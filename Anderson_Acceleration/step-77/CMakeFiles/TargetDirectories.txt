@@ -1,0 +1,10 @@
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/step-77.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/run.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/debug.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/release.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/runclean.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/distclean.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/strip_comments.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/info.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/edit_cache.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-NOX/CMakeFiles/rebuild_cache.dir

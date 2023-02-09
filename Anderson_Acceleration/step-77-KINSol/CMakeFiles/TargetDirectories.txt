@@ -1,0 +1,10 @@
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/step-77.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/run.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/debug.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/release.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/runclean.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/distclean.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/strip_comments.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/info.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/edit_cache.dir
+/home/sean/Grad_Research/Anderson_Acceleration/step-77-KINSol/CMakeFiles/rebuild_cache.dir
