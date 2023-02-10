@@ -1,4 +1,4 @@
-MESSAGE(
+message(
 "###
 #
 #  Project  step-77  set up with  deal.II-9.5.0-pre  found at

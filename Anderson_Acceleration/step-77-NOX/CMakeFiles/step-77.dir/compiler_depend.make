@@ -233,6 +233,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/file_inln.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/numbers.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/types.h \
+  /usr/include/trilinos/Kokkos_Macros.hpp \
+  /usr/include/trilinos/KokkosCore_config.h \
+  /usr/include/trilinos/KokkosCore_Config_SetupBackend.hpp \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -266,6 +269,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /home/sean/Software/deal.II/installed/include/deal.II/base/quadrature.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/point.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/exceptions.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/base/kokkos.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/tensor.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/table_indices.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/template_constraints.h \
@@ -487,6 +491,156 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /home/sean/Software/deal.II/installed/include/deal.II/base/mpi.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/array_view.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/memory_space.h \
+  /usr/include/trilinos/Kokkos_Core.hpp \
+  /usr/include/trilinos/Kokkos_Core_fwd.hpp \
+  /usr/include/trilinos/impl/Kokkos_Error.hpp \
+  /usr/include/trilinos/impl/Kokkos_Utilities.hpp \
+  /usr/include/trilinos/Kokkos_MasterLock.hpp \
+  /usr/include/trilinos/KokkosCore_Config_FwdBackend.hpp \
+  /usr/include/trilinos/fwd/Kokkos_Fwd_SERIAL.hpp \
+  /usr/include/trilinos/Kokkos_Half.hpp \
+  /usr/include/trilinos/Cuda/Kokkos_Cuda_Half.hpp \
+  /usr/include/trilinos/KokkosCore_Config_DeclareBackend.hpp \
+  /usr/include/trilinos/decl/Kokkos_Declare_SERIAL.hpp \
+  /usr/include/trilinos/Kokkos_Serial.hpp \
+  /usr/include/trilinos/Kokkos_Parallel.hpp \
+  /usr/include/trilinos/Kokkos_View.hpp \
+  /usr/include/trilinos/Kokkos_HostSpace.hpp \
+  /usr/include/c++/11/cstring \
+  /usr/include/trilinos/Kokkos_Concepts.hpp \
+  /usr/include/trilinos/Kokkos_MemoryTraits.hpp \
+  /usr/include/trilinos/impl/Kokkos_Traits.hpp \
+  /usr/include/trilinos/impl/Kokkos_BitOps.hpp \
+  /usr/include/c++/11/climits \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+  /usr/include/trilinos/impl/Kokkos_Tags.hpp \
+  /usr/include/trilinos/impl/Kokkos_SharedAlloc.hpp \
+  /usr/include/trilinos/impl/Kokkos_Tools.hpp \
+  /usr/include/trilinos/impl/Kokkos_Profiling.hpp \
+  /usr/include/trilinos/Kokkos_ExecPolicy.hpp \
+  /usr/include/trilinos/impl/Kokkos_AnalyzePolicy.hpp \
+  /usr/include/trilinos/traits/Kokkos_Traits_fwd.hpp \
+  /usr/include/trilinos/traits/Kokkos_PolicyTraitAdaptor.hpp \
+  /usr/include/trilinos/traits/Kokkos_ExecutionSpaceTrait.hpp \
+  /usr/include/trilinos/traits/Kokkos_GraphKernelTrait.hpp \
+  /usr/include/trilinos/impl/Kokkos_GraphImpl_fwd.hpp \
+  /usr/include/trilinos/traits/Kokkos_IndexTypeTrait.hpp \
+  /usr/include/trilinos/traits/Kokkos_IterationPatternTrait.hpp \
+  /usr/include/trilinos/traits/Kokkos_LaunchBoundsTrait.hpp \
+  /usr/include/trilinos/traits/Kokkos_OccupancyControlTrait.hpp \
+  /usr/include/trilinos/traits/Kokkos_ScheduleTrait.hpp \
+  /usr/include/trilinos/traits/Kokkos_WorkItemPropertyTrait.hpp \
+  /usr/include/trilinos/traits/Kokkos_WorkTagTrait.hpp \
+  /usr/include/trilinos/Kokkos_Tuners.hpp \
+  /usr/include/trilinos/KokkosExp_MDRangePolicy.hpp \
+  /usr/include/trilinos/Kokkos_Layout.hpp \
+  /usr/include/trilinos/Kokkos_Array.hpp \
+  /usr/include/trilinos/impl/KokkosExp_Host_IterateTile.hpp \
+  /usr/include/trilinos/impl/Kokkos_Profiling_Interface.hpp \
+  /usr/include/c++/11/cinttypes \
+  /usr/include/inttypes.h \
+  /usr/include/dlfcn.h \
+  /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
+  /usr/include/x86_64-linux-gnu/bits/dl_find_object.h \
+  /usr/include/trilinos/impl/Kokkos_Profiling_DeviceInfo.hpp \
+  /usr/include/trilinos/impl/Kokkos_Profiling_C_Interface.h \
+  /usr/include/c++/11/cassert \
+  /usr/include/trilinos/impl/Kokkos_HostSpace_deepcopy.hpp \
+  /usr/include/trilinos/impl/Kokkos_ViewMapping.hpp \
+  /usr/include/trilinos/Kokkos_Pair.hpp \
+  /usr/include/trilinos/Kokkos_Extents.hpp \
+  /usr/include/trilinos/impl/Kokkos_ViewTracker.hpp \
+  /usr/include/trilinos/impl/Kokkos_ViewCtor.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_View.hpp \
+  /usr/include/trilinos/Kokkos_Atomic.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Memory_Order.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Assembly.hpp \
+  /usr/include/trilinos/impl/Kokkos_Memory_Fence.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Exchange.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Compare_Exchange_Strong.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Memory_Order.hpp \
+  /usr/include/trilinos/impl/Kokkos_Memory_Fence.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Generic.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Add.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Increment.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Decrement.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Sub.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Assembly.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Sub.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Or.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_And.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_MinMax.hpp \
+  /usr/include/trilinos/impl/Kokkos_Volatile_Load.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Load.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Generic.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Store.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Generic_Secondary.hpp \
+  /usr/include/trilinos/impl/Kokkos_ViewArray.hpp \
+  /usr/include/trilinos/impl/Kokkos_ViewUniformType.hpp \
+  /usr/include/trilinos/impl/Kokkos_FunctorAnalysis.hpp \
+  /usr/include/trilinos/impl/Kokkos_FunctorAdapter.hpp \
+  /usr/include/trilinos/Kokkos_Parallel_Reduce.hpp \
+  /usr/include/trilinos/Kokkos_NumericTraits.hpp \
+  /usr/include/c++/11/cfloat \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+  /usr/include/trilinos/Kokkos_TaskScheduler.hpp \
+  /usr/include/trilinos/Kokkos_TaskScheduler_fwd.hpp \
+  /usr/include/trilinos/Kokkos_MemoryPool.hpp \
+  /usr/include/trilinos/impl/Kokkos_ConcurrentBitset.hpp \
+  /usr/include/trilinos/impl/Kokkos_ClockTic.hpp \
+  /usr/include/trilinos/Kokkos_Future.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskQueue.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskBase.hpp \
+  /usr/include/trilinos/impl/Kokkos_LIFO.hpp \
+  /usr/include/trilinos/Kokkos_PointerOwnership.hpp \
+  /usr/include/trilinos/impl/Kokkos_OptionalRef.hpp \
+  /usr/include/trilinos/impl/Kokkos_LinkedListNode.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskResult.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskNode.hpp \
+  /usr/include/trilinos/impl/Kokkos_VLAEmulation.hpp \
+  /usr/include/trilinos/impl/Kokkos_ChaseLev.hpp \
+  /usr/include/trilinos/impl/Kokkos_LIFO.hpp \
+  /usr/include/trilinos/impl/Kokkos_EBO.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Increment.hpp \
+  /usr/include/trilinos/impl/Kokkos_SingleTaskQueue.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskQueueMemoryManager.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskQueueCommon.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskQueueMultiple.hpp \
+  /usr/include/trilinos/impl/Kokkos_Atomic_Decrement.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskQueueMultiple_impl.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskPolicyData.hpp \
+  /usr/include/trilinos/impl/Kokkos_TaskTeamMember.hpp \
+  /usr/include/trilinos/impl/Kokkos_SimpleTaskScheduler.hpp \
+  /usr/include/trilinos/impl/Kokkos_MultipleTaskQueue.hpp \
+  /usr/include/trilinos/Kokkos_ScratchSpace.hpp \
+  /usr/include/trilinos/impl/Kokkos_HostThreadTeam.hpp \
+  /usr/include/trilinos/impl/Kokkos_HostBarrier.hpp \
+  /usr/include/trilinos/impl/Kokkos_ExecSpaceInitializer.hpp \
+  /usr/include/trilinos/Kokkos_UniqueToken.hpp \
+  /usr/include/trilinos/impl/Kokkos_Serial_Task.hpp \
+  /usr/include/trilinos/Kokkos_AnonymousSpace.hpp \
+  /usr/include/trilinos/Kokkos_LogicalSpaces.hpp \
+  /usr/include/trilinos/impl/Kokkos_MemorySpace.hpp \
+  /usr/include/trilinos/Kokkos_MathematicalFunctions.hpp \
+  /usr/include/trilinos/Kokkos_Vectorization.hpp \
+  /usr/include/trilinos/Kokkos_hwloc.hpp \
+  /usr/include/trilinos/Kokkos_Timer.hpp \
+  /usr/include/trilinos/Kokkos_Complex.hpp \
+  /usr/include/trilinos/Kokkos_CopyViews.hpp \
+  /usr/include/trilinos/Kokkos_Crs.hpp \
+  /usr/include/trilinos/Kokkos_WorkGraphPolicy.hpp \
+  /usr/include/trilinos/impl/Kokkos_Serial_WorkGraphPolicy.hpp \
+  /usr/include/trilinos/impl/Kokkos_Combined_Reducer.hpp \
+  /usr/include/trilinos/Kokkos_AcquireUniqueTokenImpl.hpp \
+  /usr/include/trilinos/KokkosCore_Config_PostInclude.hpp \
   /home/sean/Software/deal.II/installed/include/deal.II/base/mpi_stub.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/mpi_tags.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/utilities.h \
@@ -501,21 +655,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /usr/include/c++/11/bits/codecvt.h \
   /usr/include/c++/11/bits/locale_facets_nonio.tcc \
   /usr/include/c++/11/bits/locale_conv.h \
-  /usr/include/c++/11/cstring \
   /usr/include/boost/cstdint.hpp \
   /usr/include/boost/serialization/throw_exception.hpp \
   /usr/include/boost/integer.hpp \
   /usr/include/boost/integer_fwd.hpp \
-  /usr/include/c++/11/climits \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
-  /usr/include/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
-  /usr/include/linux/limits.h \
-  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
-  /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
   /usr/include/boost/limits.hpp \
   /usr/include/boost/integer_traits.hpp \
   /usr/include/boost/serialization/is_bitwise_serializable.hpp \
@@ -938,7 +1081,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /usr/include/boost/iostreams/detail/optional.hpp \
   /usr/include/boost/iostreams/detail/streambuf/linked_streambuf.hpp \
   /usr/include/boost/iostreams/detail/streambuf/indirect_streambuf.hpp \
-  /usr/include/c++/11/cassert \
   /usr/include/boost/iostreams/detail/adapter/concept_adapter.hpp \
   /usr/include/boost/iostreams/concepts.hpp \
   /usr/include/boost/iostreams/detail/default_arg.hpp \
@@ -1454,6 +1596,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /home/sean/Software/deal.II/installed/include/deal.II/lac/sparse_matrix.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/smartpointer.h \
   /home/sean/Software/deal.II/installed/include/deal.II/lac/sparsity_pattern.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/lac/sparsity_pattern_base.h \
   /home/sean/Software/deal.II/installed/include/deal.II/lac/dynamic_sparsity_pattern.h \
   /home/sean/Software/deal.II/installed/include/deal.II/lac/affine_constraints.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/thread_local_storage.h \
@@ -1557,7 +1700,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /usr/include/sc.h \
   /usr/include/sc_config.h \
   /usr/include/c++/11/math.h \
-  /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
   /usr/include/libgen.h \
   /usr/include/sc_mpi.h \
   /usr/include/sc_containers.h \
@@ -1589,6 +1731,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /home/sean/Software/deal.II/installed/include/deal.II/grid/tria_iterator_selector.h \
   /home/sean/Software/deal.II/installed/include/deal.II/grid/tria_levels.h \
   /home/sean/Software/deal.II/installed/include/deal.II/grid/tria_objects.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/grid/tria_objects_orientations.h \
   /usr/include/boost/serialization/utility.hpp \
   /usr/include/boost/serialization/map.hpp \
   /usr/include/boost/serialization/unique_ptr.hpp \
@@ -1912,9 +2055,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /home/sean/Software/deal.II/installed/include/deal.II/fe/block_mask.h \
   /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_data.h \
   /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_update_flags.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/base/derivative_form.h \
   /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_values_extractors.h \
   /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/base/derivative_form.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_related_data.h \
   /home/sean/Software/deal.II/installed/include/deal.II/hp/q_collection.h \
   /home/sean/Software/deal.II/installed/include/deal.II/hp/collection.h \
   /home/sean/Software/deal.II/installed/include/deal.II/non_matching/immersed_surface_quadrature.h \
@@ -1929,18 +2073,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools.h \
   /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_boundary.h \
   /home/sean/Software/deal.II/installed/include/deal.II/hp/mapping_collection.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_constraints.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/multigrid/mg_constrained_dofs.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/base/mg_level_object.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/multigrid/mg_tools.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_evaluate.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/base/mpi_remote_point_evaluation.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/distributed/tria_base.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/lac/la_parallel_vector.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/base/memory_space_data.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/base/cuda.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/fe_point_evaluation.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/base/signaling_nan.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_q1.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_q.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/vectorization.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/x86intrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/x86gprintrin.h \
@@ -2031,14 +2165,25 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/fma4intrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/ammintrin.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/xopintrin.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/evaluation_flags.h \
   /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/shape_info.h \
   /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/tensor_product_kernels.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_constraints.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/multigrid/mg_constrained_dofs.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/base/mg_level_object.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/multigrid/mg_tools.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_evaluate.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/base/mpi_remote_point_evaluation.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/distributed/tria_base.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/lac/la_parallel_vector.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/base/memory_space_data.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/base/cuda.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/fe_point_evaluation.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/base/signaling_nan.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/evaluation_flags.h \
   /home/sean/Software/deal.II/installed/include/deal.II/non_matching/mapping_info.h \
   /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_dgq.h \
   /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_cartesian.h \
   /home/sean/Software/deal.II/installed/include/deal.II/base/qprojector.h \
-  /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_q.h \
   /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_integrate_difference.h \
   /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_interpolate.h \
   /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_mean_value.h \
@@ -2071,8 +2216,92 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
   /usr/include/sundials/sundials_linearsolver.h \
   /usr/include/sundials/sundials_matrix.h \
   /usr/include/nvector/nvector_serial.h \
-  /usr/include/sundials/sundials_math.h
+  /usr/include/sundials/sundials_math.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/trilinos/nox.h \
+  /home/sean/Software/deal.II/installed/include/deal.II/lac/solver_control.h \
+  /usr/include/trilinos/Teuchos_ParameterList.hpp \
+  /usr/include/trilinos/Teuchos_ParameterListExceptions.hpp \
+  /usr/include/trilinos/Teuchos_ConfigDefs.hpp \
+  /usr/include/trilinos/TeuchosCore_config.h \
+  /usr/include/trilinos/Teuchos_config.h \
+  /usr/include/trilinos/Teuchos_DLLExportMacro.h \
+  /usr/include/trilinos/Teuchos_ParameterListModifier.hpp \
+  /usr/include/trilinos/Teuchos_Describable.hpp \
+  /usr/include/trilinos/Teuchos_VerbosityLevel.hpp \
+  /usr/include/trilinos/Teuchos_Assert.hpp \
+  /usr/include/trilinos/Teuchos_TestForException.hpp \
+  /usr/include/trilinos/Teuchos_TypeNameTraits.hpp \
+  /usr/include/trilinos/Teuchos_ConstTypeTraits.hpp \
+  /usr/include/trilinos/Teuchos_stacktrace.hpp \
+  /usr/include/trilinos/Teuchos_iostream_helpers.hpp \
+  /usr/include/trilinos/Teuchos_FancyOStream.hpp \
+  /usr/include/trilinos/Teuchos_RCP.hpp \
+  /usr/include/trilinos/Teuchos_RCPDecl.hpp \
+  /usr/include/trilinos/Teuchos_RCPNode.hpp \
+  /usr/include/trilinos/Teuchos_any.hpp \
+  /usr/include/trilinos/Teuchos_map.hpp \
+  /usr/include/trilinos/Teuchos_ENull.hpp \
+  /usr/include/trilinos/Teuchos_Exceptions.hpp \
+  /usr/include/trilinos/Teuchos_toString.hpp \
+  /usr/include/trilinos/Teuchos_getBaseObjVoidPtr.hpp \
+  /usr/include/trilinos/TeuchosCore_ConfigDefs.hpp \
+  /usr/include/trilinos/Teuchos_NullIteratorTraits.hpp \
+  /usr/include/trilinos/Teuchos_Ptr.hpp \
+  /usr/include/trilinos/Teuchos_PtrDecl.hpp \
+  /usr/include/trilinos/Teuchos_dyn_cast.hpp \
+  /usr/include/trilinos/Teuchos_GlobalMPISession.hpp \
+  /usr/include/trilinos/Teuchos_ArrayView.hpp \
+  /usr/include/trilinos/Teuchos_ArrayViewDecl.hpp \
+  /usr/include/trilinos/Teuchos_ArrayRCP.hpp \
+  /usr/include/trilinos/Teuchos_ArrayRCPDecl.hpp \
+  /usr/include/trilinos/Teuchos_as.hpp \
+  /usr/include/trilinos/Teuchos_oblackholestream.hpp \
+  /usr/include/trilinos/Teuchos_basic_oblackholestream.hpp \
+  /usr/include/trilinos/Teuchos_LabeledObject.hpp \
+  /usr/include/trilinos/Teuchos_ParameterEntryValidator.hpp \
+  /usr/include/trilinos/Teuchos_Array.hpp \
+  /usr/include/trilinos/Teuchos_Tuple.hpp \
+  /usr/include/trilinos/Teuchos_Utils.hpp \
+  /usr/include/trilinos/Teuchos_XMLObject.hpp \
+  /usr/include/trilinos/Teuchos_XMLObjectImplem.hpp \
+  /usr/include/trilinos/Teuchos_ParameterEntry.hpp \
+  /usr/include/trilinos/Teuchos_StringIndexedOrderedValueObjectContainer.hpp \
+  /usr/include/trilinos/Teuchos_FilteredIterator.hpp
 
+
+/usr/include/trilinos/Teuchos_StringIndexedOrderedValueObjectContainer.hpp:
+
+/usr/include/trilinos/Teuchos_XMLObjectImplem.hpp:
+
+/usr/include/trilinos/Teuchos_Utils.hpp:
+
+/usr/include/trilinos/Teuchos_Array.hpp:
+
+/usr/include/trilinos/Teuchos_ParameterEntryValidator.hpp:
+
+/usr/include/trilinos/Teuchos_ArrayRCPDecl.hpp:
+
+/usr/include/trilinos/Teuchos_dyn_cast.hpp:
+
+/usr/include/trilinos/Teuchos_NullIteratorTraits.hpp:
+
+/usr/include/trilinos/Teuchos_getBaseObjVoidPtr.hpp:
+
+/usr/include/trilinos/Teuchos_map.hpp:
+
+/usr/include/trilinos/Teuchos_RCP.hpp:
+
+/usr/include/trilinos/Teuchos_FancyOStream.hpp:
+
+/usr/include/trilinos/Teuchos_stacktrace.hpp:
+
+/usr/include/trilinos/Teuchos_ConstTypeTraits.hpp:
+
+/usr/include/trilinos/Teuchos_ConfigDefs.hpp:
+
+/usr/include/trilinos/Teuchos_ParameterListExceptions.hpp:
+
+/usr/include/trilinos/Teuchos_ParameterList.hpp:
 
 /usr/include/nvector/nvector_serial.h:
 
@@ -2084,15 +2313,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /home/sean/Software/deal.II/installed/include/deal.II/numerics/solution_transfer.h:
 
-/home/sean/Software/deal.II/installed/include/deal.II/numerics/data_postprocessor.h:
+/usr/include/trilinos/Teuchos_GlobalMPISession.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/hp/fe_values.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/data_out_base.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/numerics/data_out_dof_data.h:
-
-/home/sean/Software/deal.II/installed/include/deal.II/grid/filtered_iterator.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/numerics/matrix_tools.h:
 
@@ -2104,9 +2331,17 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /home/sean/Software/deal.II/installed/include/deal.II/non_matching/mapping_info.h:
 
-/home/sean/Software/deal.II/installed/include/deal.II/matrix_free/tensor_product_kernels.h:
-
 /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/evaluation_flags.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/lac/la_parallel_vector.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/multigrid/mg_tools.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/mg_level_object.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_constraints.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/matrix_free/tensor_product_kernels.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/ammintrin.h:
 
@@ -2146,8 +2381,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/smmintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
@@ -2164,6 +2397,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/enqcmdintrin.h:
 
+/usr/include/trilinos/Teuchos_any.hpp:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/mwaitintrin.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/clzerointrin.h:
@@ -2174,19 +2409,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/cetintrin.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/bmi2intrin.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/ia32intrin.h:
 
-/home/sean/Software/deal.II/installed/include/deal.II/base/cuda.h:
-
-/home/sean/Software/deal.II/installed/include/deal.II/lac/la_parallel_vector.h:
-
-/home/sean/Software/deal.II/installed/include/deal.II/multigrid/mg_tools.h:
-
-/home/sean/Software/deal.II/installed/include/deal.II/base/mg_level_object.h:
-
-/home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_constraints.h:
+/home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_q1.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_boundary.h:
 
@@ -2201,6 +2426,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_values.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/dofs/dof_tools.h:
+
+/usr/include/trilinos/Teuchos_XMLObject.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/non_matching/immersed_surface_quadrature.h:
 
@@ -2242,11 +2469,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/multi_index/detail/bidir_node_iterator.hpp:
 
+/usr/include/trilinos/TeuchosCore_config.h:
+
 /usr/include/boost/multi_index/detail/serialization_version.hpp:
 
 /usr/include/boost/multi_index/detail/archive_constructed.hpp:
 
 /usr/include/boost/multi_index/detail/scope_guard.hpp:
+
+/usr/include/trilinos/Teuchos_ArrayViewDecl.hpp:
 
 /usr/include/boost/multi_index/detail/converter.hpp:
 
@@ -2302,8 +2533,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/set/aux_/insert_range_impl.hpp:
 
-/usr/include/boost/mpl/base.hpp:
-
 /usr/include/boost/mpl/set/aux_/insert_impl.hpp:
 
 /usr/include/boost/mpl/set/aux_/set0.hpp:
@@ -2352,8 +2581,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/vector/vector20.hpp:
 
-/usr/include/boost/mpl/vector.hpp:
-
 /usr/include/boost/multi_index/identity_fwd.hpp:
 
 /usr/include/boost/multi_index_container_fwd.hpp:
@@ -2366,11 +2593,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/property_tree/ptree_serialization.hpp:
 
-/usr/include/boost/property_tree/ptree_fwd.hpp:
-
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
 
 /usr/include/c++/11/fstream:
 
@@ -2379,6 +2602,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/predef/version.h:
 
 /usr/include/boost/predef/hardware/simd/ppc.h:
+
+/usr/include/trilinos/Teuchos_VerbosityLevel.hpp:
 
 /usr/include/boost/predef/hardware/simd/arm/versions.h:
 
@@ -2412,9 +2637,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/predef/platform/cloudabi.h:
 
-/usr/include/boost/predef/platform/android.h:
+/usr/include/trilinos/Teuchos_ParameterEntry.hpp:
 
-/usr/include/boost/predef/os/windows.h:
+/usr/include/boost/predef/platform/android.h:
 
 /usr/include/boost/mpl/erase_fwd.hpp:
 
@@ -2446,11 +2671,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/predef/library/std/modena.h:
 
-/usr/include/boost/predef/library/std/libcomo.h:
-
 /usr/include/boost/predef/library/std/dinkumware.h:
 
 /usr/include/boost/predef/detail/_exception.h:
+
+/usr/include/trilinos/Teuchos_RCPDecl.hpp:
 
 /usr/include/boost/predef/library/std/_prefix.h:
 
@@ -2479,8 +2704,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/predef/compiler/sunpro.h:
 
 /usr/include/boost/predef/compiler/sgi_mipspro.h:
-
-/usr/include/boost/predef/compiler/pgi.h:
 
 /usr/include/boost/predef/compiler/mpw.h:
 
@@ -2594,8 +2817,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/p8est_lnodes.h:
 
-/usr/include/p8est_iterate.h:
-
 /usr/include/p8est_ghost.h:
 
 /usr/include/p8est_mesh.h:
@@ -2625,10 +2846,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/p4est_base.h:
 
 /usr/include/sc_mpi.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
-
-/usr/include/c++/11/math.h:
 
 /usr/include/sc_config.h:
 
@@ -2670,8 +2887,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/suitesparse/umfpack_report_info.h:
 
-/usr/include/suitesparse/umfpack_get_determinant.h:
-
 /usr/include/suitesparse/umfpack_load_numeric.h:
 
 /usr/include/suitesparse/umfpack_get_symbolic.h:
@@ -2702,6 +2917,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/suitesparse/SuiteSparse_config.h:
 
+/usr/include/trilinos/Teuchos_ParameterListModifier.hpp:
+
 /usr/include/suitesparse/umfpack.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/lac/sparse_matrix_ez.h:
@@ -2713,6 +2930,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/trilinos/Epetra_MpiDistributor.h:
 
 /usr/include/trilinos/Epetra_Comm.h:
+
+/usr/include/trilinos/Teuchos_oblackholestream.hpp:
 
 /usr/include/trilinos/Epetra_CrsGraphData.h:
 
@@ -2741,8 +2960,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /home/sean/Software/deal.II/installed/include/deal.II/lac/block_matrix_base.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/lac/sparse_direct.h:
-
-/usr/include/trilinos/Epetra_Util.h:
 
 /usr/include/trilinos/Epetra_Flops.h:
 
@@ -2778,6 +2995,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /home/sean/Software/deal.II/installed/include/deal.II/lac/dynamic_sparsity_pattern.h:
 
+/home/sean/Software/deal.II/installed/include/deal.II/lac/sparsity_pattern_base.h:
+
 /home/sean/Software/deal.II/installed/include/deal.II/lac/sparsity_pattern.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/smartpointer.h:
@@ -2789,8 +3008,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /home/sean/Software/deal.II/installed/include/deal.II/lac/full_matrix.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/lac/vector_type_traits.h:
-
-/home/sean/Software/deal.II/installed/include/deal.II/lac/vector_operation.h:
 
 /usr/include/boost/predef/compiler.h:
 
@@ -2819,10 +3036,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/move/algo/detail/heap_sort.hpp:
 
 /usr/include/boost/move/algo/predicate.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vldqintrin.h:
-
-/usr/include/boost/move/detail/destruct_n.hpp:
 
 /usr/include/boost/move/algo/detail/merge.hpp:
 
@@ -2858,6 +3071,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/container/detail/advanced_insert_int.hpp:
 
+/usr/include/trilinos/TeuchosCore_ConfigDefs.hpp:
+
 /usr/include/boost/intrusive/pack_options.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/vectorization.h:
@@ -2883,12 +3098,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/container/detail/type_traits.hpp:
 
 /usr/include/boost/container/detail/config_end.hpp:
-
-/usr/include/boost/move/detail/std_ns_end.hpp:
-
-/usr/include/boost/mpl/vector/aux_/pop_front.hpp:
-
-/usr/include/boost/container/container_fwd.hpp:
 
 /usr/include/boost/container/detail/workaround.hpp:
 
@@ -2922,11 +3131,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/tbb/tbb_profiling.h:
 
-/usr/include/asm-generic/posix_types.h:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/xsaveintrin.h:
 
 /usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
+
+/usr/include/trilinos/Teuchos_Tuple.hpp:
 
 /usr/include/x86_64-linux-gnu/asm/posix_types.h:
 
@@ -2937,8 +3146,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/linux/stddef.h:
 
 /usr/include/linux/posix_types.h:
-
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/include/p8est_communication.h:
 
@@ -3028,6 +3235,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/parameter/aux_/pack/deduce_tag.hpp:
 
+/usr/include/trilinos/Teuchos_basic_oblackholestream.hpp:
+
 /home/sean/Software/deal.II/installed/include/deal.II/base/parameter_handler.h:
 
 /usr/include/boost/parameter/aux_/set.hpp:
@@ -3080,8 +3289,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/parameter/aux_/lambda_tag.hpp:
 
-/usr/include/boost/parameter/keyword_fwd.hpp:
-
 /usr/include/boost/parameter/aux_/augment_predicate.hpp:
 
 /usr/include/boost/parameter/aux_/tagged_argument_fwd.hpp:
@@ -3094,9 +3301,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/parameter/aux_/use_default_tag.hpp:
 
-/usr/include/boost/parameter/aux_/yesno.hpp:
+/usr/include/trilinos/Teuchos_Exceptions.hpp:
 
-/usr/include/boost/parameter/aux_/void.hpp:
+/usr/include/boost/parameter/aux_/yesno.hpp:
 
 /usr/include/boost/parameter/aux_/arg_list.hpp:
 
@@ -3164,13 +3371,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/size_t.hpp:
 
-/usr/include/tbb/machine/gcc_ia32_common.h:
-
-/usr/include/boost/mpl/max_element.hpp:
-
 /usr/include/boost/type_traits/same_traits.hpp:
-
-/usr/include/boost/mpl/aux_/iter_push_front.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/plus.hpp:
 
@@ -3194,6 +3395,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/insert_range_fwd.hpp:
 
+/usr/include/trilinos/Teuchos_TypeNameTraits.hpp:
+
 /usr/include/boost/mpl/front.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/fold_impl.hpp:
@@ -3203,8 +3406,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/tbb/partitioner.h:
 
 /usr/include/boost/mpl/fold.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
 
 /usr/include/boost/mpl/aux_/iter_fold_if_impl.hpp:
 
@@ -3256,8 +3457,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/list/aux_/empty.hpp:
 
-/usr/include/boost/mpl/list/aux_/size.hpp:
-
 /usr/include/boost/mpl/list/aux_/O1_size.hpp:
 
 /usr/include/boost/mpl/list/aux_/clear.hpp:
@@ -3280,79 +3479,263 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/variant/detail/make_variant_list.hpp:
 
-/usr/include/boost/mpl/pair.hpp:
-
-/usr/include/tbb/internal/_tbb_strings.h:
-
-/usr/include/boost/variant/detail/move.hpp:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/vaesintrin.h:
 
 /usr/include/boost/variant/recursive_wrapper_fwd.hpp:
 
 /usr/include/boost/variant/detail/initializer.hpp:
 
-/usr/include/boost/mp11/detail/mp_count.hpp:
+/usr/include/boost/variant/detail/backup_holder.hpp:
 
-/usr/include/boost/type_traits/is_same.hpp:
+/usr/include/boost/mpl/vector/aux_/O1_size.hpp:
 
-/usr/include/boost/mp11/detail/mp_map_find.hpp:
+/usr/include/boost/preprocessor/enum_shifted_params.hpp:
 
-/usr/include/boost/mpl/list/aux_/item.hpp:
+/home/sean/Software/deal.II/installed/include/deal.II/base/polynomial.h:
 
-/usr/include/c++/11/ext/concurrence.h:
+/usr/include/boost/variant/detail/config.hpp:
 
-/usr/include/boost/mp11/version.hpp:
+/usr/include/boost/type_traits/copy_cv.hpp:
 
-/usr/include/boost/mpl/aux_/config/lambda.hpp:
+/usr/include/boost/multi_index/detail/has_tag.hpp:
 
-/usr/include/boost/type_traits/intrinsics.hpp:
+/usr/include/boost/utility/declval.hpp:
 
-/usr/include/boost/serialization/level.hpp:
+/usr/include/boost/signals2/detail/variadic_arg_type.hpp:
 
-/usr/include/boost/mpl/vector/aux_/push_back.hpp:
+/usr/include/boost/mpl/aux_/size_impl.hpp:
 
-/usr/include/boost/parameter/aux_/has_nested_template_fn.hpp:
-
-/usr/include/boost/mpl/next.hpp:
-
-/usr/include/trilinos/Epetra_BLAS.h:
-
-/usr/include/boost/core/nvp.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
-
-/usr/include/boost/serialization/nvp.hpp:
-
-/usr/include/c++/11/bits/fstream.tcc:
-
-/usr/include/boost/type_traits/is_floating_point.hpp:
-
-/usr/include/boost/type_traits/is_arithmetic.hpp:
-
-/usr/include/c++/11/bits/unordered_map.h:
-
-/usr/include/x86_64-linux-gnu/bits/syscall.h:
-
-/usr/include/boost/integer_traits.hpp:
+/usr/include/boost/mpl/size.hpp:
 
 /usr/include/boost/mpl/aux_/msvc_type.hpp:
 
-/usr/include/boost/limits.hpp:
+/usr/include/boost/mpl/aux_/front_impl.hpp:
 
-/usr/include/suitesparse/umfpack_report_perm.h:
-
-/usr/include/boost/iostreams/traits_fwd.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_cartesian.h:
-
-/usr/include/boost/range/detail/common.hpp:
-
-/usr/include/boost/mpl/list/aux_/include_preprocessed.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
+/usr/include/boost/mpl/prior.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/advance_forward.hpp:
+
+/usr/include/trilinos/Epetra_IntSerialDenseVector.h:
+
+/usr/include/boost/mpl/negate.hpp:
+
+/usr/include/boost/mpl/advance_fwd.hpp:
+
+/usr/include/boost/mpl/advance.hpp:
+
+/usr/include/boost/mpl/iterator_range.hpp:
+
+/usr/include/p8est_extended.h:
+
+/usr/include/boost/mpl/aux_/iter_fold_impl.hpp:
+
+/usr/include/boost/mpl/aux_/has_size.hpp:
+
+/usr/include/boost/mpl/long_fwd.hpp:
+
+/usr/include/boost/mpl/aux_/O1_size_impl.hpp:
+
+/usr/include/boost/mpl/O1_size_fwd.hpp:
+
+/usr/include/boost/mpl/sequence_tag.hpp:
+
+/usr/include/boost/predef/os/haiku.h:
+
+/usr/include/boost/mpl/sequence_tag_fwd.hpp:
+
+/usr/include/boost/mpl/aux_/begin_end_impl.hpp:
+
+/usr/include/boost/mpl/begin_end_fwd.hpp:
+
+/usr/include/boost/mpl/iter_fold.hpp:
+
+/usr/include/boost/mpl/distance_fwd.hpp:
+
+/usr/include/boost/mpl/distance.hpp:
+
+/usr/include/boost/variant/apply_visitor.hpp:
+
+/usr/include/boost/utility/swap.hpp:
+
+/usr/include/boost/signals2/detail/foreign_ptr.hpp:
+
+/usr/include/boost/smart_ptr/weak_ptr.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/wbnoinvdintrin.h:
+
+/usr/include/boost/signals2/detail/tracked_objects_visitor.hpp:
+
+/usr/include/boost/variant/detail/visitation_impl.hpp:
+
+/usr/include/boost/signals2/signal_base.hpp:
+
+/usr/include/boost/signals2/detail/signals_common.hpp:
+
+/usr/include/boost/type_traits/cv_traits.hpp:
+
+/usr/include/boost/mpl/clear_fwd.hpp:
+
+/usr/include/boost/bind/placeholders.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/fe/fe_update_flags.h:
+
+/usr/include/boost/bind/bind_cc.hpp:
+
+/usr/include/boost/bind/storage.hpp:
+
+/usr/include/boost/signals2/slot.hpp:
+
+/usr/include/boost/signals2/detail/unique_lock.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/hp/q_collection.h:
+
+/usr/include/boost/mpl/aux_/config/operators.hpp:
+
+/usr/include/boost/intrusive/detail/config_end.hpp:
+
+/usr/include/boost/iterator/function_output_iterator.hpp:
+
+/usr/include/boost/swap.hpp:
+
+/usr/include/boost/signals2/detail/scope_guard.hpp:
+
+/usr/include/boost/predef/architecture/convex.h:
+
+/usr/include/boost/signals2/connection.hpp:
+
+/usr/include/boost/predef/compiler/nvcc.h:
+
+/usr/include/boost/function/detail/maybe_include.hpp:
+
+/usr/include/boost/function/detail/function_iterate.hpp:
+
+/usr/include/boost/preprocessor/enum_params.hpp:
+
+/usr/include/boost/preprocessor/enum.hpp:
+
+/usr/include/boost/config/no_tr1/memory.hpp:
+
+/usr/include/boost/get_pointer.hpp:
+
+/usr/include/boost/bind/mem_fn.hpp:
+
+/usr/include/boost/signals2/trackable.hpp:
+
+/usr/include/boost/mem_fn.hpp:
+
+/usr/include/trilinos/Teuchos_Assert.hpp:
+
+/usr/include/boost/function/function_fwd.hpp:
+
+/usr/include/boost/container/detail/next_capacity.hpp:
+
+/usr/include/boost/function_equal.hpp:
+
+/usr/include/boost/mpl/set/aux_/empty_impl.hpp:
+
+/usr/include/boost/type_traits/composite_traits.hpp:
+
+/usr/include/boost/mp11/list.hpp:
+
+/usr/include/boost/type_traits/has_trivial_destructor.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/dofs/dof_accessor.templates.h:
+
+/usr/include/boost/container_hash/hash_fwd.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/distributed/tria_base.h:
+
+/usr/include/suitesparse/umfpack_report_numeric.h:
+
+/usr/include/boost/variant/static_visitor.hpp:
+
+/usr/include/boost/type_index/stl_type_index.hpp:
+
+/usr/include/boost/function/function_base.hpp:
+
+/usr/include/c++/11/stdlib.h:
+
+/usr/include/boost/config/no_tr1/functional.hpp:
+
+/usr/include/boost/function/detail/prologue.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/rtmintrin.h:
+
+/usr/include/boost/preprocessor/iterate.hpp:
+
+/usr/include/boost/function.hpp:
+
+/usr/include/boost/signals2/signal.hpp:
+
+/usr/include/boost/optional/detail/optional_swap.hpp:
+
+/usr/include/boost/container/vector.hpp:
+
+/usr/include/boost/optional/detail/optional_relops.hpp:
+
+/usr/include/boost/optional/detail/optional_reference_spec.hpp:
+
+/usr/include/boost/multi_index/detail/ord_index_args.hpp:
+
+/usr/include/c++/11/bits/quoted_string.h:
+
+/usr/include/boost/optional/detail/optional_factory_support.hpp:
+
+/usr/include/boost/utility/compare_pointees.hpp:
+
+/usr/include/boost/none_t.hpp:
+
+/usr/include/boost/mpl/list/aux_/preprocessed/plain/list10.hpp:
+
+/usr/include/boost/move/adl_move_swap.hpp:
+
+/usr/include/boost/none.hpp:
+
+/usr/include/boost/move/detail/type_traits.hpp:
+
+/usr/include/boost/move/traits.hpp:
+
+/usr/include/boost/type_traits/is_nothrow_move_constructible.hpp:
+
+/usr/include/boost/type_traits/has_trivial_move_assign.hpp:
+
+/usr/include/boost/type_traits/is_nothrow_move_assignable.hpp:
+
+/usr/include/boost/type_traits/remove_bounds.hpp:
+
+/usr/include/boost/type_traits/decay.hpp:
+
+/usr/include/boost/core/swap.hpp:
+
+/usr/include/boost/optional/optional.hpp:
+
+/usr/include/boost/optional.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/serializeintrin.h:
+
+/usr/include/boost/signals2/dummy_mutex.hpp:
+
+/usr/include/boost/concept/detail/concept_def.hpp:
+
+/usr/include/trilinos/traits/Kokkos_IndexTypeTrait.hpp:
+
+/usr/include/c++/11/tr1/special_function_util.h:
+
+/usr/include/boost/archive/detail/helper_collection.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/hp/mapping_collection.h:
+
+/usr/include/boost/mpl/key_type_fwd.hpp:
+
+/usr/include/boost/iostreams/putback.hpp:
+
+/usr/include/boost/property_tree/ptree_fwd.hpp:
+
+/usr/include/trilinos/traits/Kokkos_ExecutionSpaceTrait.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/grid/tria_iterator.h:
+
+/usr/include/boost/signals2/deconstruct_ptr.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
 
@@ -3362,47 +3745,45 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h:
 
-/usr/include/boost/mpl/aux_/na_spec.hpp:
+/usr/include/boost/parameter/value_type.hpp:
 
-/home/sean/Software/deal.II/installed/include/deal.II/dofs/dof_objects.h:
+/usr/include/boost/core/explicit_operator_bool.hpp:
 
-/usr/include/boost/mpl/list/list0.hpp:
+/usr/include/boost/type_traits/remove_extent.hpp:
 
-/usr/include/boost/preprocessor/stringize.hpp:
+/usr/include/trilinos/Kokkos_MemoryTraits.hpp:
 
-/usr/include/boost/cstdint.hpp:
+/usr/include/boost/predef/compiler/pgi.h:
 
-/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+/usr/include/trilinos/Kokkos_Parallel.hpp:
 
-/usr/include/p8est_bits.h:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_if_impl.hpp:
 
-/usr/include/boost/serialization/is_bitwise_serializable.hpp:
+/usr/include/trilinos/Kokkos_Serial.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
 
-/usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
+/usr/include/suitesparse/umfpack_scale.h:
 
-/home/sean/Software/deal.II/installed/include/deal.II/lac/identity_matrix.h:
+/usr/include/boost/mpl/begin_end.hpp:
 
-/usr/include/c++/11/bits/basic_ios.h:
+/usr/include/trilinos/Kokkos_Concepts.hpp:
 
-/usr/include/boost/iostreams/detail/streambuf/chainbuf.hpp:
+/usr/include/trilinos/Teuchos_DLLExportMacro.h:
 
-/usr/include/c++/11/bits/locale_facets_nonio.h:
+/usr/include/trilinos/KokkosCore_Config_DeclareBackend.hpp:
 
-/usr/include/boost/multi_index/detail/index_loader.hpp:
+/usr/include/trilinos/Kokkos_MasterLock.hpp:
 
-/usr/include/boost/iostreams/device/array.hpp:
+/usr/include/boost/mpl/iterator_category.hpp:
 
-/home/sean/Software/deal.II/installed/include/deal.II/base/utilities.h:
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
-/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+/usr/include/boost/mpl/list/aux_/include_preprocessed.hpp:
 
-/home/sean/Software/deal.II/installed/include/deal.II/lac/block_sparsity_pattern.h:
+/usr/include/x86_64-linux-gnu/bits/xopen_lim.h:
 
-/home/sean/Software/deal.II/installed/include/deal.II/base/mpi_tags.h:
-
-/usr/include/c++/11/debug/assertions.h:
+/usr/include/trilinos/Kokkos_Core.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/array_view.h:
 
@@ -3412,13 +3793,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/timer.h:
 
-/usr/include/boost/mpl/distance_fwd.hpp:
-
 /home/sean/Software/deal.II/installed/include/deal.II/base/function.h:
-
-/usr/include/boost/type_traits/is_base_and_derived.hpp:
-
-/usr/include/c++/11/pstl/glue_memory_defs.h:
 
 /usr/include/boost/mpl/front_fwd.hpp:
 
@@ -3432,23 +3807,19 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bit:
 
-/home/sean/Software/deal.II/installed/include/deal.II/fe/fe_update_flags.h:
-
-/usr/include/boost/bind/bind_cc.hpp:
-
 /home/sean/Software/deal.II/installed/include/deal.II/base/function_time.h:
 
 /usr/include/c++/11/ctime:
 
 /usr/include/c++/11/bits/atomic_base.h:
 
+/usr/include/boost/blank_fwd.hpp:
+
+/usr/include/c++/11/atomic:
+
 /usr/include/sundials/sundials_types.h:
 
 /usr/include/boost/config/detail/suffix.hpp:
-
-/usr/include/boost/integer_fwd.hpp:
-
-/usr/include/boost/swap.hpp:
 
 /usr/include/c++/11/bits/allocated_ptr.h:
 
@@ -3466,9 +3837,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/integer.hpp:
 
-/usr/include/boost/predef/library/std/stdcpp3.h:
-
-/usr/include/boost/type_traits/integral_constant.hpp:
+/usr/include/trilinos/impl/Kokkos_OptionalRef.hpp:
 
 /usr/include/boost/type_traits/add_reference.hpp:
 
@@ -3488,6 +3857,18 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/range/const_iterator.hpp:
 
+/usr/include/boost/mp11/detail/mp_with_index.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp:
+
+/usr/include/boost/preprocessor/slot/detail/shared.hpp:
+
+/usr/include/boost/predef/compiler/gcc_xml.h:
+
+/usr/include/boost/type_traits/copy_cv_ref.hpp:
+
+/usr/include/boost/range/detail/msvc_has_iterator_workaround.hpp:
+
 /usr/include/c++/11/list:
 
 /usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
@@ -3500,6 +3881,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/range/range_fwd.hpp:
 
+/usr/include/trilinos/Teuchos_PtrDecl.hpp:
+
 /usr/include/boost/range/iterator.hpp:
 
 /usr/include/boost/mpl/assert.hpp:
@@ -3510,7 +3893,19 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/preprocessor/variadic/size.hpp:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/float.h:
+
 /usr/include/boost/preprocessor/repetition/enum_params.hpp:
+
+/usr/include/trilinos/Cuda/Kokkos_Cuda_Half.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/bmi2intrin.h:
+
+/usr/include/trilinos/traits/Kokkos_Traits_fwd.hpp:
+
+/usr/include/trilinos/decl/Kokkos_Declare_SERIAL.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Or.hpp:
 
 /usr/include/boost/mpl/aux_/config/pp_counter.hpp:
 
@@ -3530,10 +3925,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/preprocessor/arithmetic/sub.hpp:
 
-/usr/include/boost/predef/compiler/clang.h:
-
-/usr/include/boost/serialization/array_wrapper.hpp:
-
 /usr/include/boost/preprocessor/tuple/rem.hpp:
 
 /usr/include/boost/preprocessor/facilities/overload.hpp:
@@ -3544,9 +3935,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/preprocessor/seq/enum.hpp:
 
-/usr/include/boost/preprocessor/enum_params.hpp:
-
-/usr/include/boost/preprocessor/control/detail/while.hpp:
+/usr/include/trilinos/impl/Kokkos_Tags.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/grid/reference_cell.h:
 
@@ -3555,14 +3944,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/parameter/aux_/pack/tag_deduced.hpp:
 
 /usr/include/boost/archive/binary_iarchive_impl.hpp:
-
-/usr/include/boost/serialization/map.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
-
-/usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
-
-/usr/include/boost/type_traits/detail/yes_no_type.hpp:
 
 /usr/include/boost/bind/bind.hpp:
 
@@ -3574,19 +3955,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/stl_raw_storage_iter.h:
 
-/usr/include/boost/optional/detail/optional_reference_spec.hpp:
-
 /usr/include/boost/type_traits/is_const.hpp:
 
 /usr/include/boost/preprocessor/list/adt.hpp:
 
 /usr/include/boost/mpl/aux_/type_wrapper.hpp:
-
-/usr/include/boost/mpl/list/aux_/preprocessed/plain/list10.hpp:
-
-/usr/include/boost/move/adl_move_swap.hpp:
-
-/usr/include/boost/none.hpp:
 
 /usr/include/boost/preprocessor/control/expr_iif.hpp:
 
@@ -3604,13 +3977,25 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/void_fwd.hpp:
 
+/usr/include/boost/type_traits/has_nothrow_constructor.hpp:
+
+/usr/include/boost/config/pragma_message.hpp:
+
 /usr/include/boost/preprocessor/arithmetic/add.hpp:
+
+/usr/include/trilinos/Teuchos_iostream_helpers.hpp:
 
 /usr/include/c++/11/iterator:
 
 /usr/include/boost/preprocessor/empty.hpp:
 
 /usr/include/boost/preprocessor/facilities/identity.hpp:
+
+/usr/include/c++/11/set:
+
+/usr/include/boost/optional/detail/optional_aligned_storage.hpp:
+
+/usr/include/boost/preprocessor/identity.hpp:
 
 /usr/include/boost/mpl/quote.hpp:
 
@@ -3626,6 +4011,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/preprocessor/logical/and.hpp:
 
+/usr/include/boost/mpl/aux_/iter_push_front.hpp:
+
+/usr/include/trilinos/Kokkos_Timer.hpp:
+
 /usr/include/boost/mpl/vector/aux_/pop_back.hpp:
 
 /usr/include/boost/mpl/aux_/config/intel.hpp:
@@ -3636,11 +4025,19 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
+/home/sean/Software/deal.II/installed/include/deal.II/trilinos/nox.h:
+
 /usr/include/boost/property_tree/exceptions.hpp:
 
 /usr/include/boost/preprocessor/tuple/eat.hpp:
 
+/usr/include/trilinos/Teuchos_FilteredIterator.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Tools.hpp:
+
 /usr/include/boost/preprocessor/detail/auto_rec.hpp:
+
+/usr/include/trilinos/Teuchos_ENull.hpp:
 
 /usr/include/boost/type_traits/is_complete.hpp:
 
@@ -3660,8 +4057,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/preprocessor/array/data.hpp:
 
-/usr/include/boost/move/traits.hpp:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/reverse_iter_fold_impl.hpp:
 
 /usr/include/boost/parameter/aux_/is_placeholder.hpp:
@@ -3680,6 +4075,24 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
+/usr/include/boost/mpl/O1_size.hpp:
+
+/usr/include/c++/11/bits/streambuf.tcc:
+
+/usr/include/boost/mp11/detail/mp_map_find.hpp:
+
+/usr/include/boost/mpl/list/aux_/item.hpp:
+
+/usr/include/c++/11/ext/concurrence.h:
+
+/usr/include/boost/mp11/version.hpp:
+
+/usr/include/boost/mpl/aux_/config/lambda.hpp:
+
+/usr/include/boost/mp11/detail/mp_count.hpp:
+
+/usr/include/boost/type_traits/is_same.hpp:
+
 /usr/include/boost/preprocessor/comma_if.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/dofs/block_info.h:
@@ -3690,17 +4103,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/arg.hpp:
 
-/usr/include/boost/preprocessor/iteration/local.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/boost/predef/architecture/convex.h:
-
-/usr/include/boost/signals2/connection.hpp:
 
 /usr/include/boost/mpl/aux_/arithmetic_op.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessor/params.hpp:
+
+/usr/include/boost/mpl/vector.hpp:
+
+/usr/include/trilinos/traits/Kokkos_WorkTagTrait.hpp:
 
 /usr/include/trilinos/Epetra_Distributor.h:
 
@@ -3708,15 +4119,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/preprocessor/seq/size.hpp:
 
+/usr/include/boost/preprocessor/seq/elem.hpp:
+
+/usr/include/boost/variant/variant.hpp:
+
+/usr/include/boost/mpl/aux_/config/preprocessor.hpp:
+
+/usr/include/c++/11/ext/numeric_traits.h:
+
 /usr/include/boost/mpl/aux_/integral_wrapper.hpp:
-
-/usr/include/boost/type_traits/is_scalar.hpp:
-
-/usr/include/boost/mpl/aux_/na.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/base/tensor.h:
-
-/usr/include/boost/mpl/aux_/config/workaround.hpp:
 
 /usr/include/c++/11/bits/uses_allocator.h:
 
@@ -3734,19 +4145,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/smart_ptr/scoped_ptr.hpp:
 
-/home/sean/Software/deal.II/installed/include/deal.II/fe/fe_q_base.h:
-
-/usr/include/boost/type_traits/is_class.hpp:
-
-/usr/include/boost/config/abi_prefix.hpp:
-
-/usr/include/c++/11/bits/locale_conv.h:
+/home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_related_data.h:
 
 /usr/include/boost/config/platform/linux.hpp:
 
 /usr/include/boost/smart_ptr/detail/sp_convertible.hpp:
-
-/usr/include/linux/close_range.h:
 
 /usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
 
@@ -3760,13 +4163,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/functexcept.h:
 
-/usr/include/boost/type_traits/is_void.hpp:
+/usr/include/boost/bind/mem_fn_cc.hpp:
+
+/usr/include/boost/utility/result_of.hpp:
+
+/usr/include/boost/type_traits/is_union.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
 
 /usr/include/boost/mpl/aux_/config/eti.hpp:
-
-/usr/include/tbb/blocked_range.h:
-
-/usr/include/boost/config/compiler/gcc.hpp:
 
 /usr/include/sundials/sundials_iterative.h:
 
@@ -3786,6 +4191,12 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/range/value_type.hpp:
 
+/usr/include/tbb/blocked_range.h:
+
+/usr/include/boost/config/compiler/gcc.hpp:
+
+/usr/include/trilinos/KokkosCore_config.h:
+
 /usr/include/boost/mpl/aux_/config/msvc.hpp:
 
 /usr/include/boost/mpl/aux_/adl_barrier.hpp:
@@ -3804,13 +4215,31 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/cstring:
 
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
+
+/usr/include/trilinos/Kokkos_Extents.hpp:
+
 /usr/include/boost/geometry/core/point_type.hpp:
 
 /usr/include/boost/mpl/lambda_fwd.hpp:
 
+/usr/include/tbb/machine/gcc_ia32_common.h:
+
+/usr/include/boost/mpl/max_element.hpp:
+
+/usr/include/inttypes.h:
+
 /usr/include/boost/mpl/aux_/config/static_constant.hpp:
 
 /usr/include/adolc/param.h:
+
+/usr/include/boost/mpl/aux_/clear_impl.hpp:
+
+/usr/include/boost/mpl/insert.hpp:
+
+/usr/include/boost/variant/variant_fwd.hpp:
+
+/usr/include/boost/mpl/aux_/has_apply.hpp:
 
 /usr/include/boost/container/small_vector.hpp:
 
@@ -3818,17 +4247,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/point.h:
 
-/usr/include/adolc/internal/usrparms.h:
-
 /usr/include/boost/core/allocator_access.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/c++/11/bits/vector.tcc:
-
-/usr/include/boost/type_traits/is_enum.hpp:
-
-/usr/include/boost/type_traits/detail/config.hpp:
 
 /usr/include/boost/concept/assert.hpp:
 
@@ -3836,11 +4259,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
 
+/usr/include/boost/mpl/aux_/traits_lambda_spec.hpp:
+
+/usr/include/c++/11/vector:
+
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/datatype_inln.h:
 
-/usr/include/boost/signals2/detail/variadic_arg_type.hpp:
+/usr/include/c++/11/bits/unordered_map.h:
 
-/usr/include/boost/mpl/aux_/size_impl.hpp:
+/usr/include/boost/type_traits/is_arithmetic.hpp:
 
 /usr/include/boost/mp11/integral.hpp:
 
@@ -3858,21 +4285,41 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
+/usr/include/boost/optional/detail/optional_trivially_copyable_base.hpp:
+
+/usr/include/boost/preprocessor/debug/error.hpp:
+
 /usr/include/c++/11/bits/stl_algo.h:
 
 /usr/include/c++/11/algorithm:
 
 /usr/include/c++/11/bits/stl_tree.h:
 
+/usr/include/boost/optional/detail/optional_config.hpp:
+
+/usr/include/boost/smart_ptr/make_shared.hpp:
+
 /home/sean/Software/deal.II/installed/include/deal.II/base/template_constraints.h:
 
 /usr/include/boost/serialization/tracking_enum.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/tensor.h:
+
+/usr/include/boost/variant/detail/apply_visitor_binary.hpp:
+
+/usr/include/boost/core/addressof.hpp:
 
 /usr/include/boost/version.hpp:
 
 /usr/include/boost/multi_index/detail/define_if_constexpr_macro.hpp:
 
 /usr/include/c++/11/bits/stl_vector.h:
+
+/usr/include/trilinos/impl/Kokkos_VLAEmulation.hpp:
+
+/usr/include/boost/bind/mem_fn_template.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/c++/11/cstddef:
 
@@ -3892,17 +4339,23 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/smart_ptr/detail/sp_has_gcc_intrinsics.hpp:
 
-/usr/include/boost/mpl/aux_/config/gcc.hpp:
-
 /usr/include/boost/geometry/util/bare_type.hpp:
 
 /usr/include/c++/11/sstream:
 
-/usr/include/boost/serialization/level_enum.hpp:
+/home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools.h:
 
-/usr/include/c++/11/bits/stl_iterator.h:
+/usr/include/limits.h:
 
-/usr/include/c++/11/ext/atomicity.h:
+/usr/include/c++/11/tr1/riemann_zeta.tcc:
+
+/usr/include/c++/11/bits/std_mutex.h:
+
+/usr/include/trilinos/impl/Kokkos_ExecSpaceInitializer.hpp:
+
+/usr/include/boost/range/distance.hpp:
+
+/usr/include/boost/serialization/assume_abstract.hpp:
 
 /usr/include/assert.h:
 
@@ -3916,19 +4369,19 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/bool_fwd.hpp:
 
+/usr/include/trilinos/impl/Kokkos_MultipleTaskQueue.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
-/usr/include/boost/predef/platform.h:
-
-/usr/include/boost/mpl/order_fwd.hpp:
-
-/usr/include/boost/mpl/always.hpp:
-
 /usr/include/c++/11/bits/basic_string.h:
 
+/usr/include/trilinos/Kokkos_Tuners.hpp:
+
 /usr/include/locale.h:
+
+/usr/include/c++/11/bits/stl_map.h:
 
 /usr/include/boost/mpl/aux_/lambda_spec.hpp:
 
@@ -3936,13 +4389,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/preprocessor/slot/detail/def.hpp:
 
-/usr/include/boost/function/function_fwd.hpp:
-
 /usr/include/c++/11/bits/localefwd.h:
 
-/home/sean/Software/deal.II/installed/include/deal.II/dofs/dof_handler.h:
-
-/usr/include/boost/iterator/iterator_facade.hpp:
+/usr/include/trilinos/Kokkos_View.hpp:
 
 /usr/include/c++/11/tr1/hypergeometric.tcc:
 
@@ -3956,11 +4405,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/iostreams/detail/config/overload_resolution.hpp:
 
+/usr/include/boost/optional/bad_optional_access.hpp:
+
+/usr/include/boost/smart_ptr/allocate_shared_array.hpp:
+
+/usr/include/c++/11/cctype:
+
 /usr/include/boost/range/algorithm/equal.hpp:
-
-/usr/include/boost/mpl/iterator_category.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/op.h:
 
@@ -3970,13 +4421,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/type_traits/aligned_storage.hpp:
 
-/usr/include/boost/mpl/not.hpp:
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+/usr/include/boost/mpl/not.hpp:
 
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
 
 /usr/include/boost/smart_ptr/make_shared_object.hpp:
+
+/usr/include/trilinos/KokkosExp_MDRangePolicy.hpp:
 
 /usr/include/c++/11/exception:
 
@@ -3988,13 +4441,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
+/usr/include/trilinos/impl/Kokkos_SingleTaskQueue.hpp:
+
 /usr/include/boost/parameter/aux_/pack/unmatched_argument.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
 /usr/include/boost/type_traits/conditional.hpp:
-
-/usr/include/c++/11/bits/nested_exception.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/f16cintrin.h:
 
@@ -4012,7 +4465,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/exception/exception.hpp:
 
+/usr/include/trilinos/Teuchos_Ptr.hpp:
+
 /usr/include/c++/11/bits/stl_algobase.h:
+
+/usr/include/boost/mpl/vector/aux_/pop_front.hpp:
+
+/usr/include/boost/container/container_fwd.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Profiling_Interface.hpp:
 
 /usr/include/boost/iterator/reverse_iterator.hpp:
 
@@ -4028,6 +4489,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/iostreams/close.hpp:
 
+/usr/include/trilinos/impl/Kokkos_LIFO.hpp:
+
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/status_inln.h:
 
 /usr/include/boost/preprocessor/facilities/empty.hpp:
@@ -4038,31 +4501,25 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/invoke.h:
 
-/usr/include/boost/mpl/integral_c_fwd.hpp:
+/home/sean/Software/deal.II/installed/include/deal.II/lac/vector_operation.h:
 
-/usr/include/boost/preprocessor/logical/bool.hpp:
+/usr/include/trilinos/impl/Kokkos_Profiling.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/include/boost/signals2/signal.hpp:
-
-/usr/include/c++/11/tr1/special_function_util.h:
-
-/usr/include/boost/archive/detail/helper_collection.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/hp/mapping_collection.h:
-
-/usr/include/boost/mpl/key_type_fwd.hpp:
-
-/usr/include/boost/iostreams/putback.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/time.h:
 
+/usr/include/boost/predef/os/windows.h:
+
+/usr/include/trilinos/fwd/Kokkos_Fwd_SERIAL.hpp:
+
+/usr/include/boost/weak_ptr.hpp:
+
+/usr/include/c++/11/bits/ios_base.h:
+
+/usr/include/trilinos/traits/Kokkos_GraphKernelTrait.hpp:
+
 /usr/include/boost/ref.hpp:
-
-/usr/include/boost/parameter/aux_/default.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/lac/block_sparse_matrix.h:
 
@@ -4074,10 +4531,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/op_inln.h:
 
-/usr/include/boost/predef/compiler/nvcc.h:
-
-/usr/include/boost/function/detail/maybe_include.hpp:
-
 /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping.h:
 
 /usr/include/boost/mpl/vector/aux_/preprocessed/typeof_based/vector10.hpp:
@@ -4087,6 +4540,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/lib/gcc/x86_64-linux-gnu/11/include/fxsrintrin.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/trilinos/Teuchos_RCPNode.hpp:
 
 /usr/include/c++/11/climits:
 
@@ -4106,9 +4561,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/exception_ptr.h:
 
+/home/sean/Software/deal.II/installed/include/deal.II/lac/solver_control.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512dqintrin.h:
 
 /usr/include/math.h:
+
+/usr/include/boost/type_index.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
 /usr/include/c++/11/string:
 
@@ -4116,13 +4577,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/serialization/vector.hpp:
 
+/usr/include/boost/mpl/long.hpp:
+
+/usr/include/boost/iostreams/filter/symmetric.hpp:
+
 /usr/include/boost/config.hpp:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intracomm_inln.h:
-
-/usr/include/c++/11/memory:
-
-/usr/include/boost/core/use_default.hpp:
 
 /usr/include/boost/concept/usage.hpp:
 
@@ -4144,8 +4603,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/preprocessor/iteration/detail/bounds/upper1.hpp:
 
-/usr/include/boost/archive/basic_binary_iprimitive.hpp:
-
 /usr/include/c++/11/bits/unique_lock.h:
 
 /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_evaluate.h:
@@ -4156,13 +4613,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/exception.h:
 
-/usr/include/boost/mpl/list/aux_/front.hpp:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
+/usr/include/trilinos/traits/Kokkos_WorkItemPropertyTrait.hpp:
 
 /usr/include/boost/mpl/has_xxx.hpp:
-
-/usr/include/boost/type_traits/is_nothrow_move_constructible.hpp:
 
 /usr/include/boost/predef/architecture/alpha.h:
 
@@ -4190,11 +4643,31 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/range/size.hpp:
 
+/usr/include/trilinos/impl/Kokkos_GraphImpl_fwd.hpp:
+
 /usr/include/c++/11/chrono:
 
 /usr/include/boost/parameter/aux_/pack/parameter_requirements.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/boost/parameter/aux_/default.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/intracomm_inln.h:
+
+/usr/include/c++/11/memory:
+
+/usr/include/boost/core/use_default.hpp:
+
+/usr/include/trilinos/Kokkos_Macros.hpp:
+
+/usr/include/boost/multi_index/detail/node_type.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/mutex.h:
+
+/usr/include/boost/type_traits/is_abstract.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
@@ -4203,6 +4676,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/full_lambda.hpp:
+
+/usr/include/boost/type_index/type_index_facade.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/mpi_stub.h:
 
 /usr/include/boost/signals2/variadic_signal.hpp:
 
@@ -4226,14 +4703,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-/usr/include/boost/mpl/aux_/clear_impl.hpp:
-
-/usr/include/boost/mpl/insert.hpp:
-
-/usr/include/boost/mpl/aux_/has_apply.hpp:
-
-/usr/include/boost/variant/variant_fwd.hpp:
-
 /usr/include/boost/optional/optional_io.hpp:
 
 /usr/include/boost/parameter/aux_/is_tagged_argument.hpp:
@@ -4246,16 +4715,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/aux_/na_fwd.hpp:
 
-/usr/include/c++/11/bits/stl_map.h:
-
-/usr/include/boost/detail/is_incrementable.hpp:
-
-/usr/include/boost/multi_index/detail/node_type.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/base/mutex.h:
-
-/usr/include/boost/type_traits/is_abstract.hpp:
-
 /usr/include/boost/preprocessor/list/detail/fold_left.hpp:
 
 /usr/include/boost/mpl/aux_/config/use_preprocessed.hpp:
@@ -4263,6 +4722,16 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/mpl/logical.hpp:
 
 /usr/include/c++/11/bits/list.tcc:
+
+/usr/include/libgen.h:
+
+/usr/include/trilinos/Epetra_CombineMode.h:
+
+/usr/include/boost/container/detail/alloc_helpers.hpp:
+
+/usr/include/boost/signals2/slot_base.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/dec.hpp:
 
 /usr/include/boost/mpl/int.hpp:
 
@@ -4272,19 +4741,27 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/streambuf:
 
+/home/sean/Software/deal.II/installed/include/deal.II/base/subscriptor.h:
+
+/usr/include/c++/11/tr1/poly_hermite.tcc:
+
+/usr/include/c++/11/bits/memoryfwd.h:
+
 /usr/include/boost/signals2/expired_slot.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 
 /usr/include/c++/11/debug/debug.h:
 
+/usr/include/tbb/internal/_tbb_strings.h:
+
+/usr/include/boost/variant/detail/move.hpp:
+
+/usr/include/trilinos/Kokkos_Vectorization.hpp:
+
+/usr/include/trilinos/impl/Kokkos_AnalyzePolicy.hpp:
+
 /usr/include/strings.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/hresetintrin.h:
-
-/usr/include/boost/type_traits/remove_cv.hpp:
-
-/usr/include/boost/mpl/aux_/config/has_apply.hpp:
 
 /usr/include/boost/preprocessor/detail/is_binary.hpp:
 
@@ -4292,27 +4769,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/stl_relops.h:
 
-/usr/include/boost/mpl/size_t_fwd.hpp:
-
-/usr/include/c++/11/bits/hash_bytes.h:
-
-/usr/include/boost/mpl/aux_/fold_impl.hpp:
-
-/usr/include/c++/11/bits/move.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/serializeintrin.h:
-
-/usr/include/boost/signals2/dummy_mutex.hpp:
-
-/usr/include/boost/mp11/detail/mp_with_index.hpp:
-
-/usr/include/boost/preprocessor/slot/detail/shared.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/advance_backward.hpp:
-
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/mpicxx.h:
 
 /usr/include/boost/type_traits/is_signed.hpp:
+
+/usr/include/trilinos/traits/Kokkos_ScheduleTrait.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Traits.hpp:
 
 /usr/include/c++/11/tuple:
 
@@ -4340,9 +4803,17 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/pstl/pstl_config.h:
 
+/usr/include/trilinos/Teuchos_ArrayView.hpp:
+
 /usr/include/c++/11/type_traits:
 
+/usr/include/trilinos/Kokkos_hwloc.hpp:
+
 /usr/include/boost/type_traits/conversion_traits.hpp:
+
+/usr/include/x86_64-linux-gnu/sys/single_threaded.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/utilities.h:
 
 /usr/include/boost/mpl/aux_/msvc_eti_base.hpp:
 
@@ -4354,13 +4825,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
 
-/usr/include/boost/serialization/unique_ptr.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
-
 /usr/include/boost/mpl/bool.hpp:
 
-/usr/include/boost/type_traits/copy_cv.hpp:
+/home/sean/Software/deal.II/installed/include/deal.II/grid/filtered_iterator.h:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Generic_Secondary.hpp:
 
 /usr/include/boost/parameter/aux_/template_keyword.hpp:
 
@@ -4370,9 +4839,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/limits/arity.hpp:
 
-/usr/include/boost/signals2/trackable.hpp:
-
-/usr/include/boost/mem_fn.hpp:
+/usr/include/trilinos/Teuchos_ArrayRCP.hpp:
 
 /usr/include/boost/predef/architecture/arm.h:
 
@@ -4388,14 +4855,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/cstdlib:
 
-/usr/include/c++/11/bits/std_mutex.h:
-
-/usr/include/boost/range/distance.hpp:
-
-/usr/include/c++/11/locale:
-
-/usr/include/boost/signals2/detail/signals_common.hpp:
-
 /usr/include/ctype.h:
 
 /usr/include/c++/11/ext/new_allocator.h:
@@ -4410,13 +4869,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/concept_check.h:
 
-/usr/include/trilinos/Epetra_IntSerialDenseVector.h:
+/usr/include/c++/11/bits/istream.tcc:
 
-/usr/include/boost/mpl/negate.hpp:
-
-/usr/include/boost/config/no_tr1/memory.hpp:
+/usr/include/c++/11/clocale:
 
 /usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
+
+/usr/include/boost/optional/optional_fwd.hpp:
+
+/usr/include/boost/serialization/void_cast_fwd.hpp:
 
 /usr/include/boost/geometry/util/promote_floating_point.hpp:
 
@@ -4432,7 +4893,17 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/cmath:
 
+/usr/include/boost/mpl/aux_/static_cast.hpp:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/request.h:
+
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/info.h:
+
+/usr/include/boost/serialization/unique_ptr.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
+
+/usr/include/trilinos/impl/Kokkos_Serial_WorkGraphPolicy.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vlbwintrin.h:
 
@@ -4452,8 +4923,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-/usr/include/boost/mpl/begin_end_fwd.hpp:
-
 /home/sean/Software/deal.II/installed/include/deal.II/base/geometry_info.h:
 
 /usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
@@ -4468,17 +4937,27 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
+/usr/include/trilinos/Kokkos_AnonymousSpace.hpp:
+
 /usr/include/boost/container/allocator_traits.hpp:
 
 /usr/include/boost/iostreams/checked_operations.hpp:
 
 /usr/include/boost/mpl/aux_/nested_type_wknd.hpp:
 
+/usr/include/trilinos/KokkosCore_Config_FwdBackend.hpp:
+
 /usr/include/c++/11/tr1/beta_function.tcc:
 
 /usr/include/c++/11/tr1/poly_laguerre.tcc:
 
 /usr/include/c++/11/array:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/cuda.h:
+
+/usr/include/trilinos/Kokkos_Core_fwd.hpp:
+
+/usr/include/c++/11/bits/locale_conv.h:
 
 /usr/include/c++/11/bits/erase_if.h:
 
@@ -4492,8 +4971,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++locale.h:
 
-/usr/include/linux/errno.h:
-
 /usr/include/boost/mpl/aux_/preprocessed/gcc/quote.hpp:
 
 /usr/include/c++/11/iosfwd:
@@ -4504,8 +4981,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/predefined_ops.h:
 
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
-
 /usr/include/boost/predef/hardware/simd/x86.h:
 
 /usr/include/trilinos/Epetra_Object.h:
@@ -4514,9 +4989,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/mpi.h:
 
+/usr/include/trilinos/Kokkos_Future.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
-/usr/include/boost/smart_ptr/weak_ptr.hpp:
+/usr/include/trilinos/impl/Kokkos_TaskQueueMultiple_impl.hpp:
 
 /usr/include/x86_64-linux-gnu/asm/errno.h:
 
@@ -4558,6 +5035,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/archive/detail/basic_pointer_iserializer.hpp:
 
+/usr/include/trilinos/Kokkos_AcquireUniqueTokenImpl.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
 /usr/include/boost/preprocessor/arithmetic/mod.hpp:
@@ -4588,18 +5067,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/group.h:
 
-/usr/include/libgen.h:
-
-/usr/include/trilinos/Epetra_CombineMode.h:
-
-/usr/include/boost/container/detail/alloc_helpers.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/dec.hpp:
-
-/usr/include/boost/signals2/slot_base.hpp:
-
-/usr/include/boost/type_traits/is_fundamental.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
 
 /usr/include/boost/mpl/push_back_fwd.hpp:
@@ -4607,6 +5074,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/mpl/aux_/config/nttp.hpp:
 
 /usr/include/c++/11/bits/ostream_insert.h:
+
+/usr/include/boost/preprocessor/logical/bool.hpp:
+
+/usr/include/boost/mpl/integral_c_fwd.hpp:
 
 /usr/include/c++/11/bits/functional_hash.h:
 
@@ -4626,7 +5097,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/config.h:
 
-/usr/include/boost/function.hpp:
+/usr/include/boost/variant/detail/apply_visitor_unary.hpp:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/win_inln.h:
 
 /usr/include/boost/signals2/detail/signal_template.hpp:
 
@@ -4660,8 +5133,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/equal_to.hpp:
 
-/usr/include/boost/mpl/aux_/O1_size_impl.hpp:
-
 /usr/include/boost/predef/os/cygwin.h:
 
 /usr/include/boost/predef/compiler/dignus.h:
@@ -4678,13 +5149,25 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/wchar.h:
 
+/usr/include/trilinos/Teuchos_toString.hpp:
+
 /usr/include/alloca.h:
 
 /usr/include/c++/11/bits/stl_heap.h:
 
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vldqintrin.h:
+
+/usr/include/boost/move/detail/destruct_n.hpp:
+
+/usr/include/trilinos/Kokkos_Complex.hpp:
+
 /usr/include/boost/iterator/iterator_traits.hpp:
 
 /usr/include/c++/11/cstdio:
+
+/usr/include/boost/preprocessor/control/detail/while.hpp:
+
+/usr/include/trilinos/Kokkos_Parallel_Reduce.hpp:
 
 /usr/include/boost/range/mutable_iterator.hpp:
 
@@ -4708,13 +5191,21 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/sched.h:
 
+/usr/include/boost/container/detail/std_fwd.hpp:
+
+/usr/include/boost/variant/detail/has_result_type.hpp:
+
+/usr/include/wctype.h:
+
 /usr/include/p4est_lnodes.h:
 
 /usr/include/boost/mpl/greater.hpp:
 
-/usr/include/boost/utility/result_of.hpp:
+/home/sean/Software/deal.II/installed/include/deal.II/numerics/error_estimator.h:
 
-/usr/include/boost/bind/mem_fn_cc.hpp:
+/usr/include/boost/iostreams/detail/access_control.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
 
 /usr/include/boost/type_traits/remove_volatile.hpp:
 
@@ -4730,21 +5221,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/error_constants.h:
 
-/home/sean/Software/deal.II/installed/include/deal.II/distributed/tria_base.h:
-
-/usr/include/suitesparse/umfpack_report_numeric.h:
-
-/usr/include/boost/variant/static_visitor.hpp:
-
-/usr/include/boost/type_index/stl_type_index.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/boost/range/empty.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/dofs/dof_accessor.templates.h:
-
-/usr/include/boost/container_hash/hash_fwd.hpp:
 
 /usr/include/boost/archive/detail/basic_oserializer.hpp:
 
@@ -4756,9 +5235,27 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/type_traits/is_integral.hpp:
 
+/usr/include/trilinos/impl/Kokkos_SharedAlloc.hpp:
+
 /usr/include/boost/mpl/aux_/config/gpu.hpp:
 
+/usr/include/boost/bind/bind_mf_cc.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
+
+/usr/include/boost/config/workaround.hpp:
+
+/usr/include/trilinos/impl/Kokkos_ChaseLev.hpp:
+
 /usr/include/c++/11/bits/node_handle.h:
+
+/usr/include/boost/type_traits/has_trivial_assign.hpp:
+
+/usr/include/boost/range/rend.hpp:
+
+/usr/include/c++/11/cstdarg:
+
+/usr/include/boost/mpl/arg.hpp:
 
 /usr/include/boost/iostreams/concepts.hpp:
 
@@ -4774,13 +5271,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/serialization/static_warning.hpp:
 
-/usr/include/boost/container/detail/next_capacity.hpp:
-
-/usr/include/boost/function_equal.hpp:
-
 /usr/include/c++/11/utility:
 
 /usr/include/c++/11/stdexcept:
+
+/usr/include/trilinos/impl/Kokkos_Combined_Reducer.hpp:
 
 /usr/include/c++/11/tr1/bessel_function.tcc:
 
@@ -4790,21 +5285,19 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/type_traits/declval.hpp:
 
+/home/sean/Software/deal.II/installed/include/deal.II/lac/identity_matrix.h:
+
+/usr/include/c++/11/bits/basic_ios.h:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h:
+
+/usr/include/boost/iostreams/detail/streambuf/chainbuf.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
 /usr/include/c++/11/bits/exception.h:
 
 /usr/include/c++/11/bits/locale_facets.h:
-
-/usr/include/c++/11/bits/streambuf.tcc:
-
-/usr/include/boost/mpl/O1_size.hpp:
-
-/usr/include/boost/range/irange.hpp:
-
-/usr/include/boost/mpl/identity.hpp:
-
-/usr/include/boost/mpl/aux_/template_arity.hpp:
 
 /usr/include/boost/integer/common_factor_ct.hpp:
 
@@ -4814,21 +5307,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/smart_ptr/detail/operator_bool.hpp:
 
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/request.h:
-
-/usr/include/boost/mpl/aux_/static_cast.hpp:
-
-/usr/include/boost/serialization/assume_abstract.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/base/subscriptor.h:
-
-/usr/include/c++/11/bits/memoryfwd.h:
-
-/usr/include/c++/11/tr1/poly_hermite.tcc:
-
 /usr/include/c++/11/cwctype:
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Exchange.hpp:
 
 /usr/include/boost/mpl/set/aux_/at_impl.hpp:
 
@@ -4838,25 +5321,35 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/locale_facets.tcc:
 
-/usr/include/c++/11/bits/codecvt.h:
+/usr/include/boost/type_traits/has_trivial_copy.hpp:
+
+/usr/include/boost/preprocessor/variadic/elem.hpp:
 
 /usr/include/boost/mpl/aux_/config/msvc_typename.hpp:
 
 /usr/include/c++/11/istream:
 
-/usr/include/c++/11/clocale:
-
-/usr/include/c++/11/bits/istream.tcc:
-
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 
+/usr/include/boost/parameter/keyword_fwd.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/dlfcn.h:
+
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/trilinos/impl/Kokkos_MemorySpace.hpp:
+
 /usr/include/boost/utility/binary.hpp:
+
+/usr/include/trilinos/Kokkos_UniqueToken.hpp:
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/topology.h:
 
-/usr/include/boost/mpl/aux_/begin_end_impl.hpp:
+/usr/include/trilinos/Kokkos_HostSpace.hpp:
+
+/usr/include/boost/type_traits/is_void.hpp:
 
 /usr/include/boost/multi_index/identity.hpp:
 
@@ -4868,33 +5361,55 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/request_inln.h:
 
+/usr/include/trilinos/impl/Kokkos_BitOps.hpp:
+
 /usr/include/boost/serialization/item_version_type.hpp:
 
 /usr/include/boost/preprocessor/iteration/detail/iter/forward1.hpp:
 
+/home/sean/Software/deal.II/installed/include/deal.II/dofs/dof_handler.h:
+
+/usr/include/boost/iterator/iterator_facade.hpp:
+
+/usr/include/trilinos/traits/Kokkos_PolicyTraitAdaptor.hpp:
+
 /home/sean/Software/deal.II/installed/include/deal.II/base/numbers.h:
+
+/usr/include/boost/move/detail/std_ns_end.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Store.hpp:
 
 /usr/include/boost/mpl/placeholders.hpp:
 
-/usr/include/CGAL/export/helpers.h:
+/usr/include/boost/mpl/size_t_fwd.hpp:
 
-/usr/include/boost/mpl/aux_/config/ctps.hpp:
+/usr/include/c++/11/bits/hash_bytes.h:
+
+/usr/include/boost/mpl/aux_/fold_impl.hpp:
+
+/usr/include/c++/11/bits/move.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/c++/11/cinttypes:
 
 /usr/include/boost/parameter/aux_/pack/tag_template_keyword_arg.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h:
 
+/usr/include/CGAL/export/helpers.h:
+
+/usr/include/boost/mpl/aux_/config/ctps.hpp:
+
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/rtmintrin.h:
+/usr/include/trilinos/impl/Kokkos_Atomic_View.hpp:
 
-/usr/include/boost/preprocessor/iterate.hpp:
+/usr/include/trilinos/impl/Kokkos_Utilities.hpp:
 
 /usr/include/tbb/tbb_machine.h:
 
 /usr/include/boost/preprocessor/tuple/elem.hpp:
-
-/usr/include/boost/mpl/O1_size_fwd.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/numerics/data_out.h:
 
@@ -4912,8 +5427,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/type_traits/has_plus_assign.hpp:
 
-/usr/include/boost/archive/binary_iarchive.hpp:
-
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/c++/11/bits/specfun.h:
@@ -4923,6 +5436,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/c++/11/limits:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
+
+/usr/include/boost/mpl/list/aux_/size.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Compare_Exchange_Strong.hpp:
 
 /usr/include/tbb/atomic.h:
 
@@ -4936,11 +5453,381 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/tr1/legendre_function.tcc:
 
-/home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools.h:
+/usr/include/trilinos/impl/KokkosExp_Host_IterateTile.hpp:
 
-/usr/include/limits.h:
+/usr/include/dlfcn.h:
 
-/usr/include/c++/11/tr1/riemann_zeta.tcc:
+/usr/include/c++/11/debug/assertions.h:
+
+/usr/include/trilinos/impl/Kokkos_Profiling_DeviceInfo.hpp:
+
+/usr/include/boost/mpl/aux_/na.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Profiling_C_Interface.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/boost/iterator/detail/config_undef.hpp:
+
+/usr/include/c++/11/cassert:
+
+/usr/include/boost/parameter/aux_/void.hpp:
+
+/usr/include/trilinos/impl/Kokkos_HostSpace_deepcopy.hpp:
+
+/usr/include/boost/mpl/aux_/at_impl.hpp:
+
+/usr/include/boost/core/noncopyable.hpp:
+
+/usr/include/boost/serialization/string.hpp:
+
+/usr/include/boost/detail/is_incrementable.hpp:
+
+/usr/include/trilinos/impl/Kokkos_ViewMapping.hpp:
+
+/usr/include/trilinos/impl/Kokkos_ViewCtor.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/grid/tria_levels.h:
+
+/usr/include/boost/iostreams/device/back_inserter.hpp:
+
+/usr/include/p8est_iterate.h:
+
+/usr/include/trilinos/Kokkos_Atomic.hpp:
+
+/usr/include/trilinos/impl/Kokkos_EBO.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/lac/block_vector.h:
+
+/usr/include/boost/preprocessor/seq/transform.hpp:
+
+/usr/include/c++/11/bits/stl_iterator.h:
+
+/usr/include/c++/11/ext/atomicity.h:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Memory_Order.hpp:
+
+/usr/include/c++/11/math.h:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Assembly.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/tsxldtrkintrin.h:
+
+/usr/include/boost/core/is_same.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Memory_Fence.hpp:
+
+/usr/include/boost/move/utility_core.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Error.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Generic.hpp:
+
+/usr/include/boost/mpl/pair.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Increment.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Decrement.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Sub.hpp:
+
+/usr/include/suitesparse/umfpack_transpose.h:
+
+/usr/include/boost/mpl/aux_/arity_spec.hpp:
+
+/usr/include/boost/move/algo/move.hpp:
+
+/usr/include/c++/11/cxxabi.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/numerics/data_postprocessor.h:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Fetch_And.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmavlintrin.h:
+
+/usr/include/boost/type_traits/extent.hpp:
+
+/usr/include/boost/preprocessor/repetition/enum.hpp:
+
+/usr/include/boost/iostreams/put.hpp:
+
+/usr/include/boost/predef/platform.h:
+
+/usr/include/boost/mpl/order_fwd.hpp:
+
+/usr/include/boost/mpl/always.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_MinMax.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_mean_value.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/grid/tria_objects_orientations.h:
+
+/usr/include/boost/utility/base_from_member.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Volatile_Load.hpp:
+
+/usr/include/boost/predef/library/std/libcomo.h:
+
+/usr/include/trilinos/impl/Kokkos_Atomic_Load.hpp:
+
+/usr/include/boost/mpl/aux_/config/bind.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+
+/usr/include/trilinos/impl/Kokkos_ViewArray.hpp:
+
+/usr/include/trilinos/Epetra_Util.h:
+
+/usr/include/trilinos/impl/Kokkos_ViewUniformType.hpp:
+
+/usr/include/linux/errno.h:
+
+/usr/include/trilinos/impl/Kokkos_FunctorAnalysis.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/trilinos/impl/Kokkos_FunctorAdapter.hpp:
+
+/usr/include/boost/predef/library/std/stdcpp3.h:
+
+/usr/include/boost/type_traits/integral_constant.hpp:
+
+/usr/include/trilinos/Kokkos_NumericTraits.hpp:
+
+/usr/include/boost/type_traits/is_scalar.hpp:
+
+/usr/include/c++/11/cfloat:
+
+/usr/include/trilinos/Kokkos_TaskScheduler.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
+
+/usr/include/trilinos/Kokkos_TaskScheduler_fwd.hpp:
+
+/usr/include/trilinos/Kokkos_MemoryPool.hpp:
+
+/usr/include/boost/mpl/base.hpp:
+
+/usr/include/trilinos/impl/Kokkos_Serial_Task.hpp:
+
+/usr/include/suitesparse/umfpack_get_determinant.h:
+
+/usr/include/trilinos/impl/Kokkos_ClockTic.hpp:
+
+/usr/include/boost/preprocessor/seq/cat.hpp:
+
+/usr/include/adolc/internal/usrparms.h:
+
+/usr/include/trilinos/impl/Kokkos_TaskBase.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
+
+/usr/include/trilinos/Kokkos_PointerOwnership.hpp:
+
+/usr/include/boost/type_traits/has_nothrow_assign.hpp:
+
+/usr/include/boost/iostreams/detail/config/auto_link.hpp:
+
+/usr/include/trilinos/Teuchos_Describable.hpp:
+
+/usr/include/boost/mpl/aux_/config/gcc.hpp:
+
+/usr/include/trilinos/impl/Kokkos_TaskResult.hpp:
+
+/usr/include/linux/close_range.h:
+
+/usr/include/trilinos/impl/Kokkos_TaskNode.hpp:
+
+/usr/include/boost/predef/compiler/llvm.h:
+
+/usr/include/boost/geometry/core/coordinate_type.hpp:
+
+/usr/include/boost/mpl/next_prior.hpp:
+
+/usr/include/boost/mpl/list/aux_/front.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h:
+
+/usr/include/trilinos/impl/Kokkos_TaskQueueMemoryManager.hpp:
+
+/usr/include/trilinos/Kokkos_ScratchSpace.hpp:
+
+/usr/include/boost/mpl/apply_wrap.hpp:
+
+/usr/include/trilinos/impl/Kokkos_TaskQueueCommon.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/tensor_product_polynomials.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/grid/tria_accessor.templates.h:
+
+/usr/include/boost/mpl/deref.hpp:
+
+/usr/include/trilinos/impl/Kokkos_TaskQueueMultiple.hpp:
+
+/usr/include/boost/mpl/void.hpp:
+
+/usr/include/trilinos/impl/Kokkos_TaskPolicyData.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/kokkos.h:
+
+/usr/include/c++/11/bits/nested_exception.h:
+
+/usr/include/trilinos/impl/Kokkos_TaskTeamMember.hpp:
+
+/usr/include/time.h:
+
+/usr/include/boost/iostreams/detail/template_params.hpp:
+
+/usr/include/boost/mpl/aux_/na_spec.hpp:
+
+/usr/include/trilinos/impl/Kokkos_SimpleTaskScheduler.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/dl_find_object.h:
+
+/usr/include/boost/archive/detail/interface_oarchive.hpp:
+
+/usr/include/boost/mpl/aux_/config/workaround.hpp:
+
+/usr/include/trilinos/Kokkos_LogicalSpaces.hpp:
+
+/usr/include/trilinos/Kokkos_MathematicalFunctions.hpp:
+
+/usr/include/trilinos/Kokkos_CopyViews.hpp:
+
+/usr/include/trilinos/Kokkos_Crs.hpp:
+
+/usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp:
+
+/usr/include/boost/iostreams/imbue.hpp:
+
+/usr/include/trilinos/KokkosCore_Config_PostInclude.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/lac/block_sparsity_pattern.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/mpi_tags.h:
+
+/usr/include/boost/archive/binary_iarchive.hpp:
+
+/usr/include/boost/archive/basic_binary_iprimitive.hpp:
+
+/usr/include/c++/11/locale:
+
+/usr/include/c++/11/bits/locale_facets_nonio.h:
+
+/usr/include/boost/multi_index/detail/index_loader.hpp:
+
+/usr/include/boost/iostreams/device/array.hpp:
+
+/usr/include/boost/serialization/map.hpp:
+
+/usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
+
+/usr/include/boost/mpl/list/aux_/preprocessed/plain/list20.hpp:
+
+/usr/include/boost/type_traits/detail/yes_no_type.hpp:
+
+/usr/include/c++/11/bits/codecvt.h:
+
+/usr/include/c++/11/bits/locale_facets_nonio.tcc:
+
+/usr/include/boost/integer_fwd.hpp:
+
+/usr/include/boost/limits.hpp:
+
+/usr/include/suitesparse/umfpack_report_perm.h:
+
+/usr/include/boost/iostreams/traits_fwd.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_cartesian.h:
+
+/usr/include/boost/range/detail/common.hpp:
+
+/usr/include/x86_64-linux-gnu/bits/syscall.h:
+
+/usr/include/boost/integer_traits.hpp:
+
+/usr/include/p8est_bits.h:
+
+/usr/include/boost/serialization/is_bitwise_serializable.hpp:
+
+/usr/include/c++/11/bits/fstream.tcc:
+
+/usr/include/boost/type_traits/is_floating_point.hpp:
+
+/usr/include/boost/predef/compiler/clang.h:
+
+/usr/include/boost/serialization/array_wrapper.hpp:
+
+/usr/include/boost/serialization/nvp.hpp:
+
+/usr/include/trilinos/Epetra_BLAS.h:
+
+/usr/include/boost/core/nvp.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/dofs/dof_objects.h:
+
+/usr/include/boost/mpl/list/list0.hpp:
+
+/usr/include/boost/cstdint.hpp:
+
+/usr/include/boost/preprocessor/stringize.hpp:
+
+/usr/include/boost/mpl/vector/aux_/push_back.hpp:
+
+/usr/include/boost/parameter/aux_/has_nested_template_fn.hpp:
+
+/usr/include/trilinos/traits/Kokkos_LaunchBoundsTrait.hpp:
+
+/usr/include/boost/mpl/next.hpp:
+
+/usr/include/boost/serialization/level.hpp:
+
+/usr/include/boost/type_traits/is_fundamental.hpp:
+
+/usr/include/boost/type_traits/detail/config.hpp:
+
+/usr/include/boost/type_traits/is_enum.hpp:
+
+/usr/include/trilinos/Kokkos_Layout.hpp:
+
+/usr/include/boost/type_traits/intrinsics.hpp:
+
+/usr/include/boost/property_tree/string_path.hpp:
+
+/usr/include/boost/variant/detail/apply_visitor_delayed.hpp:
+
+/usr/include/boost/type_traits/is_array.hpp:
+
+/usr/include/boost/preprocessor/iteration/local.hpp:
+
+/home/sean/Software/deal.II/installed/include/deal.II/fe/fe_q_base.h:
+
+/usr/include/boost/type_traits/is_class.hpp:
+
+/usr/include/boost/config/abi_prefix.hpp:
+
+/usr/include/c++/11/pstl/glue_memory_defs.h:
+
+/usr/include/trilinos/Kokkos_Half.hpp:
+
+/usr/include/boost/type_traits/is_base_and_derived.hpp:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/hresetintrin.h:
+
+/usr/include/boost/mpl/aux_/config/has_apply.hpp:
+
+/usr/include/boost/type_traits/remove_cv.hpp:
+
+/usr/include/boost/serialization/level_enum.hpp:
+
+/usr/include/boost/range/irange.hpp:
+
+/usr/include/boost/mpl/identity.hpp:
+
+/usr/include/boost/mpl/aux_/template_arity.hpp:
 
 /usr/include/boost/mpl/aux_/comparison_op.hpp:
 
@@ -4951,8 +5838,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/mpl/numeric_cast.hpp:
 
 /usr/include/boost/utility.hpp:
-
-/usr/include/boost/mpl/apply_wrap.hpp:
 
 /usr/include/boost/predef/library/c.h:
 
@@ -4972,7 +5857,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/archive/detail/oserializer.hpp:
 
-/usr/include/boost/mpl/void.hpp:
+/usr/include/trilinos/Teuchos_config.h:
 
 /usr/include/c++/11/iostream:
 
@@ -5022,17 +5907,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/serialization/traits.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/uio_lim.h:
-
-/usr/include/boost/type_index.hpp:
-
 /usr/include/boost/serialization/split_free.hpp:
 
 /usr/include/boost/iostreams/detail/optional.hpp:
 
 /usr/include/boost/serialization/strong_typedef.hpp:
-
-/usr/include/boost/type_traits/has_nothrow_assign.hpp:
 
 /usr/include/boost/predef/compiler/gcc.h:
 
@@ -5070,17 +5949,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/type_traits/detail/is_function_cxx_11.hpp:
 
-/usr/include/boost/config/pragma_message.hpp:
-
-/usr/include/boost/type_traits/has_nothrow_constructor.hpp:
-
 /usr/include/boost/type_traits/is_default_constructible.hpp:
+
+/usr/include/boost/mpl/size_fwd.hpp:
 
 /usr/include/c++/11/tr1/modified_bessel_func.tcc:
 
 /usr/include/c++/11/bits/ostream.tcc:
-
-/usr/include/boost/mpl/size_fwd.hpp:
 
 /usr/include/boost/type_traits/has_nothrow_copy.hpp:
 
@@ -5096,29 +5971,25 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/serialization/access.hpp:
 
-/usr/include/boost/mpl/aux_/config/preprocessor.hpp:
-
-/usr/include/c++/11/ext/numeric_traits.h:
-
-/usr/include/boost/variant/variant.hpp:
-
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/status.h:
 
 /usr/include/boost/serialization/wrapper.hpp:
-
-/usr/include/boost/preprocessor/enum.hpp:
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/mpi_portable_platform.h:
 
 /usr/include/boost/serialization/base_object.hpp:
 
+/usr/include/boost/signals2/detail/auto_buffer.hpp:
+
+/usr/include/boost/serialization/force_include.hpp:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/avx512vnniintrin.h:
 
 /usr/include/boost/serialization/detail/stack_constructor.hpp:
 
-/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
-
 /usr/include/boost/variant/detail/enable_recursive_fwd.hpp:
+
+/usr/include/boost/preprocessor/punctuation/comma_if.hpp:
 
 /usr/include/boost/serialization/split_member.hpp:
 
@@ -5130,17 +6001,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/serialization/collection_size_type.hpp:
 
+/usr/include/trilinos/Teuchos_LabeledObject.hpp:
+
+/usr/include/boost/variant/detail/forced_return.hpp:
+
+/usr/include/boost/type_traits/has_minus_assign.hpp:
+
 /usr/include/boost/serialization/array_optimization.hpp:
-
-/usr/include/boost/mpl/aux_/has_size.hpp:
-
-/usr/include/suitesparse/umfpack_transpose.h:
-
-/usr/include/boost/mpl/aux_/arity_spec.hpp:
-
-/usr/include/boost/move/algo/move.hpp:
-
-/usr/include/c++/11/cxxabi.h:
 
 /usr/include/boost/mpl/apply_fwd.hpp:
 
@@ -5170,12 +6037,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/iostreams/detail/double_object.hpp:
 
-/usr/include/boost/optional/optional.hpp:
-
-/usr/include/boost/mpl/aux_/config/bind.hpp:
-
-/usr/include/boost/type_traits/remove_bounds.hpp:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/rdseedintrin.h:
 
 /usr/include/boost/preprocessor/array/size.hpp:
@@ -5183,12 +6044,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/preprocessor/inc.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/bind_fwd.hpp:
-
-/usr/include/boost/predef/compiler/llvm.h:
-
-/usr/include/boost/geometry/core/coordinate_type.hpp:
-
-/usr/include/boost/mpl/next_prior.hpp:
 
 /usr/include/boost/mpl/aux_/common_name_wknd.hpp:
 
@@ -5200,12 +6055,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/bind.hpp:
 
-/home/sean/Software/deal.II/installed/include/deal.II/base/tensor_product_polynomials.h:
-
-/home/sean/Software/deal.II/installed/include/deal.II/grid/tria_accessor.templates.h:
-
-/usr/include/boost/mpl/deref.hpp:
-
 /usr/include/boost/mpl/aux_/full_lambda.hpp:
 
 /usr/include/boost/mpl/bind_fwd.hpp:
@@ -5214,15 +6063,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/aux_/config/bcc.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessed/gcc/template_arity.hpp:
-
 /usr/include/boost/noncopyable.hpp:
-
-/usr/include/boost/mpl/aux_/at_impl.hpp:
-
-/usr/include/boost/core/noncopyable.hpp:
-
-/usr/include/boost/serialization/string.hpp:
 
 /usr/include/boost/parameter/deduced.hpp:
 
@@ -5239,6 +6080,14 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/archive/detail/auto_link_archive.hpp:
 
 /usr/include/boost/archive/detail/decl.hpp:
+
+/usr/include/boost/signals2/detail/signals_common_macros.hpp:
+
+/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/file_inln.h:
+
+/home/sean/Software/deal.II/installed/include/deal.II/base/tensor_accessors.h:
+
+/usr/include/boost/core/enable_if.hpp:
 
 /usr/include/boost/predef/compiler/borland.h:
 
@@ -5260,11 +6109,25 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/archive/basic_binary_iarchive.hpp:
 
+/usr/include/boost/type_traits/has_trivial_constructor.hpp:
+
+/usr/include/boost/iostreams/detail/streambuf/linked_streambuf.hpp:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/movdirintrin.h:
 
 /usr/include/boost/archive/basic_archive.hpp:
 
 /usr/include/boost/serialization/library_version_type.hpp:
+
+/usr/include/boost/mpl/minus.hpp:
+
+/usr/include/boost/move/algo/detail/merge_sort.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp:
+
+/usr/include/endian.h:
+
+/usr/include/boost/archive/detail/common_iarchive.hpp:
 
 /usr/include/boost/archive/detail/basic_iarchive.hpp:
 
@@ -5300,19 +6163,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/comm_inln.h:
 
+/usr/include/trilinos/impl/Kokkos_LinkedListNode.hpp:
+
 /usr/include/boost/smart_ptr/detail/sp_counted_base_gcc_atomic.hpp:
-
-/usr/include/boost/smart_ptr/detail/sp_typeinfo_.hpp:
-
-/usr/include/boost/iostreams/imbue.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/pkuintrin.h:
 
 /usr/include/boost/smart_ptr/detail/sp_counted_impl.hpp:
-
-/usr/include/boost/core/addressof.hpp:
-
-/usr/include/boost/variant/detail/apply_visitor_binary.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
@@ -5322,9 +6179,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/current_function.hpp:
 
-/usr/include/boost/mpl/vector/aux_/O1_size.hpp:
-
-/usr/include/boost/preprocessor/enum_shifted_params.hpp:
+/usr/include/trilinos/impl/Kokkos_ViewTracker.hpp:
 
 /usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
 
@@ -5346,19 +6201,21 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/smart_ptr/detail/local_sp_deleter.hpp:
 
-/usr/include/boost/smart_ptr/make_shared.hpp:
-
-/usr/include/boost/optional/detail/optional_config.hpp:
-
 /usr/include/trilinos/Epetra_MpiCommData.h:
 
 /usr/include/boost/move/detail/to_raw_pointer.hpp:
 
 /usr/include/boost/move/detail/config_begin.hpp:
 
-/usr/include/boost/mpl/long_fwd.hpp:
+/usr/include/boost/predef/compiler/ibm.h:
+
+/usr/include/boost/bind/bind_mf2_cc.hpp:
+
+/usr/include/boost/move/detail/workaround.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/patterns.h:
+
+/usr/include/trilinos/Kokkos_ExecPolicy.hpp:
 
 /usr/include/boost/smart_ptr/detail/spinlock.hpp:
 
@@ -5369,8 +6226,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/mpl/reverse_fold.hpp:
 
 /usr/include/boost/iostreams/detail/push_params.hpp:
-
-/usr/include/boost/move/utility_core.hpp:
 
 /usr/include/boost/move/detail/meta_utils.hpp:
 
@@ -5400,10 +6255,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/core/first_scalar.hpp:
 
-/usr/lib/gcc/x86_64-linux-gnu/11/include/avx512ifmavlintrin.h:
-
-/usr/include/boost/type_traits/extent.hpp:
-
 /usr/include/boost/type_traits/is_bounded_array.hpp:
 
 /usr/include/boost/archive/detail/basic_serializer.hpp:
@@ -5415,12 +6266,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/c++/11/ratio:
 
 /usr/include/boost/iostreams/flush.hpp:
-
-/usr/include/boost/predef/compiler/gcc_xml.h:
-
-/usr/include/boost/range/detail/msvc_has_iterator_workaround.hpp:
-
-/usr/include/boost/type_traits/copy_cv_ref.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/symmetric_tensor.h:
 
@@ -5450,17 +6295,11 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/archive/basic_binary_oarchive.hpp:
 
-/usr/include/boost/variant/detail/visitation_impl.hpp:
-
-/usr/include/boost/signals2/signal_base.hpp:
+/usr/include/trilinos/traits/Kokkos_OccupancyControlTrait.hpp:
 
 /usr/include/boost/preprocessor/comparison/less_equal.hpp:
 
 /usr/include/boost/preprocessor/logical/not.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/tsxldtrkintrin.h:
-
-/usr/include/boost/core/is_same.hpp:
 
 /usr/include/c++/11/bits/string_view.tcc:
 
@@ -5472,9 +6311,15 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/or.hpp:
 
+/usr/include/trilinos/Teuchos_TestForException.hpp:
+
 /usr/include/asm-generic/bitsperlong.h:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/or.hpp:
+
+/usr/include/boost/type_traits/copy_reference.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp:
 
 /usr/include/boost/parameter/aux_/result_of0.hpp:
 
@@ -5489,6 +6334,12 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/serialization/factory.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/less.hpp:
+
+/usr/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp:
+
+/usr/include/boost/iostreams/detail/translate_int_type.hpp:
+
+/usr/include/boost/mpl/comparison.hpp:
 
 /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/comm.h:
 
@@ -5524,6 +6375,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/iostreams/detail/config/gcc.hpp:
 
+/usr/include/trilinos/impl/Kokkos_HostBarrier.hpp:
+
 /usr/include/boost/type_traits/make_void.hpp:
 
 /usr/include/boost/archive/detail/archive_serializer_map.hpp:
@@ -5536,6 +6389,8 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/mpl/protect.hpp:
 
+/usr/include/trilinos/impl/Kokkos_ConcurrentBitset.hpp:
+
 /usr/include/boost/archive/binary_oarchive.hpp:
 
 /usr/include/boost/predef/architecture/x86.h:
@@ -5544,7 +6399,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/archive/detail/basic_oarchive.hpp:
 
-/usr/include/boost/archive/detail/interface_oarchive.hpp:
+/usr/include/boost/visit_each.hpp:
+
+/usr/include/boost/archive/detail/basic_pointer_oserializer.hpp:
 
 /usr/include/boost/core/demangle.hpp:
 
@@ -5554,12 +6411,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/iostreams/categories.hpp:
 
-/usr/include/c++/11/cctype:
-
-/usr/include/boost/smart_ptr/allocate_shared_array.hpp:
-
-/usr/include/boost/optional/bad_optional_access.hpp:
-
 /usr/include/boost/assert/source_location.hpp:
 
 /usr/include/boost/type_traits/add_lvalue_reference.hpp:
@@ -5567,14 +6418,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 /usr/include/boost/predef/library/std/stlport.h:
 
 /usr/include/boost/next_prior.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/grid/tria_levels.h:
-
-/usr/include/boost/iostreams/device/back_inserter.hpp:
-
-/usr/include/p8est_extended.h:
-
-/usr/include/boost/mpl/aux_/iter_fold_impl.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/tbmintrin.h:
 
@@ -5594,9 +6437,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/c++/11/bits/stl_list.h:
 
-/usr/include/x86_64-linux-gnu/bits/time64.h:
+/usr/include/boost/variant/detail/substitute_fwd.hpp:
 
-/usr/include/boost/bind/mem_fn_template.hpp:
+/usr/include/boost/signals2/detail/null_output_iterator.hpp:
+
+/usr/include/trilinos/Kokkos_WorkGraphPolicy.hpp:
+
+/usr/include/boost/core/typeinfo.hpp:
 
 /usr/include/suitesparse/umfpack_global.h:
 
@@ -5604,25 +6451,13 @@ CMakeFiles/step-77.dir/step-77.cc.o: step-77.cc \
 
 /usr/include/boost/iostreams/constants.hpp:
 
-/home/sean/Software/deal.II/installed/include/deal.II/numerics/error_estimator.h:
-
-/usr/include/x86_64-linux-gnu/c++/11/bits/ctype_base.h:
-
-/usr/include/boost/iostreams/detail/access_control.hpp:
-
-/usr/include/boost/concept/detail/concept_def.hpp:
-
-/usr/include/boost/mpl/sequence_tag.hpp:
-
 /usr/include/boost/multi_index/detail/adl_swap.hpp:
 
 /usr/include/boost/iostreams/detail/push.hpp:
 
-/usr/include/c++/11/bits/ios_base.h:
-
-/usr/include/boost/weak_ptr.hpp:
-
 /usr/include/boost/mpl/insert_range.hpp:
+
+/usr/include/trilinos/Kokkos_Array.hpp:
 
 /usr/include/boost/iostreams/detail/adapter/range_adapter.hpp:
 
@@ -5648,14 +6483,6 @@ step-77.cc:
 
 /usr/include/boost/iostreams/pipeline.hpp:
 
-/usr/include/boost/multi_index/detail/has_tag.hpp:
-
-/usr/include/boost/utility/declval.hpp:
-
-/usr/include/time.h:
-
-/usr/include/boost/iostreams/detail/template_params.hpp:
-
 /usr/include/boost/preprocessor/control/expr_if.hpp:
 
 /usr/lib/gcc/x86_64-linux-gnu/11/include/clflushoptintrin.h:
@@ -5680,21 +6507,9 @@ step-77.cc:
 
 /usr/include/boost/iostreams/detail/wrap_unwrap.hpp:
 
-/usr/include/boost/move/detail/type_traits.hpp:
-
 /usr/lib/gcc/x86_64-linux-gnu/11/include/stdarg.h:
 
 /usr/include/boost/core/ref.hpp:
-
-/usr/include/boost/mpl/minus.hpp:
-
-/usr/include/boost/move/algo/detail/merge_sort.hpp:
-
-/usr/include/endian.h:
-
-/usr/include/boost/archive/detail/common_iarchive.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/iter_fold_impl.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_common.h:
 
@@ -5706,15 +6521,13 @@ step-77.cc:
 
 /usr/include/boost/range/functions.hpp:
 
-/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
-
-/usr/include/boost/iterator/detail/config_undef.hpp:
-
 /usr/include/boost/detail/workaround.hpp:
 
 /usr/include/boost/iterator/iterator_categories.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/complex_overloads.h:
+
+/usr/include/trilinos/impl/Kokkos_HostThreadTeam.hpp:
 
 /usr/include/boost/mpl/aux_/include_preprocessed.hpp:
 
@@ -5764,8 +6577,6 @@ step-77.cc:
 
 /usr/include/boost/preprocessor/seq/seq.hpp:
 
-/usr/include/boost/preprocessor/seq/elem.hpp:
-
 /usr/include/boost/preprocessor/list/detail/fold_right.hpp:
 
 /usr/include/c++/11/ext/string_conversions.h:
@@ -5786,29 +6597,21 @@ step-77.cc:
 
 /usr/include/boost/range/detail/has_member_size.hpp:
 
-/home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_mean_value.h:
-
-/usr/include/boost/utility/base_from_member.hpp:
+/usr/include/trilinos/traits/Kokkos_IterationPatternTrait.hpp:
 
 /usr/include/boost/preprocessor/repetition/enum_binary_params.hpp:
-
-/usr/include/boost/preprocessor/repetition/repeat_from_to.hpp:
 
 /usr/include/boost/detail/reference_content.hpp:
 
 /usr/include/boost/preprocessor/control/deduce_d.hpp:
-
-/usr/include/boost/preprocessor/seq/cat.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/lac/block_vector.h:
-
-/usr/include/boost/preprocessor/seq/transform.hpp:
 
 /usr/include/boost/utility/identity_type.hpp:
 
 /usr/include/boost/iterator/advance.hpp:
 
 /usr/include/boost/type_traits/function_traits.hpp:
+
+/usr/include/trilinos/Teuchos_as.hpp:
 
 /usr/include/boost/iterator/distance.hpp:
 
@@ -5834,23 +6637,19 @@ step-77.cc:
 
 /usr/include/boost/type_traits/has_plus.hpp:
 
-/usr/include/boost/predef/compiler/ibm.h:
-
-/usr/include/boost/move/detail/workaround.hpp:
-
-/usr/include/boost/bind/bind_mf2_cc.hpp:
-
 /usr/include/boost/type_traits/detail/has_binary_operator.hpp:
 
 /usr/include/boost/serialization/detail/is_default_constructible.hpp:
 
 /usr/include/boost/type_traits/has_minus.hpp:
 
+/usr/include/boost/mpl/aux_/advance_forward.hpp:
+
+/usr/include/boost/geometry/core/coordinate_dimension.hpp:
+
+/usr/include/boost/iostreams/detail/adapter/mode_adapter.hpp:
+
 /usr/include/boost/iostreams/operations.hpp:
-
-/usr/include/c++/11/vector:
-
-/usr/include/boost/mpl/aux_/traits_lambda_spec.hpp:
 
 /usr/include/boost/mpl/aux_/preprocessed/gcc/list.hpp:
 
@@ -5877,8 +6676,6 @@ step-77.cc:
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
 /usr/include/boost/iostreams/seek.hpp:
-
-/usr/include/boost/core/swap.hpp:
 
 /home/sean/Software/deal.II/installed/include/deal.II/base/mpi_remote_point_evaluation.h:
 
@@ -5924,21 +6721,15 @@ step-77.cc:
 
 /usr/include/boost/mp11/detail/mp_append.hpp:
 
+/usr/include/trilinos/impl/Kokkos_TaskQueue.hpp:
+
 /usr/include/boost/type_traits/type_identity.hpp:
-
-/usr/include/boost/iostreams/detail/translate_int_type.hpp:
-
-/usr/include/boost/mpl/comparison.hpp:
-
-/usr/include/boost/preprocessor/iteration/detail/bounds/lower1.hpp:
-
-/usr/include/boost/optional/detail/optional_swap.hpp:
 
 /usr/include/c++/11/bits/stl_function.h:
 
-/usr/include/boost/iostreams/detail/functional.hpp:
+/usr/include/trilinos/Kokkos_Pair.hpp:
 
-/usr/include/c++/11/cassert:
+/usr/include/boost/iostreams/detail/functional.hpp:
 
 /usr/include/boost/iostreams/detail/adapter/concept_adapter.hpp:
 
@@ -5946,11 +6737,9 @@ step-77.cc:
 
 /usr/include/boost/iostreams/detail/default_arg.hpp:
 
+/usr/include/trilinos/KokkosCore_Config_SetupBackend.hpp:
+
 /usr/include/boost/iostreams/get.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/and.hpp:
-
-/usr/include/boost/type_traits/copy_reference.hpp:
 
 /usr/include/boost/range/detail/safe_bool.hpp:
 
@@ -5960,15 +6749,15 @@ step-77.cc:
 
 /usr/include/boost/serialization/complex.hpp:
 
+/usr/include/boost/move/utility.hpp:
+
+/usr/include/boost/serialization/collections_save_imp.hpp:
+
 /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/fe_point_evaluation.h:
 
+/usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Add.hpp:
+
 /usr/include/boost/serialization/collection_traits.hpp:
-
-/usr/include/boost/parameter/value_type.hpp:
-
-/usr/include/boost/type_traits/remove_extent.hpp:
-
-/usr/include/boost/core/explicit_operator_bool.hpp:
 
 /usr/include/boost/iostreams/filter/gzip.hpp:
 
@@ -5976,226 +6765,6 @@ step-77.cc:
 
 /usr/include/boost/iostreams/filter/zlib.hpp:
 
-/usr/include/boost/iostreams/detail/config/auto_link.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/grid/tria_iterator.h:
-
-/usr/include/boost/signals2/deconstruct_ptr.hpp:
-
 /usr/include/boost/range/end.hpp:
 
 /usr/include/boost/signals2/postconstructible.hpp:
-
-/usr/include/boost/optional.hpp:
-
-/usr/include/boost/type_traits/decay.hpp:
-
-/usr/include/boost/type_traits/is_nothrow_move_assignable.hpp:
-
-/usr/include/boost/type_traits/has_trivial_move_assign.hpp:
-
-/usr/include/boost/bind/storage.hpp:
-
-/usr/include/boost/serialization/collections_save_imp.hpp:
-
-/usr/include/boost/move/utility.hpp:
-
-/usr/include/boost/iostreams/detail/streambuf/linked_streambuf.hpp:
-
-/usr/include/boost/type_traits/has_trivial_constructor.hpp:
-
-/usr/include/boost/none_t.hpp:
-
-/usr/include/boost/utility/compare_pointees.hpp:
-
-/usr/include/boost/serialization/void_cast_fwd.hpp:
-
-/usr/include/boost/optional/optional_fwd.hpp:
-
-/usr/include/boost/multi_index/detail/ord_index_args.hpp:
-
-/usr/include/c++/11/bits/quoted_string.h:
-
-/usr/include/boost/optional/detail/optional_factory_support.hpp:
-
-/usr/include/c++/11/set:
-
-/usr/include/boost/preprocessor/identity.hpp:
-
-/usr/include/boost/optional/detail/optional_aligned_storage.hpp:
-
-/usr/include/boost/preprocessor/debug/error.hpp:
-
-/usr/include/boost/optional/detail/optional_trivially_copyable_base.hpp:
-
-/usr/include/boost/container/vector.hpp:
-
-/usr/include/boost/optional/detail/optional_relops.hpp:
-
-/usr/include/boost/function/detail/prologue.hpp:
-
-/usr/include/c++/11/stdlib.h:
-
-/usr/include/boost/config/no_tr1/functional.hpp:
-
-/usr/include/boost/function/function_base.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/base/mpi_stub.h:
-
-/usr/include/boost/type_index/type_index_facade.hpp:
-
-/usr/include/boost/preprocessor/variadic/elem.hpp:
-
-/usr/include/boost/type_traits/has_trivial_copy.hpp:
-
-/usr/include/boost/mp11/list.hpp:
-
-/usr/include/boost/type_traits/has_trivial_destructor.hpp:
-
-/usr/include/boost/mpl/set/aux_/empty_impl.hpp:
-
-/usr/include/boost/type_traits/composite_traits.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/boost/type_traits/is_union.hpp:
-
-/usr/include/boost/bind/mem_fn.hpp:
-
-/usr/include/boost/get_pointer.hpp:
-
-/usr/include/boost/iostreams/put.hpp:
-
-/usr/include/boost/preprocessor/repetition/enum.hpp:
-
-/usr/include/boost/function/detail/function_iterate.hpp:
-
-/usr/include/boost/variant/detail/backup_holder.hpp:
-
-/usr/include/boost/serialization/force_include.hpp:
-
-/usr/include/boost/signals2/detail/auto_buffer.hpp:
-
-/usr/include/boost/signals2/detail/scope_guard.hpp:
-
-/usr/include/boost/predef/os/haiku.h:
-
-/usr/include/boost/mpl/sequence_tag_fwd.hpp:
-
-/usr/include/boost/range/rend.hpp:
-
-/usr/include/c++/11/cstdarg:
-
-/usr/include/boost/mpl/arg.hpp:
-
-/usr/include/boost/type_traits/has_trivial_assign.hpp:
-
-/usr/include/boost/mpl/aux_/front_impl.hpp:
-
-/usr/include/boost/mpl/prior.hpp:
-
-/usr/include/boost/archive/detail/basic_pointer_oserializer.hpp:
-
-/usr/include/boost/visit_each.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/hp/q_collection.h:
-
-/usr/include/boost/mpl/aux_/config/operators.hpp:
-
-/usr/include/boost/intrusive/detail/config_end.hpp:
-
-/usr/include/boost/iterator/function_output_iterator.hpp:
-
-/usr/include/boost/signals2/detail/unique_lock.hpp:
-
-/usr/include/boost/signals2/slot.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
-
-/usr/include/boost/config/workaround.hpp:
-
-/usr/include/boost/bind/bind_mf_cc.hpp:
-
-/usr/include/boost/type_traits/cv_traits.hpp:
-
-/usr/include/boost/mpl/clear_fwd.hpp:
-
-/usr/include/boost/bind/placeholders.hpp:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/file_inln.h:
-
-/home/sean/Software/deal.II/installed/include/deal.II/base/tensor_accessors.h:
-
-/usr/include/boost/core/enable_if.hpp:
-
-/usr/include/boost/signals2/detail/signals_common_macros.hpp:
-
-/usr/lib/gcc/x86_64-linux-gnu/11/include/wbnoinvdintrin.h:
-
-/usr/include/boost/signals2/detail/tracked_objects_visitor.hpp:
-
-/usr/include/boost/signals2/detail/foreign_ptr.hpp:
-
-/usr/include/boost/utility/swap.hpp:
-
-/usr/include/boost/variant/apply_visitor.hpp:
-
-/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/win_inln.h:
-
-/usr/include/boost/variant/detail/apply_visitor_unary.hpp:
-
-/usr/include/boost/mpl/distance.hpp:
-
-/usr/include/boost/mpl/iter_fold.hpp:
-
-/usr/include/suitesparse/umfpack_scale.h:
-
-/usr/include/boost/mpl/begin_end.hpp:
-
-/usr/include/boost/iostreams/filter/symmetric.hpp:
-
-/usr/include/boost/mpl/long.hpp:
-
-/usr/include/boost/mpl/iterator_range.hpp:
-
-/usr/include/boost/mpl/advance.hpp:
-
-/usr/include/boost/mpl/advance_fwd.hpp:
-
-/usr/include/boost/geometry/core/coordinate_dimension.hpp:
-
-/usr/include/boost/iostreams/detail/adapter/mode_adapter.hpp:
-
-/usr/include/boost/mpl/aux_/advance_forward.hpp:
-
-/usr/include/boost/mpl/size.hpp:
-
-/usr/include/boost/container/detail/std_fwd.hpp:
-
-/usr/include/wctype.h:
-
-/usr/include/boost/variant/detail/has_result_type.hpp:
-
-/usr/include/boost/property_tree/string_path.hpp:
-
-/usr/include/boost/type_traits/is_array.hpp:
-
-/usr/include/boost/variant/detail/apply_visitor_delayed.hpp:
-
-/home/sean/Software/deal.II/installed/include/deal.II/base/polynomial.h:
-
-/usr/include/boost/variant/detail/config.hpp:
-
-/usr/include/c++/11/atomic:
-
-/usr/include/boost/blank_fwd.hpp:
-
-/usr/include/boost/core/typeinfo.hpp:
-
-/usr/include/boost/signals2/detail/null_output_iterator.hpp:
-
-/usr/include/boost/variant/detail/substitute_fwd.hpp:
-
-/usr/include/boost/type_traits/has_minus_assign.hpp:
-
-/usr/include/boost/variant/detail/forced_return.hpp:

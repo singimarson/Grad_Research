@@ -795,43 +795,9 @@ namespace Step77
             additional_data.anderson_subspace_size = AA_size;
           }
           additional_data.strategy = strategy;
+          
 
           kinsol nonlinear_solver(additional_data, mpi_communicator);
-
-          // Then we have to describe the operations that were already mentioned
-          // in the introduction. In essence, we have to teach KINSOL how to (i)
-          // resize a vector to the correct size, (ii) compute the residual
-          // vector, (iii) compute the Jacobian matrix (during which we also
-          // compute its factorization), and (iv) solve a linear system with the
-          // Jacobian.
-          //
-          // All four of these operations are represented by member variables of
-          // the SUNDIALS::KINSOL class that are of type `std::function`, i.e.,
-          // they are objects to which we can assign a pointer to a function or,
-          // as we do here, a "lambda function" that takes the appropriate
-          // arguments and returns the appropriate information. By convention,
-          // KINSOL wants that functions doing something nontrivial return an
-          // integer where zero indicates success. It turns out that we can do
-          // all of this in just 25 lines of code.
-          //
-          // (If you're not familiar what "lambda functions" are, take
-          // a look at step-12 or at the
-          // [wikipedia page](https://en.wikipedia.org/wiki/Anonymous_function)
-          // on the subject. The idea of lambda functions is that one
-          // wants to define a function with a certain set of
-          // arguments, but (i) not make it a named functions because,
-          // typically, the function is used in only one place and it
-          // seems unnecessary to give it a global name; and (ii) that
-          // the function has access to some of the variables that
-          // exist at the place where it is defined, including member
-          // variables. The syntax of lambda functions is awkward, but
-          // ultimately quite useful.)
-          //
-          // At the very end of the code block we then tell KINSOL to go to work
-          // and solve our problem. The member functions called from the
-          // 'residual', 'setup_jacobian', and 'solve_jacobian_system' functions
-          // will then print output to screen that allows us to follow along
-          // with the progress of the program.
 
           
           nonlinear_solver.reinit_vector = [&](LA::MPI::Vector &x) {

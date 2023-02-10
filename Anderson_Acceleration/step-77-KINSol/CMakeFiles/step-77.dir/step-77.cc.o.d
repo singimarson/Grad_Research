@@ -193,6 +193,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi/ompi/mpi/cxx/file_inln.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/numbers.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/types.h \
+ /usr/include/trilinos/Kokkos_Macros.hpp \
+ /usr/include/trilinos/KokkosCore_config.h \
+ /usr/include/trilinos/KokkosCore_Config_SetupBackend.hpp \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
@@ -221,6 +224,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/base/quadrature.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/point.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/exceptions.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/base/kokkos.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/tensor.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/table_indices.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/template_constraints.h \
@@ -421,6 +425,151 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/base/mpi.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/array_view.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/memory_space.h \
+ /usr/include/trilinos/Kokkos_Core.hpp \
+ /usr/include/trilinos/Kokkos_Core_fwd.hpp \
+ /usr/include/trilinos/impl/Kokkos_Error.hpp \
+ /usr/include/trilinos/impl/Kokkos_Utilities.hpp \
+ /usr/include/trilinos/Kokkos_MasterLock.hpp \
+ /usr/include/trilinos/KokkosCore_Config_FwdBackend.hpp \
+ /usr/include/trilinos/fwd/Kokkos_Fwd_SERIAL.hpp \
+ /usr/include/trilinos/Kokkos_Half.hpp \
+ /usr/include/trilinos/Cuda/Kokkos_Cuda_Half.hpp \
+ /usr/include/trilinos/KokkosCore_Config_DeclareBackend.hpp \
+ /usr/include/trilinos/decl/Kokkos_Declare_SERIAL.hpp \
+ /usr/include/trilinos/Kokkos_Serial.hpp \
+ /usr/include/trilinos/Kokkos_Parallel.hpp \
+ /usr/include/trilinos/Kokkos_View.hpp \
+ /usr/include/trilinos/Kokkos_HostSpace.hpp /usr/include/c++/11/cstring \
+ /usr/include/trilinos/Kokkos_Concepts.hpp \
+ /usr/include/trilinos/Kokkos_MemoryTraits.hpp \
+ /usr/include/trilinos/impl/Kokkos_Traits.hpp \
+ /usr/include/trilinos/impl/Kokkos_BitOps.hpp /usr/include/c++/11/climits \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
+ /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+ /usr/include/linux/limits.h \
+ /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
+ /usr/include/trilinos/impl/Kokkos_Tags.hpp \
+ /usr/include/trilinos/impl/Kokkos_SharedAlloc.hpp \
+ /usr/include/trilinos/impl/Kokkos_Tools.hpp \
+ /usr/include/trilinos/impl/Kokkos_Profiling.hpp \
+ /usr/include/trilinos/Kokkos_ExecPolicy.hpp \
+ /usr/include/trilinos/impl/Kokkos_AnalyzePolicy.hpp \
+ /usr/include/trilinos/traits/Kokkos_Traits_fwd.hpp \
+ /usr/include/trilinos/traits/Kokkos_PolicyTraitAdaptor.hpp \
+ /usr/include/trilinos/traits/Kokkos_ExecutionSpaceTrait.hpp \
+ /usr/include/trilinos/traits/Kokkos_GraphKernelTrait.hpp \
+ /usr/include/trilinos/impl/Kokkos_GraphImpl_fwd.hpp \
+ /usr/include/trilinos/traits/Kokkos_IndexTypeTrait.hpp \
+ /usr/include/trilinos/traits/Kokkos_IterationPatternTrait.hpp \
+ /usr/include/trilinos/traits/Kokkos_LaunchBoundsTrait.hpp \
+ /usr/include/trilinos/traits/Kokkos_OccupancyControlTrait.hpp \
+ /usr/include/trilinos/traits/Kokkos_ScheduleTrait.hpp \
+ /usr/include/trilinos/traits/Kokkos_WorkItemPropertyTrait.hpp \
+ /usr/include/trilinos/traits/Kokkos_WorkTagTrait.hpp \
+ /usr/include/trilinos/Kokkos_Tuners.hpp \
+ /usr/include/trilinos/KokkosExp_MDRangePolicy.hpp \
+ /usr/include/trilinos/Kokkos_Layout.hpp \
+ /usr/include/trilinos/Kokkos_Array.hpp \
+ /usr/include/trilinos/impl/KokkosExp_Host_IterateTile.hpp \
+ /usr/include/trilinos/impl/Kokkos_Profiling_Interface.hpp \
+ /usr/include/c++/11/cinttypes /usr/include/inttypes.h \
+ /usr/include/dlfcn.h /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
+ /usr/include/x86_64-linux-gnu/bits/dl_find_object.h \
+ /usr/include/trilinos/impl/Kokkos_Profiling_DeviceInfo.hpp \
+ /usr/include/trilinos/impl/Kokkos_Profiling_C_Interface.h \
+ /usr/include/c++/11/cassert \
+ /usr/include/trilinos/impl/Kokkos_HostSpace_deepcopy.hpp \
+ /usr/include/trilinos/impl/Kokkos_ViewMapping.hpp \
+ /usr/include/trilinos/Kokkos_Pair.hpp \
+ /usr/include/trilinos/Kokkos_Extents.hpp \
+ /usr/include/trilinos/impl/Kokkos_ViewTracker.hpp \
+ /usr/include/trilinos/impl/Kokkos_ViewCtor.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_View.hpp \
+ /usr/include/trilinos/Kokkos_Atomic.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Memory_Order.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Assembly.hpp \
+ /usr/include/trilinos/impl/Kokkos_Memory_Fence.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Exchange.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Compare_Exchange_Strong.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Memory_Order.hpp \
+ /usr/include/trilinos/impl/Kokkos_Memory_Fence.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Generic.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Add.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Increment.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Decrement.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Sub.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Assembly.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Sub.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Or.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_And.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_MinMax.hpp \
+ /usr/include/trilinos/impl/Kokkos_Volatile_Load.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Load.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Generic.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Store.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Generic_Secondary.hpp \
+ /usr/include/trilinos/impl/Kokkos_ViewArray.hpp \
+ /usr/include/trilinos/impl/Kokkos_ViewUniformType.hpp \
+ /usr/include/trilinos/impl/Kokkos_FunctorAnalysis.hpp \
+ /usr/include/trilinos/impl/Kokkos_FunctorAdapter.hpp \
+ /usr/include/trilinos/Kokkos_Parallel_Reduce.hpp \
+ /usr/include/trilinos/Kokkos_NumericTraits.hpp \
+ /usr/include/c++/11/cfloat \
+ /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
+ /usr/include/trilinos/Kokkos_TaskScheduler.hpp \
+ /usr/include/trilinos/Kokkos_TaskScheduler_fwd.hpp \
+ /usr/include/trilinos/Kokkos_MemoryPool.hpp \
+ /usr/include/trilinos/impl/Kokkos_ConcurrentBitset.hpp \
+ /usr/include/trilinos/impl/Kokkos_ClockTic.hpp \
+ /usr/include/trilinos/Kokkos_Future.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskQueue.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskBase.hpp \
+ /usr/include/trilinos/impl/Kokkos_LIFO.hpp \
+ /usr/include/trilinos/Kokkos_PointerOwnership.hpp \
+ /usr/include/trilinos/impl/Kokkos_OptionalRef.hpp \
+ /usr/include/trilinos/impl/Kokkos_LinkedListNode.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskResult.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskNode.hpp \
+ /usr/include/trilinos/impl/Kokkos_VLAEmulation.hpp \
+ /usr/include/trilinos/impl/Kokkos_ChaseLev.hpp \
+ /usr/include/trilinos/impl/Kokkos_LIFO.hpp \
+ /usr/include/trilinos/impl/Kokkos_EBO.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Increment.hpp \
+ /usr/include/trilinos/impl/Kokkos_SingleTaskQueue.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskQueueMemoryManager.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskQueueCommon.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskQueueMultiple.hpp \
+ /usr/include/trilinos/impl/Kokkos_Atomic_Decrement.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskQueueMultiple_impl.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskPolicyData.hpp \
+ /usr/include/trilinos/impl/Kokkos_TaskTeamMember.hpp \
+ /usr/include/trilinos/impl/Kokkos_SimpleTaskScheduler.hpp \
+ /usr/include/trilinos/impl/Kokkos_MultipleTaskQueue.hpp \
+ /usr/include/trilinos/Kokkos_ScratchSpace.hpp \
+ /usr/include/trilinos/impl/Kokkos_HostThreadTeam.hpp \
+ /usr/include/trilinos/impl/Kokkos_HostBarrier.hpp \
+ /usr/include/trilinos/impl/Kokkos_ExecSpaceInitializer.hpp \
+ /usr/include/trilinos/Kokkos_UniqueToken.hpp \
+ /usr/include/trilinos/impl/Kokkos_Serial_Task.hpp \
+ /usr/include/trilinos/Kokkos_AnonymousSpace.hpp \
+ /usr/include/trilinos/Kokkos_LogicalSpaces.hpp \
+ /usr/include/trilinos/impl/Kokkos_MemorySpace.hpp \
+ /usr/include/trilinos/Kokkos_MathematicalFunctions.hpp \
+ /usr/include/trilinos/Kokkos_Vectorization.hpp \
+ /usr/include/trilinos/Kokkos_hwloc.hpp \
+ /usr/include/trilinos/Kokkos_Timer.hpp \
+ /usr/include/trilinos/Kokkos_Complex.hpp \
+ /usr/include/trilinos/Kokkos_CopyViews.hpp \
+ /usr/include/trilinos/Kokkos_Crs.hpp \
+ /usr/include/trilinos/Kokkos_WorkGraphPolicy.hpp \
+ /usr/include/trilinos/impl/Kokkos_Serial_WorkGraphPolicy.hpp \
+ /usr/include/trilinos/impl/Kokkos_Combined_Reducer.hpp \
+ /usr/include/trilinos/Kokkos_AcquireUniqueTokenImpl.hpp \
+ /usr/include/trilinos/KokkosCore_Config_PostInclude.hpp \
  /home/sean/Software/deal.II/installed/include/deal.II/base/mpi_stub.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/mpi_tags.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/utilities.h \
@@ -433,19 +582,9 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/11/bits/codecvt.h \
  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
- /usr/include/c++/11/bits/locale_conv.h /usr/include/c++/11/cstring \
- /usr/include/boost/cstdint.hpp \
+ /usr/include/c++/11/bits/locale_conv.h /usr/include/boost/cstdint.hpp \
  /usr/include/boost/serialization/throw_exception.hpp \
  /usr/include/boost/integer.hpp /usr/include/boost/integer_fwd.hpp \
- /usr/include/c++/11/climits \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
- /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
- /usr/include/x86_64-linux-gnu/bits/local_lim.h \
- /usr/include/linux/limits.h \
- /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
- /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
- /usr/include/x86_64-linux-gnu/bits/uio_lim.h \
  /usr/include/boost/limits.hpp /usr/include/boost/integer_traits.hpp \
  /usr/include/boost/serialization/is_bitwise_serializable.hpp \
  /usr/include/boost/type_traits/is_arithmetic.hpp \
@@ -852,7 +991,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /usr/include/boost/iostreams/detail/optional.hpp \
  /usr/include/boost/iostreams/detail/streambuf/linked_streambuf.hpp \
  /usr/include/boost/iostreams/detail/streambuf/indirect_streambuf.hpp \
- /usr/include/c++/11/cassert \
  /usr/include/boost/iostreams/detail/adapter/concept_adapter.hpp \
  /usr/include/boost/iostreams/concepts.hpp \
  /usr/include/boost/iostreams/detail/default_arg.hpp \
@@ -1341,6 +1479,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/vector_type_traits.h \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/block_sparsity_pattern.h \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/dynamic_sparsity_pattern.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/lac/sparsity_pattern_base.h \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/sparsity_pattern.h \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/trilinos_sparsity_pattern.h \
  /usr/include/trilinos/Epetra_FECrsGraph.h \
@@ -1477,6 +1616,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/trilinos_block_sparse_matrix.h \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/trilinos_parallel_block_vector.h \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/trilinos_vector.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/base/partitioner.h \
  /usr/include/trilinos/Epetra_LocalMap.h \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/trilinos_sparse_matrix.h \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/trilinos_index_access.h \
@@ -1493,7 +1633,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/lac/la_parallel_vector.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/memory_space_data.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/cuda.h \
- /home/sean/Software/deal.II/installed/include/deal.II/base/partitioner.h \
  /usr/include/trilinos/Epetra_RowMatrix.h \
  /usr/include/trilinos/Epetra_Vector.h \
  /usr/include/trilinos/Epetra_MultiVector.h \
@@ -1575,77 +1714,6 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /usr/include/trilinos/Teuchos_ParameterListAcceptorDefaultBase.hpp \
  /usr/include/trilinos/Teuchos_ScalarTraits.hpp \
  /usr/include/trilinos/Kokkos_Complex.hpp \
- /usr/include/trilinos/Kokkos_Atomic.hpp \
- /usr/include/trilinos/Kokkos_Macros.hpp \
- /usr/include/trilinos/KokkosCore_config.h \
- /usr/include/trilinos/KokkosCore_Config_SetupBackend.hpp \
- /usr/include/trilinos/Kokkos_HostSpace.hpp \
- /usr/include/trilinos/Kokkos_Core_fwd.hpp \
- /usr/include/trilinos/impl/Kokkos_Error.hpp \
- /usr/include/trilinos/impl/Kokkos_Utilities.hpp \
- /usr/include/trilinos/Kokkos_MasterLock.hpp \
- /usr/include/trilinos/KokkosCore_Config_FwdBackend.hpp \
- /usr/include/trilinos/fwd/Kokkos_Fwd_SERIAL.hpp \
- /usr/include/trilinos/Kokkos_Concepts.hpp \
- /usr/include/trilinos/Kokkos_MemoryTraits.hpp \
- /usr/include/trilinos/impl/Kokkos_Traits.hpp \
- /usr/include/trilinos/impl/Kokkos_BitOps.hpp \
- /usr/include/trilinos/impl/Kokkos_Tags.hpp \
- /usr/include/trilinos/impl/Kokkos_SharedAlloc.hpp \
- /usr/include/trilinos/impl/Kokkos_Tools.hpp \
- /usr/include/trilinos/impl/Kokkos_Profiling.hpp \
- /usr/include/trilinos/Kokkos_ExecPolicy.hpp \
- /usr/include/trilinos/impl/Kokkos_AnalyzePolicy.hpp \
- /usr/include/trilinos/traits/Kokkos_Traits_fwd.hpp \
- /usr/include/trilinos/traits/Kokkos_PolicyTraitAdaptor.hpp \
- /usr/include/trilinos/traits/Kokkos_ExecutionSpaceTrait.hpp \
- /usr/include/trilinos/traits/Kokkos_GraphKernelTrait.hpp \
- /usr/include/trilinos/impl/Kokkos_GraphImpl_fwd.hpp \
- /usr/include/trilinos/traits/Kokkos_IndexTypeTrait.hpp \
- /usr/include/trilinos/traits/Kokkos_IterationPatternTrait.hpp \
- /usr/include/trilinos/traits/Kokkos_LaunchBoundsTrait.hpp \
- /usr/include/trilinos/traits/Kokkos_OccupancyControlTrait.hpp \
- /usr/include/trilinos/traits/Kokkos_ScheduleTrait.hpp \
- /usr/include/trilinos/traits/Kokkos_WorkItemPropertyTrait.hpp \
- /usr/include/trilinos/traits/Kokkos_WorkTagTrait.hpp \
- /usr/include/trilinos/Kokkos_Tuners.hpp \
- /usr/include/trilinos/KokkosExp_MDRangePolicy.hpp \
- /usr/include/trilinos/Kokkos_Layout.hpp \
- /usr/include/trilinos/Kokkos_Array.hpp \
- /usr/include/trilinos/impl/KokkosExp_Host_IterateTile.hpp \
- /usr/include/trilinos/impl/Kokkos_Profiling_Interface.hpp \
- /usr/include/c++/11/cinttypes /usr/include/inttypes.h \
- /usr/include/dlfcn.h /usr/include/x86_64-linux-gnu/bits/dlfcn.h \
- /usr/include/x86_64-linux-gnu/bits/dl_find_object.h \
- /usr/include/trilinos/impl/Kokkos_Profiling_DeviceInfo.hpp \
- /usr/include/trilinos/impl/Kokkos_Profiling_C_Interface.h \
- /usr/include/trilinos/impl/Kokkos_HostSpace_deepcopy.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Memory_Order.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Assembly.hpp \
- /usr/include/trilinos/impl/Kokkos_Memory_Fence.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Exchange.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Compare_Exchange_Strong.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Memory_Order.hpp \
- /usr/include/trilinos/impl/Kokkos_Memory_Fence.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Generic.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Add.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Increment.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Decrement.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Sub.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Assembly.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Sub.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_Or.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Fetch_And.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_MinMax.hpp \
- /usr/include/trilinos/impl/Kokkos_Volatile_Load.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Load.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Generic.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Store.hpp \
- /usr/include/trilinos/impl/Kokkos_Atomic_Generic_Secondary.hpp \
- /usr/include/trilinos/Kokkos_MathematicalFunctions.hpp \
- /usr/include/trilinos/Kokkos_NumericTraits.hpp \
- /usr/include/c++/11/cfloat \
- /usr/lib/gcc/x86_64-linux-gnu/11/include/float.h \
  /usr/include/trilinos/Teuchos_ScalarTraitsDecl.hpp \
  /usr/include/trilinos/Teuchos_SerialDenseMatrix.hpp \
  /usr/include/trilinos/Teuchos_CompObject.hpp \
@@ -1791,6 +1859,7 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/grid/tria_iterator_selector.h \
  /home/sean/Software/deal.II/installed/include/deal.II/grid/tria_levels.h \
  /home/sean/Software/deal.II/installed/include/deal.II/grid/tria_objects.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/grid/tria_objects_orientations.h \
  /usr/include/boost/serialization/utility.hpp \
  /usr/include/boost/serialization/map.hpp \
  /usr/include/boost/serialization/unique_ptr.hpp \
@@ -2096,9 +2165,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/fe/block_mask.h \
  /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_data.h \
  /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_update_flags.h \
- /home/sean/Software/deal.II/installed/include/deal.II/base/derivative_form.h \
  /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_values_extractors.h \
  /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/base/derivative_form.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_related_data.h \
  /home/sean/Software/deal.II/installed/include/deal.II/hp/q_collection.h \
  /home/sean/Software/deal.II/installed/include/deal.II/hp/collection.h \
  /home/sean/Software/deal.II/installed/include/deal.II/non_matching/immersed_surface_quadrature.h \
@@ -2113,6 +2183,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools.h \
  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_boundary.h \
  /home/sean/Software/deal.II/installed/include/deal.II/hp/mapping_collection.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_q1.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_q.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/shape_info.h \
+ /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/tensor_product_kernels.h \
  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_constraints.h \
  /home/sean/Software/deal.II/installed/include/deal.II/multigrid/mg_constrained_dofs.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/mg_level_object.h \
@@ -2122,13 +2196,10 @@ CMakeFiles/step-77.dir/step-77.cc.o: \
  /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/fe_point_evaluation.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/signaling_nan.h \
  /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/evaluation_flags.h \
- /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/shape_info.h \
- /home/sean/Software/deal.II/installed/include/deal.II/matrix_free/tensor_product_kernels.h \
  /home/sean/Software/deal.II/installed/include/deal.II/non_matching/mapping_info.h \
  /home/sean/Software/deal.II/installed/include/deal.II/fe/fe_dgq.h \
  /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_cartesian.h \
  /home/sean/Software/deal.II/installed/include/deal.II/base/qprojector.h \
- /home/sean/Software/deal.II/installed/include/deal.II/fe/mapping_q.h \
  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_integrate_difference.h \
  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_interpolate.h \
  /home/sean/Software/deal.II/installed/include/deal.II/numerics/vector_tools_mean_value.h \
