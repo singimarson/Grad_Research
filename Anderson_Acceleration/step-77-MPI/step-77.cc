@@ -849,28 +849,17 @@ namespace Step77
           // We define the ParameterList class here. We can add specifics to the
           // solver with this object.
           // Help with this object type can be found here:
-          // https://trilinos.github.io/pdfs/Trilinos10.2Tutorial.pdf
-          Teuchos::ParameterList parameters;
+          // https://github.com/dealii/dealii/blob/46b63523561e3c7a6859d2fcdeb242dcc980dec2/tests/trilinos/nox_solver_01.cc#L107
+          const Teuchos::RCP<Teuchos::ParameterList> &parameters =
+                  Teuchos::rcp(new Teuchos::ParameterList);
 
           // Here we set the type of nonlinear solver
           // The default is "Line Search Based"
-          parameters.set("Nonlinear Solver","Line Search Based");
+          parameters->set("Nonlinear Solver","Line Search Based");
 
           // To get specifics for the solver, we create a "sublist"
           // We start with the "Line Search" specs
-          Teuchos::ParameterList& Line_Search = parameters.sublist("Line Search");
-
-          // Here we specify the method of the line search
-          // default is "Full Step"
-          Line_Search.set("Method","Full Step");
-
-          // We need to define the RCP object.
-          // This is the object that actually goes in the nonlinear solver
-          // object, not sure why it has to be the RCP object instead
-          // of just the list. I think it has something to do with how
-          // this object type handles memory.
-          const Teuchos::RCP<Teuchos::ParameterList> &params =
-                  Teuchos::rcp(new Teuchos::ParameterList(parameters));
+          parameters->sublist("Line Search").set("Method","Full Step");;
 
           // Constructor, nearly identical to KINSol
           NOX nonlinear_solver(additional_data,params);

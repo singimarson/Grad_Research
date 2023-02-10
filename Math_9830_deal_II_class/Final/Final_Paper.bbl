@@ -1,0 +1,14 @@
+\begin{thebibliography}{1}
+
+\bibitem{CHOR17}
+S.~Charnyi, T.~Heister, M.~Olshanskii, and L.~Rebholz.
+\newblock On conservation laws of {Navier-Stokes Galerkin} discretizations.
+\newblock {\em Journal of Computational Physics}, 337:289--308, 2017.
+
+\bibitem{I20}
+S.~Ingimarson.
+\newblock An energy, momentum and angular momentum conserving scheme for a
+  regularization model of incompressible flow.
+\newblock {\em Submitted}, submitted, 2020.
+
+\end{thebibliography}
