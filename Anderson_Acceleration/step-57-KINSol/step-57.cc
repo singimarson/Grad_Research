@@ -96,10 +96,10 @@ namespace Step57
 
     void assemble(const bool initial_step, const bool assemble_matrix);
 
-    void compute_jacobian(const BlockVector<double> evaluation_point);
+    void compute_jacobian(const BlockVector<double> &evaluation_point);
 
-    void compute_residual(const BlockVector<double> evaluation_point,
-                          BlockVector<double> residual);
+    void compute_residual(const BlockVector<double> &evaluation_point,
+                          BlockVector<double> &residual);
 
     void assemble_system(const bool initial_step);
 
@@ -148,7 +148,7 @@ namespace Step57
     BlockVector<double> present_solution;
     BlockVector<double> newton_update;
     BlockVector<double> system_rhs;
-    BlockVector<double> evaluation_point;
+    //BlockVector<double> evaluation_point;
   };
 
   // @sect3{Boundary values and right hand side}
@@ -377,6 +377,7 @@ namespace Step57
   // for the others). The @p assemble_matrix argument determines whether to
   // assemble the whole system or only the right hand side vector,
   // respectively.
+  /*
   template <int dim>
   void StationaryNavierStokes<dim>::assemble(const bool initial_step,
                                              const bool assemble_matrix)
@@ -519,10 +520,11 @@ namespace Step57
         system_matrix.block(1, 1) = 0;
       }
   }
+  */
 
   template <int dim>
   void StationaryNavierStokes<dim>::compute_jacobian(
-    const BlockVector<double> evaluation_point)
+    const BlockVector<double> &evaluation_point)
   {
     jacobian_matrix = 0;
 
@@ -642,8 +644,8 @@ namespace Step57
 
   template <int dim>
   void StationaryNavierStokes<dim>::compute_residual(
-    const BlockVector<double> evaluation_point,
-    BlockVector<double> residual)
+    const BlockVector<double> &evaluation_point,
+    BlockVector<double> &residual)
   {
     system_rhs = 0;
 
@@ -734,11 +736,14 @@ namespace Step57
         //                                             local_dof_indices,
         //                                             residual);
 
-        zero_constraints.distribute_local_to_global(cell_residual,
-                                                    local_dof_indices,
-                                                    residual);
+        // zero_constraints.distribute_local_to_global(cell_residual,
+        //                                             local_dof_indices,
+        //                                             residual);
           
+        for (unsigned int i = 0; i < dofs_per_cell; ++i)
+          residual(local_dof_indices[i]) += cell_residual(i);
       }
+    zero_constraints.condense(residual);  
 
     std::cout << " norm=" << residual.l2_norm() << std::endl;
   }
@@ -888,6 +893,7 @@ namespace Step57
   // the last iteration. Therefore, we just need to assemble the system matrix
   // at the current iteration. The last argument <code>output_result</code>
   // determines whether or not graphical output should be produced.
+  /*
   template <int dim>
   void StationaryNavierStokes<dim>::newton_iteration(
     const double       tolerance,
@@ -977,7 +983,7 @@ namespace Step57
           }
       }
   }
-
+*/
   // @sect4{StationaryNavierStokes::compute_initial_guess}
   //
   // This function will provide us with an initial guess by using a
@@ -1118,38 +1124,45 @@ namespace Step57
     setup_dofs();
     initialize_system();
 
-    typename SUNDIALS::KINSOL<BlockVector<double>>::AdditionalData
-            additional_data;
-    double target_tolerance = 1e-4;
-    additional_data.function_tolerance = target_tolerance;
+    {
+      typename SUNDIALS::KINSOL<BlockVector<double>>::AdditionalData
+              additional_data;
+      double target_tolerance = 1e-4;
+      additional_data.function_tolerance = target_tolerance;
 
-    SUNDIALS::KINSOL<BlockVector<double>> nonlinear_solver(additional_data);
+      SUNDIALS::KINSOL<BlockVector<double>> nonlinear_solver(additional_data);
 
-    nonlinear_solver.residual =
-      [&](const BlockVector<double> &evaluation_point,
-          BlockVector<double> &      residual) {
-        compute_residual(evaluation_point, residual);
+      nonlinear_solver.reinit_vector = 
+        [&](BlockVector<double> &x) {
+          x.reinit(dof_handler.n_dofs());
+        };
+
+      nonlinear_solver.residual =
+        [&](const BlockVector<double> &evaluation_point,
+            BlockVector<double> &      residual) {
+          compute_residual(evaluation_point, residual);
+
+          return 0;
+        };
+  
+      nonlinear_solver.setup_jacobian =
+        [&](const BlockVector<double> &current_u,
+            const BlockVector<double> & /*current_f*/) {
+          compute_jacobian(current_u);
+
+          return 0;
+        };
+
+      nonlinear_solver.solve_with_jacobian = [&](const BlockVector<double> &rhs,
+                                                  BlockVector<double> &      dst,
+                                                  const double tolerance) {
+        this->solve_kinsol(rhs, dst, tolerance);
 
         return 0;
       };
- 
-    nonlinear_solver.setup_jacobian =
-      [&](const BlockVector<double> &current_u,
-          const Vector<double> & /*current_f*/) {
-        compute_jacobian(current_u);
 
-        return 0;
-      };
-
-    nonlinear_solver.solve_with_jacobian = [&](const BlockVector<double> &rhs,
-                                                BlockVector<double> &      dst,
-                                                const double tolerance) {
-      this->solve(rhs, dst, tolerance);
-
-      return 0;
-    };
-
-    nonlinear_solver.solve(present_solution);
+      nonlinear_solver.solve(present_solution);
+    }
   }
 
 } // namespace Step57
@@ -1161,7 +1174,7 @@ int main()
       using namespace Step57;
 
       StationaryNavierStokes<2> flow(/* degree = */ 1);
-      flow.run(4);
+      flow.run_kinsol();
     }
   catch (std::exception &exc)
     {
