@@ -148,7 +148,8 @@ namespace Step57
     BlockVector<double> present_solution;
     BlockVector<double> newton_update;
     BlockVector<double> system_rhs;
-    //BlockVector<double> evaluation_point;
+
+    bool nonzero_res = true;
   };
 
   // @sect3{Boundary values and right hand side}
@@ -542,7 +543,6 @@ namespace Step57
     const FEValuesExtractors::Scalar pressure(dim);
 
     FullMatrix<double> local_matrix(dofs_per_cell, dofs_per_cell);
-    Vector<double>     local_rhs(dofs_per_cell);
 
     std::vector<types::global_dof_index> local_dof_indices(dofs_per_cell);
 
@@ -626,19 +626,19 @@ namespace Step57
       }
 
 
-    // Finally we move pressure mass matrix into a separate matrix:
-    pressure_mass_matrix.reinit(sparsity_pattern.block(1, 1));
-    pressure_mass_matrix.copy_from(system_matrix.block(1, 1));
+    // // Finally we move pressure mass matrix into a separate matrix:
+    // pressure_mass_matrix.reinit(sparsity_pattern.block(1, 1));
+    // pressure_mass_matrix.copy_from(system_matrix.block(1, 1));
 
-    // Note that settings this pressure block to zero is not identical to
-    // not assembling anything in this block, because this operation here
-    // will (incorrectly) delete diagonal entries that come in from
-    // hanging node constraints for pressure DoFs. This means that our
-    // whole system matrix will have rows that are completely
-    // zero. Luckily, FGMRES handles these rows without any problem.
-    jacobian_matrix.block(1, 1) = 0;
+    // // Note that settings this pressure block to zero is not identical to
+    // // not assembling anything in this block, because this operation here
+    // // will (incorrectly) delete diagonal entries that come in from
+    // // hanging node constraints for pressure DoFs. This means that our
+    // // whole system matrix will have rows that are completely
+    // // zero. Luckily, FGMRES handles these rows without any problem.
+    // jacobian_matrix.block(1, 1) = 0;
 
-    // boundary values section...? idk
+    // // boundary values section...? idk
 
   }
 
@@ -703,6 +703,7 @@ namespace Step57
         // separate SparseMatrix at the end (same as in step-22).
         for (unsigned int q = 0; q < n_q_points; ++q)
           {
+            // std::cout << present_velocity_gradients[q] << std::endl;
             for (unsigned int k = 0; k < dofs_per_cell; ++k)
               {
                 div_phi_u[k]  = fe_values[velocities].divergence(k, q);
@@ -724,6 +725,8 @@ namespace Step57
                    present_velocity_divergence * phi_p[i] -
                    gamma * present_velocity_divergence * div_phi_u[i]) *
                   fe_values.JxW(q);
+
+                  // std::cout << present_velocity_gradients[q] << std::endl;
               }
           }
 
@@ -736,14 +739,22 @@ namespace Step57
         //                                             local_dof_indices,
         //                                             residual);
 
-        // zero_constraints.distribute_local_to_global(cell_residual,
-        //                                             local_dof_indices,
-        //                                             residual);
+        zero_constraints.distribute_local_to_global(cell_residual,
+                                                    local_dof_indices,
+                                                    residual);
           
-        for (unsigned int i = 0; i < dofs_per_cell; ++i)
-          residual(local_dof_indices[i]) += cell_residual(i);
+        // for (unsigned int i = 0; i < dofs_per_cell; ++i)
+        //   residual(local_dof_indices[i]) += cell_residual(i);
       }
     zero_constraints.condense(residual);  
+    
+    // zero_constraints.set_zero(residual);
+    // residual.compress(VectorOperation::add);
+
+    if (nonzero_res)
+      residual(0) = 1.0;
+
+    nonzero_res = false;
 
     std::cout << " norm=" << residual.l2_norm() << std::endl;
   }
@@ -1134,7 +1145,7 @@ namespace Step57
 
       nonlinear_solver.reinit_vector = 
         [&](BlockVector<double> &x) {
-          x.reinit(dof_handler.n_dofs());
+          x.reinit(dofs_per_block);
         };
 
       nonlinear_solver.residual =
