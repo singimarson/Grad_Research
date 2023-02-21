@@ -529,7 +529,9 @@ namespace Step57
   {
     jacobian_matrix = 0;
 
-    QGauss<dim> quadrature_formula(degree + 2);
+    // jacobian_matrix.reinit(sparsity_pattern);
+
+    const QGauss<dim> quadrature_formula(degree + 2);
 
     FEValues<dim> fe_values(fe,
                             quadrature_formula,
@@ -589,6 +591,8 @@ namespace Step57
                 grad_phi_u[k] = fe_values[velocities].gradient(k, q);
                 phi_u[k]      = fe_values[velocities].value(k, q);
                 phi_p[k]      = fe_values[pressure].value(k, q);
+
+                // std::cout << phi_p[k] << std::endl;
               }
 
             for (unsigned int i = 0; i < dofs_per_cell; ++i)
@@ -596,15 +600,15 @@ namespace Step57
                 for (unsigned int j = 0; j < dofs_per_cell; ++j)
                   {
                     local_matrix(i, j) +=
-                      (viscosity *
-                          scalar_product(grad_phi_u[j], grad_phi_u[i]) +
-                        present_velocity_gradients[q] * phi_u[j] * phi_u[i] +
-                        grad_phi_u[j] * present_velocity_values[q] *
-                          phi_u[i] -
-                        div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
-                        gamma * div_phi_u[j] * div_phi_u[i] +
-                        phi_p[i] * phi_p[j]) *
-                      fe_values.JxW(q);
+                          (viscosity *
+                             scalar_product(grad_phi_u[j], grad_phi_u[i]) +
+                           present_velocity_gradients[q] * phi_u[j] * phi_u[i] +
+                           grad_phi_u[j] * present_velocity_values[q] *
+                             phi_u[i] -
+                           div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
+                           gamma * div_phi_u[j] * div_phi_u[i] +
+                           phi_p[i] * phi_p[j]) *
+                          fe_values.JxW(q);
                   }
               }
           }
@@ -625,20 +629,21 @@ namespace Step57
 
       }
 
+    // Finally we move pressure mass matrix into a separate matrix:
+    pressure_mass_matrix.reinit(sparsity_pattern.block(1, 1));
+    pressure_mass_matrix.copy_from(jacobian_matrix.block(1, 1));
 
-    // // Finally we move pressure mass matrix into a separate matrix:
-    // pressure_mass_matrix.reinit(sparsity_pattern.block(1, 1));
-    // pressure_mass_matrix.copy_from(system_matrix.block(1, 1));
+    // Note that settings this pressure block to zero is not identical to
+    // not assembling anything in this block, because this operation here
+    // will (incorrectly) delete diagonal entries that come in from
+    // hanging node constraints for pressure DoFs. This means that our
+    // whole system matrix will have rows that are completely
+    // zero. Luckily, FGMRES handles these rows without any problem.
+    jacobian_matrix.block(1, 1) = 0;
 
-    // // Note that settings this pressure block to zero is not identical to
-    // // not assembling anything in this block, because this operation here
-    // // will (incorrectly) delete diagonal entries that come in from
-    // // hanging node constraints for pressure DoFs. This means that our
-    // // whole system matrix will have rows that are completely
-    // // zero. Luckily, FGMRES handles these rows without any problem.
-    // jacobian_matrix.block(1, 1) = 0;
+    // std::cout << pressure_mass_matrix(0,0) << std::endl;
 
-    // // boundary values section...? idk
+    // boundary values section...? idk
 
   }
 
@@ -789,6 +794,8 @@ namespace Step57
     const AffineConstraints<double> &constraints_used =
       initial_step ? nonzero_constraints : zero_constraints;
 
+      std::cout << "Hello" << std::endl;
+
     SolverControl solver_control(system_matrix.m(),
                                  1e-4 * system_rhs.l2_norm(),
                                  true);
@@ -826,6 +833,7 @@ namespace Step57
 
     SolverFGMRES<BlockVector<double>> gmres(solver_control);
     SparseILU<double>                 pmass_preconditioner;
+
     pmass_preconditioner.initialize(pressure_mass_matrix,
                                     SparseILU<double>::AdditionalData());
 
