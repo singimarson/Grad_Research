@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/sean/Grad_Research/Anderson_Acceleration/step-57-KINSol-v2",
+  "command": "/usr/bin/c++ -DDEBUG -isystem /home/sean/Software/deal.II/installed/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include -isystem /usr/lib/x86_64-linux-gnu/openmpi/include/openmpi -isystem /usr/include/petsc -isystem /usr/include/trilinos -isystem /usr/include/hdf5/openmpi -isystem /usr/include/scotch -isystem /usr/include/suitesparse -isystem /usr/include/opencascade -isystem /usr/include/slepc -pedantic -fPIC -Wall -Wextra -Wmissing-braces -Woverloaded-virtual -Wpointer-arith -Wsign-compare -Wswitch -Wsynth -Wwrite-strings -Wno-placement-new -Wno-literal-suffix -Wno-psabi -Wno-class-memaccess -fopenmp-simd -Wno-unused-local-typedefs -O0 -ggdb -Wa,--compress-debug-sections -o CMakeFiles/step-57.dir/step-57.cc.o -c /home/sean/Grad_Research/Anderson_Acceleration/step-57-KINSol-v2/step-57.cc",
+  "file": "/home/sean/Grad_Research/Anderson_Acceleration/step-57-KINSol-v2/step-57.cc"
+}
+]
