@@ -71,6 +71,8 @@ namespace Step57
 {
   using namespace dealii;
 
+  using kinsol = SUNDIALS::KINSOL<BlockVector<double>>;
+
   // @sect3{The <code>NavierStokesProblem</code> class template}
 
   // This class manages the matrices and vectors described in the
@@ -149,10 +151,7 @@ namespace Step57
 
     BlockSparseMatrix<double> jacobian_matrix;
     BlockVector<double> kinsol_solution;
-
-    bool first_step = true;
-    bool first_step_jac = true;
-    bool first_step_solve = true;
+    BlockVector<double> residual;
   };
 
   // @sect3{Boundary values and right hand side}
@@ -556,7 +555,7 @@ namespace Step57
     const BlockVector<double> &kinsol_eval_point,
     BlockVector<double> &residual)
   {
-    std::cout << "  Computing residual vector..." << std::flush;
+    std::cout << "Computing residual vector..." << std::flush;
 
     const QGauss<dim> quadrature_formula(degree + 2);
 
@@ -630,27 +629,11 @@ namespace Step57
           }
 
         cell->get_dof_indices(local_dof_indices);
-
-        // const AffineConstraints<double> &constraints_used =
-        //   first_step ? nonzero_constraints : zero_constraints;
-
-        // constraints_used.distribute_local_to_global(local_residual,
-        //                                             local_dof_indices,
-        //                                             residual);
-
-        for (unsigned int i = 0; i < dofs_per_cell; ++i)
-          residual(local_dof_indices[i]) += local_residual(i);
+        zero_constraints.distribute_local_to_global(local_residual,
+                                                    local_dof_indices,
+                                                    residual);
       }
-
-    zero_constraints.condense(residual);
-
     std::cout << " norm=" << residual.l2_norm() << std::endl;
-    if (first_step)
-      std::cout << "first step" << std::endl;
-
-    first_step = false;
-
-    exit(0);
   }
 
   template <int dim>
@@ -658,6 +641,8 @@ namespace Step57
     const BlockVector<double> &kinsol_eval_point)
   {
     jacobian_matrix = 0;
+
+    std::cout << "Computing jacobian matrix..." << std::endl;
 
     QGauss<dim> quadrature_formula(degree + 2);
 
@@ -741,27 +726,15 @@ namespace Step57
 
         cell->get_dof_indices(local_dof_indices);
 
-        const AffineConstraints<double> &constraints_used =
-          first_step_jac ? nonzero_constraints : zero_constraints;
-
-        constraints_used.distribute_local_to_global(cell_matrix,
+        zero_constraints.distribute_local_to_global(cell_matrix,
                                                     local_dof_indices,
                                                     jacobian_matrix);
       }
 
-    // Finally we move pressure mass matrix into a separate matrix:
     pressure_mass_matrix.reinit(sparsity_pattern.block(1, 1));
     pressure_mass_matrix.copy_from(jacobian_matrix.block(1, 1));
 
-    // Note that settings this pressure block to zero is not identical to
-    // not assembling anything in this block, because this operation here
-    // will (incorrectly) delete diagonal entries that come in from
-    // hanging node constraints for pressure DoFs. This means that our
-    // whole system matrix will have rows that are completely
-    // zero. Luckily, FGMRES handles these rows without any problem.
     jacobian_matrix.block(1, 1) = 0;
-
-    first_step_jac = false;
   }
 
   // @sect4{StationaryNavierStokes::solve}
@@ -808,11 +781,10 @@ namespace Step57
     BlockVector<double> &solution,
     const double /*tolerance*/)
   {
-    const AffineConstraints<double> &constraints_used =
-      first_step_solve ? nonzero_constraints : zero_constraints;
+    std::cout << "GRMES solve..." << std::endl;
 
     SolverControl solver_control(jacobian_matrix.m(),
-                                 1e-4 * system_rhs.l2_norm(),
+                                 1e-4 * rhs.l2_norm(),
                                  true);
 
     SolverFGMRES<BlockVector<double>> gmres(solver_control);
@@ -830,7 +802,7 @@ namespace Step57
     gmres.solve(jacobian_matrix, solution, rhs, preconditioner);
     std::cout << "FGMRES steps: " << solver_control.last_step() << std::endl;
 
-    constraints_used.distribute(solution);
+    zero_constraints.distribute(solution);
   }
 
 
@@ -1120,6 +1092,8 @@ namespace Step57
     GridGenerator::hyper_cube(triangulation);
     triangulation.refine_global(5);
 
+    viscosity = 1.0 / 100.0;
+
     setup_dofs();
     initialize_system();
 
@@ -1130,11 +1104,14 @@ namespace Step57
               << std::endl;
 
     {
-      typename SUNDIALS::KINSOL<BlockVector<double>>::AdditionalData
-        additional_data;
+      typename kinsol::AdditionalData additional_data;
       additional_data.function_tolerance = target_tolerance;
 
-      SUNDIALS::KINSOL<BlockVector<double>> nonlinear_solver(additional_data);
+      kinsol::AdditionalData::SolutionStrategy strategy;
+      strategy = kinsol::AdditionalData::newton;
+      additional_data.strategy = strategy;
+
+      kinsol nonlinear_solver(additional_data);
 
       nonlinear_solver.reinit_vector = 
       [&](BlockVector<double> &x) {
@@ -1165,7 +1142,7 @@ namespace Step57
  
         return 0;
       };
- 
+      nonzero_constraints.distribute(kinsol_solution);
       nonlinear_solver.solve(kinsol_solution);
     }
   }
