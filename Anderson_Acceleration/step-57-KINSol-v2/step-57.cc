@@ -509,8 +509,6 @@ namespace Step57
                                                         local_dof_indices,
                                                         system_rhs);
           }
-
-          // std::cout << " norm=" << system_rhs.l2_norm() << std::endl;
       }
 
     if (assemble_matrix)
@@ -527,15 +525,6 @@ namespace Step57
         // zero. Luckily, FGMRES handles these rows without any problem.
         system_matrix.block(1, 1) = 0;
       }
-
-    std::cout << " norm=" << system_rhs.l2_norm() << std::endl;
-
-    // for (unsigned int i = 0; i < dof_handler.n_dofs(); i++)
-    // {
-    //   std::cout << system_rhs(i) << std::endl;
-    // }
-    exit(0);
-
   }
 
   template <int dim>
@@ -555,6 +544,8 @@ namespace Step57
     const BlockVector<double> &kinsol_eval_point,
     BlockVector<double> &residual)
   {
+    residual = 0;
+
     std::cout << "Computing residual vector..." << std::flush;
 
     const QGauss<dim> quadrature_formula(degree + 2);
@@ -633,6 +624,10 @@ namespace Step57
                                                     local_dof_indices,
                                                     residual);
       }
+
+      // zero_constraints.set_zero(residual);
+      // residual.compress(VectorOperation::add);
+
     std::cout << " norm=" << residual.l2_norm() << std::endl;
   }
 
@@ -689,13 +684,6 @@ namespace Step57
         fe_values[pressure].get_function_values(kinsol_eval_point,
                                                 present_pressure_values);
 
-        // The assembly is similar to step-22. An additional term with gamma
-        // as a coefficient is the Augmented Lagrangian (AL), which is
-        // assembled via grad-div stabilization.  As we discussed in the
-        // introduction, the bottom right block of the system matrix should be
-        // zero. Since the pressure mass matrix is used while creating the
-        // preconditioner, we assemble it here and then move it into a
-        // separate SparseMatrix at the end (same as in step-22).
         for (unsigned int q = 0; q < n_q_points; ++q)
           {
             for (unsigned int k = 0; k < dofs_per_cell; ++k)
@@ -735,6 +723,8 @@ namespace Step57
     pressure_mass_matrix.copy_from(jacobian_matrix.block(1, 1));
 
     jacobian_matrix.block(1, 1) = 0;
+
+    // jacobian_matrix.compress(VectorOperation::add);
   }
 
   // @sect4{StationaryNavierStokes::solve}
