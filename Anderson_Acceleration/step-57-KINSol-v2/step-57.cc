@@ -128,6 +128,8 @@ namespace Step57
                       BlockVector<double> &solution,
                       const double /*tolerance*/);
 
+    void initial_guess();
+
     double                               viscosity;
     double                               gamma;
     const unsigned int                   degree;
@@ -152,6 +154,9 @@ namespace Step57
     BlockSparseMatrix<double> jacobian_matrix;
     BlockVector<double> kinsol_solution;
     BlockVector<double> residual;
+
+    std::unique_ptr<SparseDirectUMFPACK> jacobian_matrix_factorization;
+ 
   };
 
   // @sect3{Boundary values and right hand side}
@@ -374,6 +379,7 @@ namespace Step57
 
     jacobian_matrix.reinit(sparsity_pattern);
     kinsol_solution.reinit(dofs_per_block);
+    jacobian_matrix_factorization.reset();
   }
 
   // @sect4{StationaryNavierStokes::assemble}
@@ -724,7 +730,24 @@ namespace Step57
 
     jacobian_matrix.block(1, 1) = 0;
 
-    // jacobian_matrix.compress(VectorOperation::add);
+    // std::map<types::global_dof_index, double> boundary_values;
+    // VectorTools::interpolate_boundary_values(dof_handler,
+    //                                          0,
+    //                                          Functions::ZeroFunction<dim>(),
+    //                                          boundary_values);
+    // BlockVector<double> dummy_solution(dofs_per_block);
+    // BlockVector<double> dummy_rhs(dofs_per_block);
+    // MatrixTools::apply_boundary_values(boundary_values,
+    //                                    jacobian_matrix,
+    //                                    dummy_solution,
+    //                                    dummy_rhs);
+
+    {
+      std::cout << "  Factorizing Jacobian matrix" << std::endl;
+  
+      jacobian_matrix_factorization = std::make_unique<SparseDirectUMFPACK>();
+      jacobian_matrix_factorization->factorize(jacobian_matrix);
+    }
   }
 
   // @sect4{StationaryNavierStokes::solve}
@@ -771,26 +794,30 @@ namespace Step57
     BlockVector<double> &solution,
     const double /*tolerance*/)
   {
-    std::cout << "GRMES solve..." << std::endl;
+    // std::cout << "GRMES solve..." << std::endl;
 
-    SolverControl solver_control(jacobian_matrix.m(),
-                                 1e-4 * rhs.l2_norm(),
-                                 true);
+    // SolverControl solver_control(jacobian_matrix.m(),
+    //                              1e-4 * rhs.l2_norm(),
+    //                              true);
 
-    SolverFGMRES<BlockVector<double>> gmres(solver_control);
-    SparseILU<double>                 pmass_preconditioner;
-    pmass_preconditioner.initialize(pressure_mass_matrix,
-                                    SparseILU<double>::AdditionalData());
+    // SolverFGMRES<BlockVector<double>> gmres(solver_control);
+    // SparseILU<double>                 pmass_preconditioner;
+    // pmass_preconditioner.initialize(pressure_mass_matrix,
+    //                                 SparseILU<double>::AdditionalData());
 
-    const BlockSchurPreconditioner<SparseILU<double>> preconditioner(
-      gamma,
-      viscosity,
-      jacobian_matrix,
-      pressure_mass_matrix,
-      pmass_preconditioner);
+    // const BlockSchurPreconditioner<SparseILU<double>> preconditioner(
+    //   gamma,
+    //   viscosity,
+    //   jacobian_matrix,
+    //   pressure_mass_matrix,
+    //   pmass_preconditioner);
 
-    gmres.solve(jacobian_matrix, solution, rhs, preconditioner);
-    std::cout << "FGMRES steps: " << solver_control.last_step() << std::endl;
+    // gmres.solve(jacobian_matrix, solution, rhs, preconditioner);
+    // std::cout << "FGMRES steps: " << solver_control.last_step() << std::endl;
+
+    std::cout << "  Solving linear system" << std::endl;
+ 
+    jacobian_matrix_factorization->vmult(solution, rhs);
 
     zero_constraints.distribute(solution);
   }
@@ -1047,7 +1074,8 @@ namespace Step57
     GridGenerator::hyper_cube(triangulation);
     triangulation.refine_global(5);
 
-    const double Re = 1.0 / viscosity;
+    // const double Re = 1.0 / viscosity;
+    const double Re = 100.0;
 
     // If the viscosity is smaller than $1/1000$, we have to first search for an
     // initial guess via a continuation method. What we should notice is the
@@ -1077,6 +1105,26 @@ namespace Step57
   }
 
   template <int dim>
+  void StationaryNavierStokes<dim>::initial_guess()
+  {
+    // This function is for computing the initial guess of the solution
+    // Taken directly from the first portion of the Newton function
+    bool first_step = true;
+    evaluation_point = present_solution;
+    assemble_system(first_step);
+    solve(first_step);
+    present_solution = newton_update;
+    nonzero_constraints.distribute(present_solution);
+    first_step       = false;
+    evaluation_point = present_solution;
+    assemble_rhs(first_step);
+    std::cout << "The residual of initial guess is " << system_rhs.l2_norm()
+              << std::endl;
+    nonzero_constraints.distribute(kinsol_solution);
+    kinsol_solution = present_solution;
+  }
+  
+  template <int dim>
   void StationaryNavierStokes<dim>::run_kinsol()
   {
     GridGenerator::hyper_cube(triangulation);
@@ -1086,6 +1134,7 @@ namespace Step57
 
     setup_dofs();
     initialize_system();
+    initial_guess();
 
     int refinement_cycle = 0;
 
@@ -1132,7 +1181,7 @@ namespace Step57
  
         return 0;
       };
-      nonzero_constraints.distribute(kinsol_solution);
+      // nonzero_constraints.distribute(kinsol_solution);
       nonlinear_solver.solve(kinsol_solution);
     }
   }
