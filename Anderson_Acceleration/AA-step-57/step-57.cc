@@ -884,7 +884,7 @@ namespace Step57
           auto duration_new = duration_cast<microseconds>(end - start);
           double time = duration_new.count();
 
-          //AA_time_sum += time;
+          AA_time_sum += time;
 
           std::cout << "AA time: " << time * 1e-6
                     << " seconds" << std::endl;
@@ -929,35 +929,29 @@ namespace Step57
     int &AA_iter,
     const int &m)
   {
-    // This loop creates the matrix that stores all the solution data from
-    // previous iterations.
-    // AA_matrix stores the u_tilde - u vectors
-    // utilde_matrix stores just the u_tilde vector
-    //
-    // Note: These matrices aren't used in actual computations because their
-    // size is a problem in the beginning of AA
     std::cout << "Anderson step: " << AA_iter - 1 << std::endl;
     std::cout << "Anderson limit: " << m << std::endl;
-    for (int j = 0; j < m + 1; j++)
+
+    // This loop creates the matrix that stores all the solution data from
+    // previous iterations.
+
+    for (int j = 0; j < m; j++)
     {
-      if (j < m)
-      {
-        // New stuff that's hopefully faster than loops
-        for (long unsigned int i = 0; i < dof_handler.n_dofs(); i++)
-        {
-          F(i, m - j) = F(i, m - 1 - j);
-          u_tilde(i, m - j) = u_tilde(i, m - 1 - j);
-        }
-      }
-      else if (j == m)
-      {
-        for (long unsigned int i = 0; i < dof_handler.n_dofs(); i++)
-        {
-          // Put new computed value into first column of matrix
-          F(i,0) = newton_update(i);
-          u_tilde(i,0) = evaluation_point(i);
-        }
-      }
+      // New stuff that's hopefully faster than loops
+      // for (long unsigned int i = 0; i < dof_handler.n_dofs(); i++)
+      // {
+      //   F(i, m - j) = F(i, m - 1 - j);
+      //   u_tilde(i, m - j) = u_tilde(i, m - 1 - j);
+      // }
+      F.swap_col(m - j, m - 1 - j);
+      u_tilde.swap_col(m - j, m - 1 - j);
+    }
+
+    for (long unsigned int i = 0; i < dof_handler.n_dofs(); i++)
+    {
+      // Put new computed value into first column of matrix
+      F(i,0) = newton_update(i);
+      u_tilde(i,0) = evaluation_point(i);
     }
 
     // Here we start the actual Anderson Acceleration process
@@ -1007,7 +1001,6 @@ namespace Step57
       {
         // We use this method for m>1
         // Here is the slick method using Fhat
-        // Need to verify that when m=1 that this still checks out
         //
         // We need to hardcode the alpha summing to 1 into the system itself,
         // so what we do is rearrange the system using the fact that
@@ -1018,45 +1011,57 @@ namespace Step57
         // alpha_hat = [alpha_1, ..., alpha_m-1]
         // F_rhs = -F_m
 
-        auto start = high_resolution_clock::now();
-
         int m = AA_iter - 1;
 
-        // Calculate F^T * M * F
-        // Essentially does sym_mat = {<Fhat_i,Fhat_j>_M}
+        // Some matrices/vectors that we'll need
         FullMatrix<double> sym_mat(m,m);
         Vector<double> rhs(m);
         Vector<double> temp(dof_handler.n_dofs());
         Vector<double> FtM(dof_handler.n_dofs());
+
+        // Calculate F^T * M * F
+        // Essentially does sym_mat = {<Fhat_i,Fhat_j>_M}
+        //
+        // As of now this is the dominating loop that differentiates
+        // using a non-ell^2 matrix norm
         for (int i = 0; i < m; i++)
         {
-          for (unsigned int j = 0; j < dof_handler.n_dofs(); j++)
-          {
-            // We want temp to be the ith vector in Fhat
-            // temp(j) = Fhat(j,i);
-            temp(j) = F(j,i) - F(j,m);
-          }
-
-          // We want to calculate Fhat_i^T * M
+          // This loop is only useful if we need to do a the Fhat^T * M
+          // computation. So if we use the ell^2 norm, we omit this
           if (AA_norm != 0)
-            system_norm_matrix.Tvmult(FtM,temp);
-          else
-            FtM = temp;
-
-          // While we're here, we calculate the rhs vector
-          for (unsigned int j = 0; j < dof_handler.n_dofs(); j++)
           {
-            // Calculating Fhat_i^T * M * F_m = rhs(i)
-            rhs(i) -= FtM(j) * F(j,m);
-          }
-
-          // Now for the sym_mat calc
-          for (int j = 0; j < m; j++)
-          {
-            for (unsigned int k = 0; k < dof_handler.n_dofs(); k++)
+            for (unsigned int j = 0; j < dof_handler.n_dofs(); j++)
             {
-              // sym_mat(i,j) += FtM(k) * Fhat(k,j);
-              sym_mat(i,j) += FtM(k) * (F(k,j) - F(k,m));
+              // Stores elements in a vector for the norm matrix
+              temp(j) = F(j,i) - F(j,m);
+            }
+
+            // Fhat_i^T * M
+            system_norm_matrix.Tvmult(FtM,temp);
+          }
+          
+          // Main loop
+          for (unsigned int k = 0; k < dof_handler.n_dofs(); k++)
+          {
+            // Calculate the right hand side vector
+            // Fhat_i^T * M * F_m 
+            // or
+            // Fhat_i^T * F_m
+            if (AA_norm != 0)
+              rhs(i) -= FtM(k) * F(k,m);
+            else
+              rhs(i) -= (F(k,i) - F(k,m)) * F(k,m);
+
+            // Now for the sym_mat calc
+            // sym_mat = F^T * M * F
+            // or
+            // sym_mat = F^T * F
+            for (int j = 0; j < m; j++)
+            {
+              if (AA_norm != 0)
+                sym_mat(i,j) += FtM(k) * (F(k,j) - F(k,m));
+              else
+                sym_mat(i,j) += (F(k,i) - F(k,m)) * (F(k,j) - F(k,m));
             }
           }
         }
@@ -1065,31 +1070,19 @@ namespace Step57
         FullMatrix<double> sym_mat_inv(m,m);
         sym_mat_inv.invert(sym_mat);
 
-        Vector<double> alpha_new(m);
-        sym_mat_inv.vmult(alpha_new,rhs);
+        Vector<double> alpha_temp(m);
+        sym_mat_inv.vmult(alpha_temp,rhs);
 
 
         // Evaluate the implicitly imposed condition on alpha.
         double sum = 0;
         for (int i = 0; i < m; i++)
         {
-          alpha(i) = alpha_new(i);
+          alpha(i) = alpha_temp(i);
           sum += alpha(i);
         }
         alpha(m) = 1 - sum;
 
-        // Timer end
-          auto end = high_resolution_clock::now();
-
-          // Computational time
-          auto duration_new = duration_cast<microseconds>(end - start);
-          double time = duration_new.count();
-
-          AA_time_sum += time;
-
-          std::cout << "AA time: " << time * 1e-6
-                    << " seconds" << std::endl;
-        
         // END OF NEW STUFF       
       }
 
@@ -1102,14 +1095,13 @@ namespace Step57
       std::cout << std::endl;
 
       // Here we calculate the updated solution, which we set equal to AA_sol
+      // At first it is not obvious that this is a matrix-vector product,
+      // but it's a sum of the u_tilde vectors and the alpha vectors, which
+      // is more easily computed as a matrix-vector product with terms we
+      // have already been using.
       Vector<double> AA_sol(dof_handler.n_dofs());
-      for (unsigned int i = 0; i < dof_handler.n_dofs(); i++)
-      {
-        for (int j = 0; j < AA_iter; j++)
-        {
-          AA_sol(i) += alpha(j) * u_tilde(i,j);
-        }
-      }
+      u_tilde.vmult(AA_sol,alpha);
+
       evaluation_point = AA_sol;
     }
   }
@@ -1311,14 +1303,14 @@ int main()
     }
 
     std::cout << std::endl;
-    std::cout << "AA Time (seconds) for: " << std::endl;
+    std::cout << "AA Time ratio for: " << std::endl;
     for (long unsigned int i = 0; i < Re.size(); i++)
     {
       std::cout << "Re = " << Re[i] << ":" << std::endl;
       for (long unsigned int j = 0; j < m.size(); j++)
       {
         std::cout << "  m = " << m[j] << ": "
-                  << AA_time_vec[j + m.size() * i] << std::endl;
+                  << AA_time_vec[j + m.size() * i] / time[j + m.size() * i] << std::endl;
       }
     }
 
@@ -1354,7 +1346,26 @@ int main()
         std::cout << "& " << time[j + m.size() * i] << " ";
       }
       std::cout << "\\\\" << std::endl;
-      std::cout << "\\hline\\\\" << std::endl;
+      std::cout << "\\hline" << std::endl;
+    }
+    std::cout << "\\end{tabular}" << std::endl;
+
+    std::cout << std::endl;
+    std::cout << "AA minimization time table" << std::endl;
+    std::cout << "\\begin{tabular}{|c||c|c|c|c|}" << std::endl;
+    std::cout << "\\hline" << std::endl;
+    std::cout << "Time & $m=0$ & $m=1$ & $m=2$ & $m=10$\\\\" << std::endl;
+    std::cout << "\\hline" << std::endl;
+    for (long unsigned int i = 0; i < Re.size(); i++)
+    {
+      std::cout << "$Re = " << Re[i] << "$ ";
+      for (long unsigned int j = 0; j < m.size(); j++)
+      {
+        std::cout << "& " << AA_time_vec[j + m.size() * i] 
+          / time[j + m.size() * i] << " ";
+      }
+      std::cout << "\\\\" << std::endl;
+      std::cout << "\\hline" << std::endl;
     }
     std::cout << "\\end{tabular}" << std::endl;
 
