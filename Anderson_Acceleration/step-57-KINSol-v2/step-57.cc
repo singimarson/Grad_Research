@@ -286,8 +286,8 @@ namespace Step57
   // <code>gamma</code>.
   template <int dim>
   StationaryNavierStokes<dim>::StationaryNavierStokes(const unsigned int degree)
-    : viscosity(1.0 / 7500.0)
-    , gamma(1.0)
+    : viscosity(1.0 / 100.0)
+    , gamma(0.0)
     , degree(degree)
     , triangulation(Triangulation<dim>::maximum_smoothing)
     , fe(FE_Q<dim>(degree + 1), dim, FE_Q<dim>(degree), 1)
@@ -613,7 +613,7 @@ namespace Step57
               {
                 double present_velocity_divergence =
                   trace(present_velocity_gradients[q]);
-                local_residual(i) +=
+                local_residual(i) -=
                   (-viscosity * scalar_product(present_velocity_gradients[q],
                                                grad_phi_u[i]) -
                    present_velocity_gradients[q] * present_velocity_values[q] *
@@ -635,6 +635,14 @@ namespace Step57
       // residual.compress(VectorOperation::add);
 
     std::cout << " norm=" << residual.l2_norm() << std::endl;
+    if (false)
+    {
+      // temporary output of the current best guess:
+      static int index = 0;
+      present_solution = kinsol_eval_point;
+      output_results(index);
+      ++index;
+    }
   }
 
   template <int dim>
@@ -1120,7 +1128,7 @@ namespace Step57
     assemble_rhs(first_step);
     std::cout << "The residual of initial guess is " << system_rhs.l2_norm()
               << std::endl;
-    nonzero_constraints.distribute(kinsol_solution);
+    // nonzero_constraints.distribute(kinsol_solution);
     kinsol_solution = present_solution;
   }
   
@@ -1130,15 +1138,17 @@ namespace Step57
     GridGenerator::hyper_cube(triangulation);
     triangulation.refine_global(5);
 
-    viscosity = 1.0 / 100.0;
+    //viscosity = 1.0 / 100.0;
 
     setup_dofs();
     initialize_system();
-    initial_guess();
+    //initial_guess();
+
+    nonzero_constraints.distribute(kinsol_solution);
 
     int refinement_cycle = 0;
 
-    const double target_tolerance = 1e-3 * std::pow(0.1, refinement_cycle);
+    const double target_tolerance = 1e-8;// * std::pow(0.1, refinement_cycle);
     std::cout << "  Target_tolerance: " << target_tolerance << std::endl
               << std::endl;
 
@@ -1181,8 +1191,21 @@ namespace Step57
  
         return 0;
       };
-      // nonzero_constraints.distribute(kinsol_solution);
+
+      if (false)
+      {
+        // start with Stokes solution:
+        kinsol_solution = present_solution;
+      }
+      else {
+        // start with 0 (but correct boundary values)
+      kinsol_solution=0;
+      nonzero_constraints.distribute(kinsol_solution);
+      }
+
       nonlinear_solver.solve(kinsol_solution);
+      nonzero_constraints.distribute(kinsol_solution);
+      output_results(0);
     }
   }
 
