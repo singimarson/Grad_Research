@@ -86,7 +86,10 @@ namespace Step57
   {
   public:
     StationaryNavierStokes(const unsigned int degree);
-    void run(const int m, unsigned int &picard_iter, double Re);
+    void run(const int &m,
+            unsigned int &picard_iter,
+            double Re,
+            double &AA_time);
 
   private:
 
@@ -146,15 +149,17 @@ namespace Step57
     int AA_norm = 2; // 0 - l^2 norm (identity matrix)
                      // 1 - L^2 norm (mass matrix)
                      // 2 - H^1 norm (stiffness matrix)
-    int refinement = 4;
+    int refinement = 6;
+
+    double AA_time_sum;
 
     BlockVector<double> present_solution;
     BlockVector<double> newton_update;
     BlockVector<double> system_rhs;
     BlockVector<double> evaluation_point;
 
-    void Anderson_Acceleration(FullMatrix<double> &AA_matrix,
-                               FullMatrix<double> &utilde_matrix,
+    void Anderson_Acceleration(FullMatrix<double> &F,
+                               FullMatrix<double> &u_tilde,
                                int &AA_iter,
                                const int &m);
   };
@@ -811,11 +816,11 @@ namespace Step57
 
     // This needs to be here for the time being
     setup_dofs();
-    FullMatrix<double> AA_matrix(dof_handler.n_dofs(),m + 1);
-    FullMatrix<double> utilde_matrix(dof_handler.n_dofs(),m + 1);
+    FullMatrix<double> F(dof_handler.n_dofs(),m + 1);
+    FullMatrix<double> u_tilde(dof_handler.n_dofs(),m + 1);
 
     while ((first_step || (current_res > tolerance)) &&
-           picard_iter < 50)
+           picard_iter < 200)
     {
       if (first_step)
       {
@@ -864,10 +869,25 @@ namespace Step57
 
         if (picard_iter > 0 && m != 0)
         {
-          Anderson_Acceleration(AA_matrix,utilde_matrix,AA_iter,m);
+          auto start = high_resolution_clock::now();
+
+          Anderson_Acceleration(F,u_tilde,AA_iter,m);
 
           if (AA_iter < m + 1)
             AA_iter++;
+
+          
+          // Timer end
+          auto end = high_resolution_clock::now();
+
+          // Computational time
+          auto duration_new = duration_cast<microseconds>(end - start);
+          double time = duration_new.count();
+
+          //AA_time_sum += time;
+
+          std::cout << "AA time: " << time * 1e-6
+                    << " seconds" << std::endl;
         }
 
         //assemble_rhs(first_step);
@@ -888,7 +908,7 @@ namespace Step57
           break;
         }
       }
-      /*
+
       if (output_result)
       {
         output_results(picard_iter);
@@ -899,15 +919,13 @@ namespace Step57
           process_solution(refinement_n);
         }
       }
-      */
     }
-    output_results(0);
   }
 
   template <int dim>
   void StationaryNavierStokes<dim>::Anderson_Acceleration(
-    FullMatrix<double> &AA_matrix,
-    FullMatrix<double> &utilde_matrix,
+    FullMatrix<double> &F,
+    FullMatrix<double> &u_tilde,
     int &AA_iter,
     const int &m)
   {
@@ -927,8 +945,8 @@ namespace Step57
         // New stuff that's hopefully faster than loops
         for (long unsigned int i = 0; i < dof_handler.n_dofs(); i++)
         {
-          AA_matrix(i, m - j) = AA_matrix(i, m - 1 - j);
-          utilde_matrix(i, m - j) = utilde_matrix(i, m - 1 - j);
+          F(i, m - j) = F(i, m - 1 - j);
+          u_tilde(i, m - j) = u_tilde(i, m - 1 - j);
         }
       }
       else if (j == m)
@@ -936,30 +954,10 @@ namespace Step57
         for (long unsigned int i = 0; i < dof_handler.n_dofs(); i++)
         {
           // Put new computed value into first column of matrix
-          AA_matrix(i,0) = newton_update(i);
-          utilde_matrix(i,0) = evaluation_point(i);
+          F(i,0) = newton_update(i);
+          u_tilde(i,0) = evaluation_point(i);
         }
       }
-    } // Tested and works as it should
-
-    // Here we create two matrices that will be for the actual AA computation
-    FullMatrix<double> F(dof_handler.n_dofs(),AA_iter);
-    FullMatrix<double> u_tilde(dof_handler.n_dofs(),AA_iter);
-    if (AA_iter < m + 1)
-    {
-      for (int j = 0; j < AA_iter; j++)
-      {
-        for (long unsigned int i = 0; i < dof_handler.n_dofs(); i++)
-        {
-          F(i,j) = AA_matrix(i,j);
-          u_tilde(i,j) = utilde_matrix(i,j);
-        }
-      }
-    }
-    else
-    {
-      F = AA_matrix;
-      u_tilde = utilde_matrix;
     }
 
     // Here we start the actual Anderson Acceleration process
@@ -969,7 +967,7 @@ namespace Step57
     // The second phase is more complicated, eplained there.
     if (AA_iter > 1)
     {
-      auto start = high_resolution_clock::now();
+      // auto start = high_resolution_clock::now();
 
       Vector<double> alpha(AA_iter);
 
@@ -980,8 +978,8 @@ namespace Step57
         // alpha = -(w_{k+1} - w_k, w_k)_X / ||w_{k+1}-w_k||_X^2
         Vector<double> res_diff(dof_handler.n_dofs());
         Vector<double> res_prev(dof_handler.n_dofs());
-        double numerator;
-        double denominator;
+        double numerator = 0;
+        double denominator = 0;
 
         if (AA_norm == 0)
         {
@@ -1004,15 +1002,6 @@ namespace Step57
 
         alpha(0) = -numerator / denominator;
         alpha(1) = 1 - alpha(0);
-
-        // Timer end
-        auto end = high_resolution_clock::now();
-
-        // Computational time
-        auto duration = duration_cast<microseconds>(end - start);
-
-        std::cout << "AA (m=1) time: " << duration.count() * 1e-6
-                  << " seconds" << std::endl;
       }
       else
       {
@@ -1033,66 +1022,46 @@ namespace Step57
 
         int m = AA_iter - 1;
 
-        Vector<double> F_m(dof_handler.n_dofs());
-        FullMatrix<double> Fhat(dof_handler.n_dofs(),m);
-
-        for (unsigned int i = 0; i < dof_handler.n_dofs(); i++)
-        {
-          F_m(i) = F(i,m);
-          for (int j = 0; j < m; j++)
-          {
-            // Because the mth term is the first column in F, we skip that one
-            Fhat(i,j) = F(i,j) - F(i,m);
-          }
-        }
-
         // Calculate F^T * M * F
         // Essentially does sym_mat = {<Fhat_i,Fhat_j>_M}
         FullMatrix<double> sym_mat(m,m);
         Vector<double> rhs(m);
-
-        if (AA_norm == 0)
+        Vector<double> temp(dof_handler.n_dofs());
+        Vector<double> FtM(dof_handler.n_dofs());
+        for (int i = 0; i < m; i++)
         {
-          // Calculates Fhat^T * Fhat
-          Fhat.Tmmult(sym_mat,Fhat);
-
-          // Calculates Fhat^T * F_m
-          F_m *= -1;
-          Fhat.Tvmult(rhs,F_m);
-        }
-        else
-        {
-          Vector<double> temp(dof_handler.n_dofs());
-          Vector<double> FtM(dof_handler.n_dofs());
-          for (int i = 0; i < m; i++)
+          for (unsigned int j = 0; j < dof_handler.n_dofs(); j++)
           {
-            for (unsigned int j = 0; j < dof_handler.n_dofs(); j++)
-            {
-              // We want temp to be the ith vector in Fhat
-              temp(j) = Fhat(j,i);
-            }
+            // We want temp to be the ith vector in Fhat
+            // temp(j) = Fhat(j,i);
+            temp(j) = F(j,i) - F(j,m);
+          }
 
-            // We want to calculate Fhat_i^T * M
+          // We want to calculate Fhat_i^T * M
+          if (AA_norm != 0)
             system_norm_matrix.Tvmult(FtM,temp);
+          else
+            FtM = temp;
 
-            // While we're here, we calculate the rhs vector
-            for (unsigned int j = 0; j < dof_handler.n_dofs(); j++)
-            {
-              // Calculating Fhat_i^T * M * F_m = rhs(i)
-              rhs(i) -= FtM(j) * F_m(j);
-            }
+          // While we're here, we calculate the rhs vector
+          for (unsigned int j = 0; j < dof_handler.n_dofs(); j++)
+          {
+            // Calculating Fhat_i^T * M * F_m = rhs(i)
+            rhs(i) -= FtM(j) * F(j,m);
+          }
 
-            // Now for the sym_mat calc
-            for (int j = 0; j < m; j++)
+          // Now for the sym_mat calc
+          for (int j = 0; j < m; j++)
+          {
+            for (unsigned int k = 0; k < dof_handler.n_dofs(); k++)
             {
-              for (unsigned int k = 0; k < dof_handler.n_dofs(); k++)
-              {
-                sym_mat(i,j) += FtM(k) * Fhat(k,j);
-              }
+              // sym_mat(i,j) += FtM(k) * Fhat(k,j);
+              sym_mat(i,j) += FtM(k) * (F(k,j) - F(k,m));
             }
           }
         }
         
+        // This section is almost negligable time-wise
         FullMatrix<double> sym_mat_inv(m,m);
         sym_mat_inv.invert(sym_mat);
 
@@ -1108,20 +1077,20 @@ namespace Step57
           sum += alpha(i);
         }
         alpha(m) = 1 - sum;
-        
-
 
         // Timer end
-        auto end = high_resolution_clock::now();
+          auto end = high_resolution_clock::now();
 
-        // Computational time
-        auto duration_new = duration_cast<microseconds>(end - start);
+          // Computational time
+          auto duration_new = duration_cast<microseconds>(end - start);
+          double time = duration_new.count();
 
-        std::cout << "AA new (m>1) time: " << duration_new.count() * 1e-6
-                  << " seconds" << std::endl;
+          AA_time_sum += time;
 
-        // END OF NEW STUFF
+          std::cout << "AA time: " << time * 1e-6
+                    << " seconds" << std::endl;
         
+        // END OF NEW STUFF       
       }
 
       std::cout << std::endl;
@@ -1244,9 +1213,10 @@ namespace Step57
   // and run the other functions respectively. The max refinement can be set by
   // the argument.
   template <int dim>
-  void StationaryNavierStokes<dim>::run(const int m,
+  void StationaryNavierStokes<dim>::run(const int &m,
                                         unsigned int &picard_iter,
-                                        double Re)
+                                        double Re,
+                                        double &AA_time)
   {
     GridGenerator::hyper_cube(triangulation);
     triangulation.refine_global(refinement);
@@ -1262,29 +1232,10 @@ namespace Step57
 
     picard_iteration(1e-12, true, false, m, picard_iter);
 
-    /*
+    AA_time = AA_time_sum * 1e-6;
 
-    if (Re > 50.0)
-      {
-        std::cout << "Searching for initial guess ..." << std::endl;
-        const double step_size = 200.0;
-        compute_initial_guess(step_size, picard_iter, m);
-        std::cout << "Found initial guess." << std::endl;
-        std::cout << "Computing solution with target Re = " << Re << std::endl;
-        viscosity = 1.0 / Re;
-        //newton_iteration(1e-12, 50, refinement, false, true);
-        picard_iteration(1e-12, false, true, m, picard_iter);
-      }
-    else
-      {
-        // When the viscosity is larger than 1/1000, the solution to Stokes
-        // equations is good enough as an initial guess. If so, we do not need
-        // to search for the initial guess using a continuation
-        // method. Newton's iteration can be started directly.
-
-        picard_iteration(1e-12, true, true, m, picard_iter);
-      }
-      */
+    std::cout << "Total AA time: " << AA_time
+                  << " seconds" << std::endl;
   }
 } // namespace Step57
 
@@ -1297,8 +1248,10 @@ int main()
     // Creating vectors to store things in and print them at the end
     std::vector<double> iterations;
     std::vector<double> time;
-    std::vector<int> Re = {100, 1000};
-    std::vector<int> m = {3};
+    std::vector<double> AA_time_vec;
+    std::vector<int> Re = {100};
+    std::vector<int> m = {0,1,2,10};
+    double AA_time;
 
     // quantities we need to run the code.
     unsigned int picard_iter;
@@ -1314,7 +1267,7 @@ int main()
         auto start = high_resolution_clock::now();
 
         StationaryNavierStokes<2> flow(/* degree = */ 1);
-        flow.run(m[j], picard_iter, Re[i]);
+        flow.run(m[j], picard_iter, Re[i], AA_time);
 
         // Timer end
         auto end = high_resolution_clock::now();
@@ -1328,6 +1281,8 @@ int main()
         std::cout << "Total iterations: " << picard_iter - 1 << std::endl;
         time.push_back(duration.count() * 1e-6);
         iterations.push_back(picard_iter - 1);
+
+        AA_time_vec.push_back(AA_time);
       }
     }
 
@@ -1352,6 +1307,18 @@ int main()
       {
         std::cout << "  m = " << m[j] << ": "
                   << time[j + m.size() * i] << std::endl;
+      }
+    }
+
+    std::cout << std::endl;
+    std::cout << "AA Time (seconds) for: " << std::endl;
+    for (long unsigned int i = 0; i < Re.size(); i++)
+    {
+      std::cout << "Re = " << Re[i] << ":" << std::endl;
+      for (long unsigned int j = 0; j < m.size(); j++)
+      {
+        std::cout << "  m = " << m[j] << ": "
+                  << AA_time_vec[j + m.size() * i] << std::endl;
       }
     }
 
