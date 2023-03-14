@@ -492,8 +492,6 @@ namespace Step57
     int AA_iter = 1;
     AA_time_sum = 0;
     double       current_res   = 1.0;
-    
-    std::cout << "viscosity: " << viscosity << std::endl;
 
     setup_dofs();
     FullMatrix<double> F_temp(dof_handler.n_dofs(),m + 1);
@@ -515,14 +513,9 @@ namespace Step57
         evaluation_point = present_solution;
         assemble_rhs(first_step);
         current_res = system_rhs.l2_norm();
-        std::cout << "The residual of initial guess is " << current_res
-                  << std::endl;
       }
       else
       {
-        std::cout << "**************************" << std::endl;
-        std::cout << "Picard Iteration: " << picard_iter << std::endl;
-
         evaluation_point = present_solution;
         assemble_system(first_step);
         solve(first_step);
@@ -532,33 +525,15 @@ namespace Step57
 
         if (picard_iter > 0 && m != 0)
         {
-          auto start = high_resolution_clock::now();
-
           Anderson_Acceleration(F_temp,u_tilde_temp,AA_iter,m);
 
           if (AA_iter < m + 1)
             AA_iter++;
-
-          
-          // Timer end
-          auto end = high_resolution_clock::now();
-
-          // Computational time
-          auto duration_new = duration_cast<microseconds>(end - start);
-          double time = duration_new.count();
-
-          AA_time_sum += time;
-
-          std::cout << "AA time: " << time * 1e-6
-                    << " seconds" << std::endl;
         }
         current_res = system_rhs.l2_norm();
 
         {
           present_solution = evaluation_point;
-          std::cout << "residual: " << current_res << std::endl;
-          std::cout << "**************************" << std::endl;
-          std::cout << std::endl;
         }
 
         ++picard_iter;
@@ -718,15 +693,9 @@ namespace Step57
         alpha(m) = 1 - sum;    
       }
 
-      std::cout << std::endl;
-      std::cout << "Values for alpha:" << std::endl;
-      for (int i = 0; i < AA_iter; i++)
-      {
-        std::cout << alpha(i) << std::endl;
-      }
-      std::cout << std::endl;
-
       // Here we calculate the updated solution, which we set equal to AA_sol
+      // We cannot use evaluation_point as the input for vmult because it
+      // is a BlockVector.
       Vector<double> AA_sol(dof_handler.n_dofs());
       u_tilde.vmult(AA_sol,alpha);
       evaluation_point = AA_sol;
