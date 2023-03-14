@@ -286,8 +286,8 @@ namespace Step57
   // <code>gamma</code>.
   template <int dim>
   StationaryNavierStokes<dim>::StationaryNavierStokes(const unsigned int degree)
-    : viscosity(1.0 / 100.0)
-    , gamma(0.0)
+    : viscosity(1.0 / 1000.0)
+    , gamma(2.0)
     , degree(degree)
     , triangulation(Triangulation<dim>::maximum_smoothing)
     , fe(FE_Q<dim>(degree + 1), dim, FE_Q<dim>(degree), 1)
@@ -469,16 +469,26 @@ namespace Step57
                   {
                     for (unsigned int j = 0; j < dofs_per_cell; ++j)
                       {
-                        local_matrix(i, j) +=
-                          (viscosity *
-                             scalar_product(grad_phi_u[j], grad_phi_u[i]) +
-                           present_velocity_gradients[q] * phi_u[j] * phi_u[i] +
-                           grad_phi_u[j] * present_velocity_values[q] *
-                             phi_u[i] -
-                           div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
-                           gamma * div_phi_u[j] * div_phi_u[i] +
-                           phi_p[i] * phi_p[j]) *
-                          fe_values.JxW(q);
+                        //local_matrix(i, j) +=
+                          // (viscosity *
+                          //    scalar_product(grad_phi_u[j], grad_phi_u[i]) +
+                          //  present_velocity_gradients[q] * phi_u[j] * phi_u[i] +
+                          //  grad_phi_u[j] * present_velocity_values[q] *
+                          //    phi_u[i] -
+                          //  div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
+                          //  gamma * div_phi_u[j] * div_phi_u[i] +
+                          //  phi_p[i] * phi_p[j]) *
+                          // fe_values.JxW(q);
+
+                          local_matrix(i, j) +=
+                            (viscosity *
+                               scalar_product(grad_phi_u[j], grad_phi_u[i]) +
+                               grad_phi_u[j] * present_velocity_values[q] *
+                                 phi_u[i] -
+                             div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
+                             gamma * div_phi_u[j] * div_phi_u[i] +
+                             phi_p[i] * phi_p[j]) *
+                            fe_values.JxW(q);
                       }
                   }
 
@@ -712,12 +722,22 @@ namespace Step57
               {
                 for (unsigned int j = 0; j < dofs_per_cell; ++j)
                   {
+                    // cell_matrix(i, j) +=
+                    //   (viscosity *
+                    //       scalar_product(grad_phi_u[j], grad_phi_u[i]) +
+                    //     present_velocity_gradients[q] * phi_u[j] * phi_u[i] +
+                    //     grad_phi_u[j] * present_velocity_values[q] *
+                    //       phi_u[i] -
+                    //     div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
+                    //     gamma * div_phi_u[j] * div_phi_u[i] +
+                    //     phi_p[i] * phi_p[j]) *
+                    //   fe_values.JxW(q);
+
                     cell_matrix(i, j) +=
                       (viscosity *
                           scalar_product(grad_phi_u[j], grad_phi_u[i]) +
-                        present_velocity_gradients[q] * phi_u[j] * phi_u[i] +
-                        grad_phi_u[j] * present_velocity_values[q] *
-                          phi_u[i] -
+                          grad_phi_u[j] * present_velocity_values[q] *
+                            phi_u[i] -
                         div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
                         gamma * div_phi_u[j] * div_phi_u[i] +
                         phi_p[i] * phi_p[j]) *
@@ -750,12 +770,12 @@ namespace Step57
     //                                    dummy_solution,
     //                                    dummy_rhs);
 
-    {
-      std::cout << "  Factorizing Jacobian matrix" << std::endl;
+    // {
+    //   std::cout << "  Factorizing Jacobian matrix" << std::endl;
   
-      jacobian_matrix_factorization = std::make_unique<SparseDirectUMFPACK>();
-      jacobian_matrix_factorization->factorize(jacobian_matrix);
-    }
+    //   jacobian_matrix_factorization = std::make_unique<SparseDirectUMFPACK>();
+    //   jacobian_matrix_factorization->factorize(jacobian_matrix);
+    // }
   }
 
   // @sect4{StationaryNavierStokes::solve}
@@ -802,30 +822,30 @@ namespace Step57
     BlockVector<double> &solution,
     const double /*tolerance*/)
   {
-    // std::cout << "GRMES solve..." << std::endl;
+    std::cout << "GRMES solve..." << std::endl;
 
-    // SolverControl solver_control(jacobian_matrix.m(),
-    //                              1e-4 * rhs.l2_norm(),
-    //                              true);
+    SolverControl solver_control(jacobian_matrix.m(),
+                                 1e-4 * rhs.l2_norm(),
+                                 true);
 
-    // SolverFGMRES<BlockVector<double>> gmres(solver_control);
-    // SparseILU<double>                 pmass_preconditioner;
-    // pmass_preconditioner.initialize(pressure_mass_matrix,
-    //                                 SparseILU<double>::AdditionalData());
+    SolverFGMRES<BlockVector<double>> gmres(solver_control);
+    SparseILU<double>                 pmass_preconditioner;
+    pmass_preconditioner.initialize(pressure_mass_matrix,
+                                    SparseILU<double>::AdditionalData());
 
-    // const BlockSchurPreconditioner<SparseILU<double>> preconditioner(
-    //   gamma,
-    //   viscosity,
-    //   jacobian_matrix,
-    //   pressure_mass_matrix,
-    //   pmass_preconditioner);
+    const BlockSchurPreconditioner<SparseILU<double>> preconditioner(
+      gamma,
+      viscosity,
+      jacobian_matrix,
+      pressure_mass_matrix,
+      pmass_preconditioner);
 
-    // gmres.solve(jacobian_matrix, solution, rhs, preconditioner);
-    // std::cout << "FGMRES steps: " << solver_control.last_step() << std::endl;
+    gmres.solve(jacobian_matrix, solution, rhs, preconditioner);
+    std::cout << "FGMRES steps: " << solver_control.last_step() << std::endl;
 
-    std::cout << "  Solving linear system" << std::endl;
+    // std::cout << "  Solving linear system" << std::endl;
  
-    jacobian_matrix_factorization->vmult(solution, rhs);
+    // jacobian_matrix_factorization->vmult(solution, rhs);
 
     zero_constraints.distribute(solution);
   }
@@ -1140,6 +1160,8 @@ namespace Step57
 
     //viscosity = 1.0 / 100.0;
 
+    std::cout << "viscosity = " << viscosity << std::endl;
+
     setup_dofs();
     initialize_system();
     //initial_guess();
@@ -1148,7 +1170,7 @@ namespace Step57
 
     int refinement_cycle = 0;
 
-    const double target_tolerance = 1e-8;// * std::pow(0.1, refinement_cycle);
+    const double target_tolerance = 1e-13;// * std::pow(0.1, refinement_cycle);
     std::cout << "  Target_tolerance: " << target_tolerance << std::endl
               << std::endl;
 
@@ -1157,8 +1179,9 @@ namespace Step57
       additional_data.function_tolerance = target_tolerance;
 
       kinsol::AdditionalData::SolutionStrategy strategy;
-      strategy = kinsol::AdditionalData::newton;
+      strategy = kinsol::AdditionalData::picard;
       additional_data.strategy = strategy;
+      additional_data.anderson_subspace_size = 10;
 
       kinsol nonlinear_solver(additional_data);
 
