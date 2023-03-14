@@ -63,6 +63,10 @@
 // sundials
 #include <deal.II/sundials/kinsol.h>
 
+// Timing
+#include <chrono>
+using namespace std::chrono;
+
 
 #include <fstream>
 #include <iostream>
@@ -286,8 +290,8 @@ namespace Step57
   // <code>gamma</code>.
   template <int dim>
   StationaryNavierStokes<dim>::StationaryNavierStokes(const unsigned int degree)
-    : viscosity(1.0 / 1000.0)
-    , gamma(2.0)
+    : viscosity(1.0 / 2500.0)
+    , gamma(1.0)
     , degree(degree)
     , triangulation(Triangulation<dim>::maximum_smoothing)
     , fe(FE_Q<dim>(degree + 1), dim, FE_Q<dim>(degree), 1)
@@ -469,16 +473,16 @@ namespace Step57
                   {
                     for (unsigned int j = 0; j < dofs_per_cell; ++j)
                       {
-                        //local_matrix(i, j) +=
-                          // (viscosity *
-                          //    scalar_product(grad_phi_u[j], grad_phi_u[i]) +
-                          //  present_velocity_gradients[q] * phi_u[j] * phi_u[i] +
-                          //  grad_phi_u[j] * present_velocity_values[q] *
-                          //    phi_u[i] -
-                          //  div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
-                          //  gamma * div_phi_u[j] * div_phi_u[i] +
-                          //  phi_p[i] * phi_p[j]) *
-                          // fe_values.JxW(q);
+                        // local_matrix(i, j) +=
+                        //   (viscosity *
+                        //      scalar_product(grad_phi_u[j], grad_phi_u[i]) +
+                        //    present_velocity_gradients[q] * phi_u[j] * phi_u[i] +
+                        //    grad_phi_u[j] * present_velocity_values[q] *
+                        //      phi_u[i] -
+                        //    div_phi_u[i] * phi_p[j] - phi_p[i] * div_phi_u[j] +
+                        //    gamma * div_phi_u[j] * div_phi_u[i] +
+                        //    phi_p[i] * phi_p[j]) *
+                        //   fe_values.JxW(q);
 
                           local_matrix(i, j) +=
                             (viscosity *
@@ -1156,7 +1160,7 @@ namespace Step57
   void StationaryNavierStokes<dim>::run_kinsol()
   {
     GridGenerator::hyper_cube(triangulation);
-    triangulation.refine_global(5);
+    triangulation.refine_global(6);
 
     //viscosity = 1.0 / 100.0;
 
@@ -1170,7 +1174,7 @@ namespace Step57
 
     int refinement_cycle = 0;
 
-    const double target_tolerance = 1e-13;// * std::pow(0.1, refinement_cycle);
+    const double target_tolerance = 1e-12;// * std::pow(0.1, refinement_cycle);
     std::cout << "  Target_tolerance: " << target_tolerance << std::endl
               << std::endl;
 
@@ -1241,9 +1245,21 @@ int main()
     {
       using namespace Step57;
 
+      // Timer start
+      auto start = high_resolution_clock::now();
+
       StationaryNavierStokes<2> flow(/* degree = */ 1);
-      // flow.run(4);
       flow.run_kinsol();
+
+      // Timer end
+      auto end = high_resolution_clock::now();
+
+      // Computational time
+      auto duration = duration_cast<microseconds>(end - start);
+
+      // output stuff
+      std::cout << "elapsed time: " << duration.count() * 1e-6
+                << " seconds" << std::endl;
     }
   catch (std::exception &exc)
     {
