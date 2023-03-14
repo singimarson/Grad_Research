@@ -311,10 +311,6 @@ namespace Step57
 
     std::vector<types::global_dof_index> local_dof_indices(dofs_per_cell);
 
-    // For the linearized system, we create temporary storage for present
-    // velocity and gradient, and present pressure. In practice, they are all
-    // obtained through their shape functions at quadrature points.
-
     std::vector<Tensor<1, dim>> present_velocity_values(n_q_points);
     std::vector<Tensor<2, dim>> present_velocity_gradients(n_q_points);
     std::vector<double>         present_pressure_values(n_q_points);
@@ -472,8 +468,6 @@ namespace Step57
       pressure_mass_matrix,
       pmass_preconditioner);
 
-    // Solves system_matrix * newton_update = system_rhs...
-    // WE CAN'T INCLUDE THE INITIAL VELOCITY
     gmres.solve(system_matrix, newton_update, system_rhs, preconditioner);
     std::cout << "FGMRES steps: " << solver_control.last_step() << std::endl;
 
@@ -758,7 +752,6 @@ int main()
         // Computational time
         auto duration = duration_cast<microseconds>(end - start);
 
-        // output stuff
         std::cout << "elapsed time: " << duration.count() * 1e-6
                   << " seconds" << std::endl;
         std::cout << "Total iterations: " << picard_iter - 1 << std::endl;
