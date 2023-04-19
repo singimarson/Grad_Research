@@ -55,6 +55,7 @@
 #include <deal.II/numerics/data_out.h>
 #include <deal.II/numerics/error_estimator.h>
 #include <deal.II/numerics/solution_transfer.h>
+#include <deal.II/numerics/nonlinear.h>
 
 #include <deal.II/sundials/kinsol.h>
 
@@ -462,17 +463,21 @@ namespace Step77
                   << std::endl;
 
         {
-          typename SUNDIALS::KINSOL<Vector<double>>::AdditionalData
-            additional_data;
-          additional_data.function_tolerance = target_tolerance;
+          // typename SUNDIALS::KINSOL<Vector<double>>::AdditionalData
+          //   additional_data;
+          // additional_data.function_tolerance = target_tolerance;
 
-          SUNDIALS::KINSOL<Vector<double>> nonlinear_solver(additional_data);
+          // SUNDIALS::KINSOL<Vector<double>> nonlinear_solver(additional_data);
 
-          nonlinear_solver.reinit_vector = [&](Vector<double> &x) {
+          const std::string solver_type = "kinsol";
+
+          NLSolverSelector<Vector<double>> nonlinear_solver(solver_type, target_tolerance);
+
+          nonlinear_solver.reinit_vector_NL = [&](Vector<double> &x) {
             x.reinit(dof_handler.n_dofs());
           };
 
-          nonlinear_solver.residual =
+          nonlinear_solver.residual_NL =
             [&](const Vector<double> &evaluation_point,
                 Vector<double> &      residual) {
               compute_residual(evaluation_point, residual);
@@ -480,7 +485,7 @@ namespace Step77
               return 0;
             };
 
-          nonlinear_solver.setup_jacobian =
+          nonlinear_solver.setup_jacobian_NL =
             [&](const Vector<double> &current_u,
                 const Vector<double> & /*current_f*/) {
               compute_and_factorize_jacobian(current_u);
@@ -488,7 +493,7 @@ namespace Step77
               return 0;
             };
 
-          nonlinear_solver.solve_with_jacobian = [&](const Vector<double> &rhs,
+          nonlinear_solver.solve_with_jacobian_NL = [&](const Vector<double> &rhs,
                                                      Vector<double> &      dst,
                                                      const double tolerance) {
             this->solve(rhs, dst, tolerance);
@@ -496,7 +501,7 @@ namespace Step77
             return 0;
           };
 
-          nonlinear_solver.solve(current_solution);
+          nonlinear_solver.solve_NL(current_solution);
         }
 
         output_results(refinement_cycle);
