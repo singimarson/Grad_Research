@@ -469,9 +469,11 @@ namespace Step77
 
           // SUNDIALS::KINSOL<Vector<double>> nonlinear_solver(additional_data);
 
-          const std::string solver_type = "kinsol";
+          //const std::string solver_type = "nox";
 
-          NLSolverSelector<Vector<double>> nonlinear_solver(solver_type, target_tolerance);
+          //NLSolverSelector<Vector<double>> nonlinear_solver(solver_type, target_tolerance);
+
+          NLSolverSelector<Vector<double>> nonlinear_solver;
 
           nonlinear_solver.reinit_vector_NL = [&](Vector<double> &x) {
             x.reinit(dof_handler.n_dofs());
