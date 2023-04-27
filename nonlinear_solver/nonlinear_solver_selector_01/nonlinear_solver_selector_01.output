@@ -1,0 +1,65 @@
+Computing residual vector... norm=0.867975
+Computing Jacobian matrix
+Factorizing Jacobian matrix
+Solving linear system
+Computing residual vector... norm=0.867975
+Computing residual vector... norm=0.212073
+Solving linear system
+Computing residual vector... norm=0.212073
+Computing residual vector... norm=0.202631
+Solving linear system
+Computing residual vector... norm=0.202631
+Computing residual vector... norm=0.165773
+Solving linear system
+Computing residual vector... norm=0.165774
+Computing residual vector... norm=0.162594
+Solving linear system
+Computing residual vector... norm=0.162594
+Computing residual vector... norm=0.148175
+Solving linear system
+Computing residual vector... norm=0.148175
+Computing residual vector... norm=0.145391
+Solving linear system
+Computing residual vector... norm=0.145391
+Computing residual vector... norm=0.137551
+Solving linear system
+Computing residual vector... norm=0.137551
+Computing residual vector... norm=0.135366
+Solving linear system
+Computing residual vector... norm=0.135365
+Computing residual vector... norm=0.130367
+Solving linear system
+Computing residual vector... norm=0.130367
+Computing residual vector... norm=0.128704
+Computing Jacobian matrix
+Factorizing Jacobian matrix
+Solving linear system
+Computing residual vector... norm=0.128704
+Computing residual vector... norm=0.0302623
+Solving linear system
+Computing residual vector... norm=0.0302624
+Computing residual vector... norm=0.0126764
+Solving linear system
+Computing residual vector... norm=0.0126763
+Computing residual vector... norm=0.00488315
+Solving linear system
+Computing residual vector... norm=0.00488322
+Computing residual vector... norm=0.00195788
+Solving linear system
+Computing residual vector... norm=0.00195781
+Computing residual vector... norm=0.000773169
+Solving linear system
+Computing residual vector... norm=0.000773247
+Computing residual vector... norm=0.000307242
+Solving linear system
+Computing residual vector... norm=0.000307164
+Computing residual vector... norm=0.00012179
+Solving linear system
+Computing residual vector... norm=0.000121868
+Computing residual vector... norm=4.83248e-05
+Solving linear system
+Computing residual vector... norm=4.82467e-05
+Computing residual vector... norm=1.91672e-05
+Solving linear system
+Computing residual vector... norm=1.92453e-05
+Computing residual vector... norm=7.60355e-06
